@@ -35,6 +35,7 @@ body,html {
     text-decoration:none;
     color:var(--fontColor);
     text-align:center;
+    
 }
 
 
@@ -43,6 +44,7 @@ body,html {
     border: 3px dotted var(--attendColor);
     padding: 0;
     font-size:30px;
+    cursor:pointer;
 }
 .loader_select {
     margin:0 auto;
@@ -55,6 +57,7 @@ body,html {
     border-radius: 16px
 }
 .tables {
+	padding: 10px;
     display:inline-block;
     margin:0 auto;
     min-height:50%;
@@ -73,13 +76,11 @@ body,html {
 }
 
 .diy-btn {
-    float: left;
     border-radius: 6px;
     height:105px;
     font-size: 30px;
     min-width:235px;
     padding:0;
-    margin-top:2%;
     outline:none;
 }
 .oneclick{
@@ -94,8 +95,8 @@ body,html {
 .diy-dropdown {
     min-width:175px;
     border-radius: 6px;
-
-    margin-left: 20%;
+    min-width: 400px;
+    #margin-left: 15%;
 }
 .dropdown {
     float:left;
@@ -107,8 +108,8 @@ body,html {
     padding:0px;
     min-width: 300px;
     min-height: 55px;
-    left:  270px;
-    top:-10px;
+    left: 300px;
+    bottom: -100px;
 }
 .dropdown-content {
     border-radius: 6px;
