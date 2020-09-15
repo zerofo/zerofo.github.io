@@ -179,7 +179,7 @@ body,html {
 }
 .info_msgs {
     margin:0 auto;
-    min-height:48px;
+    min-height:78px;
 }
 .cache {
     background-color:var(--spesColor);
