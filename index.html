@@ -350,7 +350,7 @@
 
         </div>
         
-        <script src="./common/exploit.js"></script>
+        
 	<script>
     function change_oneclick(idx,name,val){
         document.getElementById(idx).innerHTML =name;
@@ -361,7 +361,7 @@
     Cmap = {0: ["#0080FF", 'white', '#005AB5', 'white','gray'],
                 1: ["black", "#ffd700", "black", "#ffd700", 'black'],
                 2: ["#4d4d4d",  "white","#1AAD19", "#AAAAAA", "#1AAD19"]}
-    var themeIdx=localStorage.getItem("themeIdx");
+    let themeIdx=localStorage.getItem("themeIdx");
     
 
    IdMap = [["oneclick","_Al_Azif Mira","al"], ["loader","默认 loader","def"], ["jb_ver","默认 最新","new"]]
@@ -392,7 +392,7 @@
         localStorage.setItem("themeIdx", themeIdx);
     }
     </script>
-
+    <script src="./common/exploit.js"></script>
     </body>
 
 </html>
