@@ -58,8 +58,8 @@ body,html {
     min-height:40px;
     border-radius: 16px
 }
-.tables {
-	 padding: 10px;
+.tablebody .tables {
+	padding-top: 10px;
     display:inline-block;
     margin:0 auto;
     min-height:50%;
@@ -86,6 +86,7 @@ body,html {
 }
 
 .oneclick {
+	padding-top: 20px;
     display: block;
     margin: 0 auto;
  
@@ -121,7 +122,7 @@ body,html {
     float: none;
     padding:0px;
     min-height: 55px;
-    left: 35px;
+    left: 30px;
     bottom: -200px;
 }
 .dropdown-content {
@@ -199,7 +200,7 @@ body,html {
 }
 .info_msgs {
     margin:0 auto;
-    min-height:48px;
+    min-height:108px;
 }
 .cache {
     background-color:var(--spesColor);
