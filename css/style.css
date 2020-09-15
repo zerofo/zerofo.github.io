@@ -13,7 +13,11 @@ body,html {
     color:var(--fontColor);
     font-size: 18px;
     text-align: center;
+}
 
+.table_btn{
+	display:inline;
+    
 }
 .tablebody {
     margin:0 auto;
@@ -38,12 +42,9 @@ body,html {
     
 }
 #pl_switch{
-	 font-size:20px;
-    width:200px;
-    height:65px;
-    color: var(--attendColor);
+    width:40px;
+    height:105px;
     
-    border: 3px dotted var(--attendColor);
 }
 
 .tablebody a{
@@ -51,18 +52,13 @@ body,html {
     padding: 0;
     font-size:30px;
 }
-.loader_select {
-    margin:0 auto;
-    min-height:40px;
-    padding: 10px;
-}
 .loader {
     padding:5px;
     min-height:40px;
     border-radius: 16px
 }
 .tables {
-	padding: 10px;
+	 padding: 10px;
     display:inline-block;
     margin:0 auto;
     min-height:50%;
@@ -82,26 +78,36 @@ body,html {
 
 .diy-btn {
     border-radius: 6px;
-    height:105px;
-    font-size: 30px;
-    min-width:235px;
     padding:0;
     outline:none;
-}
-.oneclick{
     
-    display: block;
-    padding-bottom: 40px;
-    padding-top: 10px;
-
-    width: 100%;
+    float:left;
 }
 
-.diy-dropdown {
-    min-width:175px;
+.oneclick {
+    display: block;
+    margin: 0 auto;
+ 
+}
+#oneclick{
+	height:105px;
+    font-size: 30px;
+    min-width:235px;
+}
+.diy-drop {
+	
+	 margin: 0 auto;
+    height:65px;
+    font-size: 23px;
+    min-width:25px;
+	 border:none;
+	 background-color:var(--mainColor);
+    color:var(--fontColor);
     border-radius: 6px;
-    min-width: 400px;
-    #margin-left: 15%;
+}
+.diy-dropdown {
+	 
+    border-radius: 6px;
 }
 .dropdown {
     float:left;
@@ -110,11 +116,12 @@ body,html {
     display:inline-block;
 }
 .diy-dropdown-content {
+
+    float: none;
     padding:0px;
-    min-width: 300px;
     min-height: 55px;
-    left: 300px;
-    bottom: -100px;
+    left: 35px;
+    bottom: -200px;
 }
 .dropdown-content {
     border-radius: 6px;
@@ -183,15 +190,12 @@ body,html {
 }
 .cache {
     background-color:var(--spesColor);
-    width:110px;
-    height:54px;
 }
 .top{
-	top:50px;
+	top:65px;
 }
-.cache-body {
-    margin-left: 90%;
-
+.bottom{
+	bottom:-50px;
 }
 .noted {
     color:var(--mainColor);

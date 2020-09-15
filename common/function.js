@@ -1,20 +1,10 @@
-function get_ver(){
-    jbver = document.getElementById("jb_ver").value;
-    if(jbver ==""){jbver="new";}
-    let str={"new":0, "def":1, "old":2};
-    localStorage.setItem("jbnum",str[jbver]);
-    return jbver;
-}
 function load_exploit_mira() {
     msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 正在加载 Exploit + Mira ...</h1>";
     ExploitMira=document.getElementById("oneclick").value;
     console.log(ExploitMira);
     jbver = document.getElementById("jb_ver").value;
     if(jbver ==""){jbver="new";}
-    let str={"new":0, "def":1, "old":2};
-    localStorage.setItem("jbnum",str[jbver]);
-
-    LoadedMSG="使用"+ str[jbver] + "破解成功 + Mira/Hen 已加载。请等待 左上角, 出现2次 以上 跳窗 并等待跳窗结束再操作";
+    LoadedMSG="使用"+ jbver + "破解成功 + Mira/Hen 已加载。请等待 左上角, 出现2次 以上 跳窗 并等待跳窗结束再操作";
     let script=document.createElement('script');
     script.src="./common/"+jbver+"_jailbreak.js";
     setTimeout(function(){document.getElementsByTagName('head')[0].appendChild(script);}, 500);
@@ -31,7 +21,9 @@ function load_fan() {
     let loaderjs=document.createElement('script');
     loaderjs.src="./pl/"+loader+"_loader.js";
     document.getElementsByTagName('head')[0].appendChild(loaderjs);
-    let binload=document.createElement('script');binload.src="./pl/"+get_ver()+"_loader.js";
+    jbver = document.getElementById("jb_ver").value;
+    if(jbver ==""){jbver="new";}
+    let binload=document.createElement('script');binload.src="./common/"+jbver+"_binload.js";
     setTimeout(function(){document.getElementsByTagName('head')[0].appendChild(binload);},500);
 }
 
@@ -42,7 +34,9 @@ function load_binloader() {
     let script=document.createElement('script');
     script.src="./pl/"+loader+"_loader.js";
     document.getElementsByTagName('head')[0].appendChild(script);
-    let binload=document.createElement('script');binload.src="./pl/"+get_ver()+"_loader.js";
+    jbver = document.getElementById("jb_ver").value;
+    if(jbver ==""){jbver="new";}
+    let binload=document.createElement('script');binload.src="./common/"+jbver+"_binload.js";
     setTimeout(function(){document.getElementsByTagName('head')[0].appendChild(binload);},500);
 }
 
@@ -57,7 +51,9 @@ function load_ftp() {
     let loaderjs=document.createElement('script');
     loaderjs.src="./pl/"+loader+"_loader.js";
     document.getElementsByTagName('head')[0].appendChild(loaderjs);
-    let binload=document.createElement('script');binload.src="./pl/"+get_ver()+"_loader.js";
+    jbver = document.getElementById("jb_ver").value;
+    if(jbver ==""){jbver="new";}
+    let binload=document.createElement('script');binload.src="./common/"+jbver+"_binload.js";
     setTimeout(function(){document.getElementsByTagName('head')[0].appendChild(binload);},500);
 }
 function load_dumperBeta() {
@@ -70,7 +66,9 @@ function load_dumperBeta() {
     let loaderjs=document.createElement('script');
     loaderjs.src="./pl/"+loader+"_loader.js";
     document.getElementsByTagName('head')[0].appendChild(loaderjs);
-    let binload=document.createElement('script');binload.src="./pl/"+get_ver()+"_loader.js";
+    jbver = document.getElementById("jb_ver").value;
+    if(jbver ==""){jbver="new";}
+    let binload=document.createElement('script');binload.src="./common/"+jbver+"_binload.js";
     setTimeout(function(){document.getElementsByTagName('head')[0].appendChild(binload);},500);
 }
 function load_dumper() {
@@ -83,7 +81,9 @@ function load_dumper() {
     let loaderjs=document.createElement('script');
     loaderjs.src="./pl/"+loader+"_loader.js";
     document.getElementsByTagName('head')[0].appendChild(loaderjs);
-    let binload=document.createElement('script');binload.src="./pl/"+get_ver()+"_loader.js";
+    jbver = document.getElementById("jb_ver").value;
+    if(jbver ==""){jbver="new";}
+    let binload=document.createElement('script');binload.src="./common/"+jbver+"_binload.js";
     setTimeout(function(){document.getElementsByTagName('head')[0].appendChild(binload);},500);
 }
 
@@ -98,7 +98,9 @@ function load_linux() {
     let loaderjs=document.createElement('script');
     loaderjs.src="./pl/"+loader+"_loader.js";
     document.getElementsByTagName('head')[0].appendChild(loaderjs);
-    let binload=document.createElement('script');binload.src="./pl/"+get_ver()+"_loader.js";
+    jbver = document.getElementById("jb_ver").value;
+    if(jbver ==""){jbver="new";}
+    let binload=document.createElement('script');binload.src="./common/"+jbver+"_binload.js";
     setTimeout(function(){document.getElementsByTagName('head')[0].appendChild(binload);},500);
 }
 
@@ -113,7 +115,9 @@ function load_app2usb() {
     let loaderjs=document.createElement('script');
     loaderjs.src="./pl/"+loader+"_loader.js";
     document.getElementsByTagName('head')[0].appendChild(loaderjs);
-    let binload=document.createElement('script');binload.src="./pl/"+get_ver()+"_loader.js";
+    jbver = document.getElementById("jb_ver").value;
+    if(jbver ==""){jbver="new";}
+    let binload=document.createElement('script');binload.src="./common/"+jbver+"_binload.js";
     setTimeout(function(){document.getElementsByTagName('head')[0].appendChild(binload);},500);
 }
 
@@ -127,7 +131,9 @@ function load_kerneldump() {
     let loaderjs=document.createElement('script');
     loaderjs.src="./pl/"+loader+"_loader.js";
     document.getElementsByTagName('head')[0].appendChild(loaderjs);
-    let binload=document.createElement('script');binload.src="./pl/"+get_ver()+"_loader.js";
+    jbver = document.getElementById("jb_ver").value;
+    if(jbver ==""){jbver="new";}
+    let binload=document.createElement('script');binload.src="./common/"+jbver+"_binload.js";
     setTimeout(function(){document.getElementsByTagName('head')[0].appendChild(binload);},500);
 }
 
@@ -141,7 +147,9 @@ function load_kernelclock() {
     let loaderjs=document.createElement('script');
     loaderjs.src="./pl/"+loader+"_loader.js";
     document.getElementsByTagName('head')[0].appendChild(loaderjs);
-    let binload=document.createElement('script');binload.src="./pl/"+get_ver()+"_loader.js";
+    jbver = document.getElementById("jb_ver").value;
+    if(jbver ==""){jbver="new";}
+    let binload=document.createElement('script');binload.src="./common/"+jbver+"_binload.js";
     setTimeout(function(){document.getElementsByTagName('head')[0].appendChild(binload);},500);
 }
 
@@ -155,7 +163,9 @@ function load_todex() {
     let loaderjs=document.createElement('script');
     loaderjs.src="./pl/"+loader+"_loader.js";
     document.getElementsByTagName('head')[0].appendChild(loaderjs);
-    let binload=document.createElement('script');binload.src="./pl/"+get_ver()+"_loader.js";
+    jbver = document.getElementById("jb_ver").value;
+    if(jbver ==""){jbver="new";}
+    let binload=document.createElement('script');binload.src="./common/"+jbver+"_binload.js";
     setTimeout(function(){document.getElementsByTagName('head')[0].appendChild(binload);},500);
 }
 
@@ -169,7 +179,9 @@ function load_webrte() {
     let loaderjs=document.createElement('script');
     loaderjs.src="./pl/"+loader+"_loader.js";
     document.getElementsByTagName('head')[0].appendChild(loaderjs);
-    let binload=document.createElement('script');binload.src="./pl/"+get_ver()+"_loader.js";
+    jbver = document.getElementById("jb_ver").value;
+    if(jbver ==""){jbver="new";}
+    let binload=document.createElement('script');binload.src="./common/"+jbver+"_binload.js";
     setTimeout(function(){document.getElementsByTagName('head')[0].appendChild(binload);},500);
 }
 
@@ -183,7 +195,9 @@ function load_debug() {
     let loaderjs=document.createElement('script');
     loaderjs.src="./pl/"+loader+"_loader.js";
     document.getElementsByTagName('head')[0].appendChild(loaderjs);
-    let binload=document.createElement('script');binload.src="./pl/"+get_ver()+"_loader.js";
+    jbver = document.getElementById("jb_ver").value;
+    if(jbver ==""){jbver="new";}
+    let binload=document.createElement('script');binload.src="./common/"+jbver+"_binload.js";
     setTimeout(function(){document.getElementsByTagName('head')[0].appendChild(binload);},500);
 }
 
@@ -198,7 +212,9 @@ function load_historyblock() {
     let loaderjs=document.createElement('script');
     loaderjs.src="./pl/"+loader+"_loader.js";
     document.getElementsByTagName('head')[0].appendChild(loaderjs);
-    let binload=document.createElement('script');binload.src="./pl/"+get_ver()+"_loader.js";
+    jbver = document.getElementById("jb_ver").value;
+    if(jbver ==""){jbver="new";}
+    let binload=document.createElement('script');binload.src="./common/"+jbver+"_binload.js";
     setTimeout(function(){document.getElementsByTagName('head')[0].appendChild(binload);},500);
 }
 
@@ -213,7 +229,9 @@ function load_updatesdisable() {
     let loaderjs=document.createElement('script');
     loaderjs.src="./pl/"+loader+"_loader.js";
     document.getElementsByTagName('head')[0].appendChild(loaderjs);
-    let binload=document.createElement('script');binload.src="./pl/"+get_ver()+"_loader.js";
+    jbver = document.getElementById("jb_ver").value;
+    if(jbver ==""){jbver="new";}
+    let binload=document.createElement('script');binload.src="./common/"+jbver+"_binload.js";
     setTimeout(function(){document.getElementsByTagName('head')[0].appendChild(binload);},500);
 }
 
@@ -228,7 +246,9 @@ function load_updatesenable() {
     let loaderjs=document.createElement('script');
     loaderjs.src="./pl/"+loader+"_loader.js";
     document.getElementsByTagName('head')[0].appendChild(loaderjs);
-    let binload=document.createElement('script');binload.src="./pl/"+get_ver()+"_loader.js";
+    jbver = document.getElementById("jb_ver").value;
+    if(jbver ==""){jbver="new";}
+    let binload=document.createElement('script');binload.src="./common/"+jbver+"_binload.js";
     setTimeout(function(){document.getElementsByTagName('head')[0].appendChild(binload);},500);
 }
 
@@ -243,7 +263,9 @@ function load_dbbackup() {
     let loaderjs=document.createElement('script');
     loaderjs.src="./pl/"+loader+"_loader.js";
     document.getElementsByTagName('head')[0].appendChild(loaderjs);
-    let binload=document.createElement('script');binload.src="./pl/"+get_ver()+"_loader.js";
+    jbver = document.getElementById("jb_ver").value;
+    if(jbver ==""){jbver="new";}
+    let binload=document.createElement('script');binload.src="./common/"+jbver+"_binload.js";
     setTimeout(function(){document.getElementsByTagName('head')[0].appendChild(binload);},500);
 }
 
@@ -258,7 +280,9 @@ function load_dbrestore() {
     let loaderjs=document.createElement('script');
     loaderjs.src="./pl/"+loader+"_loader.js";
     document.getElementsByTagName('head')[0].appendChild(loaderjs);
-    let binload=document.createElement('script');binload.src="./pl/"+get_ver()+"_loader.js";
+    jbver = document.getElementById("jb_ver").value;
+    if(jbver ==""){jbver="new";}
+    let binload=document.createElement('script');binload.src="./common/"+jbver+"_binload.js";
     setTimeout(function(){document.getElementsByTagName('head')[0].appendChild(binload);},500);
 }
 
