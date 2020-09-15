@@ -23,7 +23,7 @@ function load_fan() {
     document.getElementsByTagName('head')[0].appendChild(loaderjs);
     jbver = document.getElementById("jb_ver").value;
     if(jbver ==""){jbver="new";}
-    let binload=document.createElement('script');binload.src="./common/"+jbver+"_binload.js";
+    let binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
     setTimeout(function(){document.getElementsByTagName('head')[0].appendChild(binload);},500);
 }
 
@@ -36,7 +36,7 @@ function load_binloader() {
     document.getElementsByTagName('head')[0].appendChild(script);
     jbver = document.getElementById("jb_ver").value;
     if(jbver ==""){jbver="new";}
-    let binload=document.createElement('script');binload.src="./common/"+jbver+"_binload.js";
+    let binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
     setTimeout(function(){document.getElementsByTagName('head')[0].appendChild(binload);},500);
 }
 
@@ -53,22 +53,7 @@ function load_ftp() {
     document.getElementsByTagName('head')[0].appendChild(loaderjs);
     jbver = document.getElementById("jb_ver").value;
     if(jbver ==""){jbver="new";}
-    let binload=document.createElement('script');binload.src="./common/"+jbver+"_binload.js";
-    setTimeout(function(){document.getElementsByTagName('head')[0].appendChild(binload);},500);
-}
-function load_dumperBeta() {
-    msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 正在加载 Dumper ...</h1>";
-    LoadedMSG="Dumper 已加载 请等待 左上角, 出现2次 以上 跳窗并等待跳窗结束再操作";
-    let script=document.createElement('script');
-    script.src="./pl/pl_dumper-beta.js";
-    document.getElementsByTagName('head')[0].appendChild(script);
-    loader=document.getElementById('loader').value=="def"? "mira": document.getElementById('loader').value;
-    let loaderjs=document.createElement('script');
-    loaderjs.src="./pl/"+loader+"_loader.js";
-    document.getElementsByTagName('head')[0].appendChild(loaderjs);
-    jbver = document.getElementById("jb_ver").value;
-    if(jbver ==""){jbver="new";}
-    let binload=document.createElement('script');binload.src="./common/"+jbver+"_binload.js";
+    let binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
     setTimeout(function(){document.getElementsByTagName('head')[0].appendChild(binload);},500);
 }
 function load_dumper() {
@@ -83,7 +68,7 @@ function load_dumper() {
     document.getElementsByTagName('head')[0].appendChild(loaderjs);
     jbver = document.getElementById("jb_ver").value;
     if(jbver ==""){jbver="new";}
-    let binload=document.createElement('script');binload.src="./common/"+jbver+"_binload.js";
+    let binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
     setTimeout(function(){document.getElementsByTagName('head')[0].appendChild(binload);},500);
 }
 
@@ -100,7 +85,7 @@ function load_linux() {
     document.getElementsByTagName('head')[0].appendChild(loaderjs);
     jbver = document.getElementById("jb_ver").value;
     if(jbver ==""){jbver="new";}
-    let binload=document.createElement('script');binload.src="./common/"+jbver+"_binload.js";
+    let binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
     setTimeout(function(){document.getElementsByTagName('head')[0].appendChild(binload);},500);
 }
 
@@ -117,7 +102,7 @@ function load_app2usb() {
     document.getElementsByTagName('head')[0].appendChild(loaderjs);
     jbver = document.getElementById("jb_ver").value;
     if(jbver ==""){jbver="new";}
-    let binload=document.createElement('script');binload.src="./common/"+jbver+"_binload.js";
+    let binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
     setTimeout(function(){document.getElementsByTagName('head')[0].appendChild(binload);},500);
 }
 
@@ -133,7 +118,7 @@ function load_kerneldump() {
     document.getElementsByTagName('head')[0].appendChild(loaderjs);
     jbver = document.getElementById("jb_ver").value;
     if(jbver ==""){jbver="new";}
-    let binload=document.createElement('script');binload.src="./common/"+jbver+"_binload.js";
+    let binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
     setTimeout(function(){document.getElementsByTagName('head')[0].appendChild(binload);},500);
 }
 
@@ -149,7 +134,7 @@ function load_kernelclock() {
     document.getElementsByTagName('head')[0].appendChild(loaderjs);
     jbver = document.getElementById("jb_ver").value;
     if(jbver ==""){jbver="new";}
-    let binload=document.createElement('script');binload.src="./common/"+jbver+"_binload.js";
+    let binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
     setTimeout(function(){document.getElementsByTagName('head')[0].appendChild(binload);},500);
 }
 
@@ -165,7 +150,7 @@ function load_todex() {
     document.getElementsByTagName('head')[0].appendChild(loaderjs);
     jbver = document.getElementById("jb_ver").value;
     if(jbver ==""){jbver="new";}
-    let binload=document.createElement('script');binload.src="./common/"+jbver+"_binload.js";
+    let binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
     setTimeout(function(){document.getElementsByTagName('head')[0].appendChild(binload);},500);
 }
 
@@ -181,7 +166,7 @@ function load_webrte() {
     document.getElementsByTagName('head')[0].appendChild(loaderjs);
     jbver = document.getElementById("jb_ver").value;
     if(jbver ==""){jbver="new";}
-    let binload=document.createElement('script');binload.src="./common/"+jbver+"_binload.js";
+    let binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
     setTimeout(function(){document.getElementsByTagName('head')[0].appendChild(binload);},500);
 }
 
@@ -197,7 +182,7 @@ function load_debug() {
     document.getElementsByTagName('head')[0].appendChild(loaderjs);
     jbver = document.getElementById("jb_ver").value;
     if(jbver ==""){jbver="new";}
-    let binload=document.createElement('script');binload.src="./common/"+jbver+"_binload.js";
+    let binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
     setTimeout(function(){document.getElementsByTagName('head')[0].appendChild(binload);},500);
 }
 
@@ -214,7 +199,7 @@ function load_historyblock() {
     document.getElementsByTagName('head')[0].appendChild(loaderjs);
     jbver = document.getElementById("jb_ver").value;
     if(jbver ==""){jbver="new";}
-    let binload=document.createElement('script');binload.src="./common/"+jbver+"_binload.js";
+    let binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
     setTimeout(function(){document.getElementsByTagName('head')[0].appendChild(binload);},500);
 }
 
@@ -231,7 +216,7 @@ function load_updatesdisable() {
     document.getElementsByTagName('head')[0].appendChild(loaderjs);
     jbver = document.getElementById("jb_ver").value;
     if(jbver ==""){jbver="new";}
-    let binload=document.createElement('script');binload.src="./common/"+jbver+"_binload.js";
+    let binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
     setTimeout(function(){document.getElementsByTagName('head')[0].appendChild(binload);},500);
 }
 
@@ -248,7 +233,7 @@ function load_updatesenable() {
     document.getElementsByTagName('head')[0].appendChild(loaderjs);
     jbver = document.getElementById("jb_ver").value;
     if(jbver ==""){jbver="new";}
-    let binload=document.createElement('script');binload.src="./common/"+jbver+"_binload.js";
+    let binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
     setTimeout(function(){document.getElementsByTagName('head')[0].appendChild(binload);},500);
 }
 
@@ -265,7 +250,7 @@ function load_dbbackup() {
     document.getElementsByTagName('head')[0].appendChild(loaderjs);
     jbver = document.getElementById("jb_ver").value;
     if(jbver ==""){jbver="new";}
-    let binload=document.createElement('script');binload.src="./common/"+jbver+"_binload.js";
+    let binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
     setTimeout(function(){document.getElementsByTagName('head')[0].appendChild(binload);},500);
 }
 
@@ -282,7 +267,7 @@ function load_dbrestore() {
     document.getElementsByTagName('head')[0].appendChild(loaderjs);
     jbver = document.getElementById("jb_ver").value;
     if(jbver ==""){jbver="new";}
-    let binload=document.createElement('script');binload.src="./common/"+jbver+"_binload.js";
+    let binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
     setTimeout(function(){document.getElementsByTagName('head')[0].appendChild(binload);},500);
 }
 

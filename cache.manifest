@@ -35,11 +35,9 @@ pl/mira_loader.js
 pl/mira_mira.js
 pl/miradev_loader.js
 pl/miradev_mira.js
-pl/new_loader.js
 pl/pl_app2usb.js
 pl/pl_dbBackup.js
 pl/pl_dbRestore.js
-pl/pl_dumper-beta.js
 pl/pl_dumper.js
 pl/pl_fan.js
 pl/pl_ftp.js
