@@ -200,7 +200,7 @@ body,html {
 }
 .info_msgs {
     margin:0 auto;
-    min-height:108px;
+    min-height:88px;
 }
 .cache {
     background-color:var(--spesColor);
