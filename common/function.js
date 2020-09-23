@@ -5,9 +5,11 @@ function load_exploit_mira() {
     jbver = document.getElementById("jb_ver").value;
     if(jbver ==""){return 0;}
     LoadedMSG="使用"+ jbver + "破解成功 + Mira/Hen 已加载。<br>请等待 左上角, 出现2次 以上 跳窗 并等待跳窗结束再操作";
-    let script=document.createElement('script');
-    script.src="./common/"+jbver+"_jailbreak.js";
-    setTimeout(function(){document.getElementsByTagName('head')[0].appendChild(script);}, 500);
+    
+    setTimeout(function(){
+        let script=document.createElement('script');
+        script.src="./common/"+jbver+"_jailbreak.js";
+        document.getElementsByTagName('head')[0].appendChild(script);}, 500);
 }
 
 function load_fan() {
