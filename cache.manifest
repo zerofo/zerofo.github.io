@@ -11,6 +11,8 @@ common/old_jailbreak.js
 common/old_loadcode.js
 common/self_jailbreak.js
 common/self_loadcode.js
+common/nobin_jailbreak.js
+common/nobin_loadcode.js
 css/style.css
 index.html
 pl/al-dev_mira.js
