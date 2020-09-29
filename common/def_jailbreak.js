@@ -40326,7 +40326,8 @@ if (ExploitMira != null){
     if (Loader == "def"){
         Loader = ExploitMira;}  
     setTimeout(function(){
-    let mirajs = document.createElement('script');mirajs.src = "./pl/"+ExploitMira+"_mira.js";document.getElementsByTagName('head')[0].appendChild(mirajs);
+    if (ExploitMira != "usb")
+    {let mirajs = document.createElement('script');mirajs.src = "./pl/"+ExploitMira+"_mira.js";document.getElementsByTagName('head')[0].appendChild(mirajs);}
     
    
     setTimeout(function(){

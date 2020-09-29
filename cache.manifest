@@ -11,6 +11,8 @@ common/old_jailbreak.js
 common/old_loadcode.js
 common/self_jailbreak.js
 common/self_loadcode.js
+common/usb_jailbreak.js
+common/usb_loadcode.js
 css/style.css
 index.html
 pl/al-test_loader.js
@@ -55,5 +57,6 @@ pl/pl_todex.js
 pl/pl_updatesDisable.js
 pl/pl_updatesEnable.js
 pl/pl_webrte.js
+pl/usb_loader.js
 FALLBACK:
 / index.html
