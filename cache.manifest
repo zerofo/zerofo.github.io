@@ -55,6 +55,5 @@ pl/pl_todex.js
 pl/pl_updatesDisable.js
 pl/pl_updatesEnable.js
 pl/pl_webrte.js
-pl/usb_loader.js
 FALLBACK:
 / index.html
