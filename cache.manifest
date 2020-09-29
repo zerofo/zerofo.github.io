@@ -13,8 +13,6 @@ common/self_jailbreak.js
 common/self_loadcode.js
 css/style.css
 index.html
-pl/pl_tempinfo.js
-pl/al-dev_mira.js
 pl/al-test_loader.js
 pl/al-test_mira.js
 pl/al_loader.js
@@ -32,6 +30,8 @@ pl/hen_loader.js
 pl/hen_mira.js
 pl/k_loader.js
 pl/k_mira.js
+pl/temp_loader.js
+pl/temp_mira.js
 pl/leeful_loader.js
 pl/leeful_mira.js
 pl/leefulhen_loader.js
@@ -55,5 +55,6 @@ pl/pl_todex.js
 pl/pl_updatesDisable.js
 pl/pl_updatesEnable.js
 pl/pl_webrte.js
+pl/usb_loader.js
 FALLBACK:
 / index.html

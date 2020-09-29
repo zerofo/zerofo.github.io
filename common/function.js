@@ -41,23 +41,6 @@ function load_binloader() {
     let binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
     setTimeout(function(){document.getElementsByTagName('head')[0].appendChild(binload);},500);
 }
-function load_tempinfo() {
-    msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 正在加载 温度插件 ...</h1>";
-
-    LoadedMSG="FTP 已加载 请等待 左上角,<br>出现2次 以上 跳窗并等待跳窗结束再操作";
-    let script=document.createElement('script');
-    script.src="./pl/pl_tempinfo.js";
-    document.getElementsByTagName('head')[0].appendChild(script);
-    loader=document.getElementById('loader').value=="def"? "mira": document.getElementById('loader').value;
-    let loaderjs=document.createElement('script');
-    loaderjs.src="./pl/"+loader+"_loader.js";
-    document.getElementsByTagName('head')[0].appendChild(loaderjs);
-    jbver = document.getElementById("jb_ver").value;
-    if(jbver ==""){jbver="new";}
-    let binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
-    setTimeout(function(){document.getElementsByTagName('head')[0].appendChild(binload);},500);
-}
-
 function load_ftp() {
     msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 正在加载 FTP ...</h1>";
 
