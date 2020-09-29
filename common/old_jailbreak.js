@@ -64090,15 +64090,18 @@ if (main_ret == 179 || main_ret == 0) {
 window.msgs.innerHTML="<h1 style='color:green;font-size:25px;text-align:center;'>Exploit Loaded ✔</h1>";
 if (ExploitMira != null){
   window.msgs.innerHTML="<h1 style='color:green;font-size:25px;text-align:center;'>破解成功! ✔ 正在加载 Mira ...</h1>";
-    let Loader=document.getElementById('loader').value
-    let binL=document.getElementById('jb_ver').value
+    let Loader=document.getElementById('loader').value;
 
     if (Loader == "def"){
         Loader = ExploitMira;}  
     setTimeout(function(){
-    if (ExploitMira != "usb")
-    {let mirajs = document.createElement('script');mirajs.src = "./pl/"+ExploitMira+"_mira.js";document.getElementsByTagName('head')[0].appendChild(mirajs);}
-    
+    if (ExploitMira != "usb"){
+    let mirajs = document.createElement('script');mirajs.src = "./pl/"+ExploitMira+"_mira.js";document.getElementsByTagName('head')[0].appendChild(mirajs);
+    let binL=document.getElementById('jb_ver').value;
+    }
+    else{
+    binL="usb";
+    }   
    
     setTimeout(function(){
     let loaderjs = document.createElement('script');loaderjs.src = "./pl/"+Loader+"_loader.js";
