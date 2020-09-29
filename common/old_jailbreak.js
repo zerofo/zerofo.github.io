@@ -64097,10 +64097,10 @@ if (ExploitMira != null){
     setTimeout(function(){
     if (ExploitMira != "usb"){
     let mirajs = document.createElement('script');mirajs.src = "./pl/"+ExploitMira+"_mira.js";document.getElementsByTagName('head')[0].appendChild(mirajs);
-    let binL=document.getElementById('jb_ver').value;
+    var binL=document.getElementById('jb_ver').value;
     }
     else{
-    binL="usb";
+    var binL="usb";
     }   
    
     setTimeout(function(){
