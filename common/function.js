@@ -33,10 +33,10 @@ function load_binloader() {
     msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 正在加载 Bin Loader ...</h1>";
     LoadedMSG="发送 bin格式插件(payload) 到端口 9021, <br>请等待 左上角, 出现2次 以上 跳窗并等待跳窗结束再操作";
     loader=document.getElementById('loader').value=="def"? "mira": document.getElementById('loader').value;
+    jbver=document.getElementById("jb_ver").value=="usb"? "mira": document.getElementById("jb_ver").value;
     let script=document.createElement('script');
     script.src="./pl/"+loader+"_loader.js";
     document.getElementsByTagName('head')[0].appendChild(script);
-    jbver = document.getElementById("jb_ver").value;
     if(jbver ==""){jbver="new";}
     let binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
     setTimeout(function(){document.getElementsByTagName('head')[0].appendChild(binload);},500);
