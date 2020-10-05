@@ -4,8 +4,9 @@
     <head>
         <link rel="stylesheet" type="text/css" href="./css/style.css"/>
         <meta charset="utf-8" />
-    <script>let exploit = document.createElement('script');exploit.src = "./common/exploit.js";
-    document.getElementsByTagName('head')[0].appendChild(exploit);</script>
+    <script>let functions = document.createElement('script');functions.src = "./common/function.js";
+    document.getElementsByTagName('head')[0].appendChild(functions);
+</script>
         <title>
             6.72专用破解网站 by zerofo
         </title>
@@ -401,9 +402,10 @@
         document.body.style.setProperty('--spesColor',  Cmap[themeIdx][4]);
         localStorage.setItem("themeIdx", themeIdx);
     }
-    let functions = document.createElement('script');functions.src = "./common/function.js";
-    document.getElementsByTagName('head')[0].appendChild(functions);
+
+    
     </script>
+    <script src="./common/exploit.js"></script>
     </body>
 
 </html>
