@@ -4,9 +4,32 @@
     <head>
         <link rel="stylesheet" type="text/css" href="./css/style.css"/>
         <meta charset="utf-8" />
-    <script>let functions = document.createElement('script');functions.src = "./common/function.js";
-    document.getElementsByTagName('head')[0].appendChild(functions);
-</script>
+        <script src="./common/function.js"></script>
+        <script>
+            let Cmap = {0: ["#0080FF", 'white', '#005AB5', 'white','gray'],
+                        1: ["black", "#ffd700", "black", "#ffd700", 'black'],
+                        2: ["#4d4d4d",  "white","#1AAD19", "#AAAAAA", "#1AAD19"]};
+            let themeIdx=localStorage.getItem("themeIdx");
+            let IdMap = [["oneclick","_Al_Azif Mira","al"], ["loader","默认 loader","def"], ["jb_ver","默认 最新","new"]];
+            function change_oneclick(idx,name,val){
+                document.getElementById(idx).innerHTML=name;
+                document.getElementById(idx).value=val;
+                localStorage.setItem(idx+"Name", name);
+                localStorage.setItem(idx+"VAL", val);
+            };
+            
+            function colorSwitch(){
+                themeIdx=themeIdx+1;
+                if (themeIdx>2){themeIdx=0;};
+                //themeIdx=1;
+                document.body.style.setProperty('--mainColor', Cmap[themeIdx][0]);
+                document.body.style.setProperty('--fontColor',  Cmap[themeIdx][1]);
+                document.body.style.setProperty('--attendColor',  Cmap[themeIdx][2]);
+                document.body.style.setProperty('--subColor',  Cmap[themeIdx][3]);
+                document.body.style.setProperty('--spesColor',  Cmap[themeIdx][4]);
+                localStorage.setItem("themeIdx", themeIdx);
+            };
+            </script>   
         <title>
             6.72专用破解网站 by zerofo
         </title>
@@ -360,51 +383,24 @@
                 </div>
 
         </div>
-        
-        
-	<script>
-    function change_oneclick(idx,name,val){
-        document.getElementById(idx).innerHTML =name;
-        document.getElementById(idx).value=val;
-        localStorage.setItem(idx+"Name", name);
-        localStorage.setItem(idx+"VAL", val);
-    }
-    Cmap = {0: ["#0080FF", 'white', '#005AB5', 'white','gray'],
-                1: ["black", "#ffd700", "black", "#ffd700", 'black'],
-                2: ["#4d4d4d",  "white","#1AAD19", "#AAAAAA", "#1AAD19"]}
-    let themeIdx=localStorage.getItem("themeIdx");
-    
+         <script>
 
-   IdMap = [["oneclick","_Al_Azif Mira","al"], ["loader","默认 loader","def"], ["jb_ver","默认 最新","new"]]
-	for (let i = 0; i < 3; i++) {
-		Name=localStorage.getItem(IdMap[i][0]+"Name");
-		Value=localStorage.getItem(IdMap[i][0]+"VAL");
-		if (Name==null||Value==null){Name=IdMap[i][1]; Value=IdMap[i][2];}
-      document.getElementById(IdMap[i][0]).innerHTML=Name;
-      document.getElementById(IdMap[i][0]).value=Value;
-	}    
-    
-	if (themeIdx==null){themeIdx=0;}
-    document.body.style.setProperty('--mainColor', Cmap[themeIdx][0]);
-    document.body.style.setProperty('--fontColor',  Cmap[themeIdx][1]);
-    document.body.style.setProperty('--attendColor',  Cmap[themeIdx][2]);
-    document.body.style.setProperty('--subColor',  Cmap[themeIdx][3]);
-    document.body.style.setProperty('--spesColor',  Cmap[themeIdx][4]);
-    
-    function colorSwitch(){
-        themeIdx=themeIdx+1;
-        if (themeIdx>2){themeIdx=0}
-        //themeIdx=1;
-        document.body.style.setProperty('--mainColor', Cmap[themeIdx][0]);
-        document.body.style.setProperty('--fontColor',  Cmap[themeIdx][1]);
-        document.body.style.setProperty('--attendColor',  Cmap[themeIdx][2]);
-        document.body.style.setProperty('--subColor',  Cmap[themeIdx][3]);
-        document.body.style.setProperty('--spesColor',  Cmap[themeIdx][4]);
-        localStorage.setItem("themeIdx", themeIdx);
-    }
-
-    
+            for (let i = 0; i < 3; i++) {
+                Name=localStorage.getItem(IdMap[i][0]+"Name");
+                Value=localStorage.getItem(IdMap[i][0]+"VAL");
+                if (Name==null||Value==null){Name=IdMap[i][1]; Value=IdMap[i][2];}
+              document.getElementById(IdMap[i][0]).innerHTML=Name;
+              document.getElementById(IdMap[i][0]).value=Value;
+            };
+            
+            if (themeIdx==null){themeIdx=0;};
+            document.body.style.setProperty('--mainColor', Cmap[themeIdx][0]);
+            document.body.style.setProperty('--fontColor',  Cmap[themeIdx][1]);
+            document.body.style.setProperty('--attendColor',  Cmap[themeIdx][2]);
+            document.body.style.setProperty('--subColor',  Cmap[themeIdx][3]);
+            document.body.style.setProperty('--spesColor',  Cmap[themeIdx][4]);
     </script>
+    
     <script src="./common/exploit.js"></script>
     </body>
 
