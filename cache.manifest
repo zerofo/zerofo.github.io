@@ -17,6 +17,8 @@ css/style.css
 index.html
 pl/al-test_loader.js
 pl/al-test_mira.js
+pl/al-now_loader.js
+pl/al-now_mira.js
 pl/al_loader.js
 pl/al_mira.js
 pl/ciss84_loader.js
@@ -30,12 +32,8 @@ pl/hen300_loader.js
 pl/hen300_mira.js
 pl/hen_loader.js
 pl/hen_mira.js
-pl/k_loader.js
-pl/k_mira.js
 pl/temp_loader.js
 pl/temp_mira.js
-pl/leeful_loader.js
-pl/leeful_mira.js
 pl/leefulhen_loader.js
 pl/leefulhen_mira.js
 pl/mira_loader.js
