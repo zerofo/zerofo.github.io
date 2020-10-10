@@ -1,3 +1,21 @@
+function change_oneclick(idx,name,val){
+    document.getElementById(idx).innerHTML=name;
+    document.getElementById(idx).value=val;
+    localStorage.setItem(idx+"Name", name);
+    localStorage.setItem(idx+"VAL", val);
+};
+
+function colorSwitch(themeIdx){
+    themeIdx=themeIdx+1;
+    if (themeIdx>2){themeIdx=0;};
+    document.body.style.setProperty('--mainColor', Cmap[themeIdx][0]);
+    document.body.style.setProperty('--fontColor',  Cmap[themeIdx][1]);
+    document.body.style.setProperty('--attendColor',  Cmap[themeIdx][2]);
+    document.body.style.setProperty('--subColor',  Cmap[themeIdx][3]);
+    document.body.style.setProperty('--spesColor',  Cmap[themeIdx][4]);
+    localStorage.setItem("themeIdx", themeIdx);
+};
+
 function load_exploit_mira() {
     msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 正在加载 Exploit + Mira ...</h1>";
     ExploitMira=document.getElementById("oneclick").value;
@@ -8,7 +26,7 @@ function load_exploit_mira() {
     setTimeout(function(){
         var script=document.createElement('script');
         script.src="./common/"+jbver+"_jailbreak.js";
-        document.getElementsByTagName('head')[0].appendChild(script);}, 1000);
+        document.getElementsByTagName('head')[0].appendChild(script);}, 500);
 }
 
 function load_fan() {
@@ -112,22 +130,6 @@ function load_kerneldump() {
     LoadedMSG="内核 Dumper 已加载 请等待 左上角,<br>出现2次 以上 跳窗并等待跳窗结束再操作";
     var script=document.createElement('script');
     script.src="./pl/pl_kernelDumper.js";
-    document.getElementsByTagName('head')[0].appendChild(script);
-    var loader=document.getElementById('loader').value=="def"? "mira": document.getElementById('loader').value;
-    var loaderjs=document.createElement('script');
-    loaderjs.src="./pl/"+loader+"_loader.js";
-    document.getElementsByTagName('head')[0].appendChild(loaderjs);
-    var jbver = document.getElementById("jb_ver").value;
-    if(jbver ==""){jbver="new";}
-    var binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
-    document.getElementsByTagName('head')[0].appendChild(binload);
-}
-
-function load_kernelclock() {
-    msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 正在加载 内核时间修复 ...</h1>";
-    LoadedMSG="内核时间修复 已加载 请等待 左上角,<br>出现2次 以上 跳窗并等待跳窗结束再操作";
-    var script=document.createElement('script');
-    script.src="./pl/pl_kernelclock.js";
     document.getElementsByTagName('head')[0].appendChild(script);
     var loader=document.getElementById('loader').value=="def"? "mira": document.getElementById('loader').value;
     var loaderjs=document.createElement('script');
