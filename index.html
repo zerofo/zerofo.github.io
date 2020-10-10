@@ -22,7 +22,7 @@
         <body>
         <div class="webname">
             
-               <a href="javascript:void(0);" onclick="colorSwitch();"> 6.72专用破解网站 by zerofo</a>
+               <a href="javascript:void(0);" onclick="colorSwitch(1);"> 6.72专用破解网站 by zerofo</a>
             
         </div>
         <div class="tablebody">
@@ -365,8 +365,9 @@
 	localStorage.setItem(idx+"VAL", val);
 	};
 
-	function colorSwitch(){
-	themeIdx=themeIdx+1;
+	function colorSwitch(btns){
+	if (btns != null)
+	{themeIdx=themeIdx+1;}
 	if (themeIdx>2){themeIdx=0;};
 	document.body.style.setProperty('--mainColor', Cmap[themeIdx][0]);
 	document.body.style.setProperty('--fontColor',  Cmap[themeIdx][1]);
@@ -376,6 +377,7 @@
 	localStorage.setItem("themeIdx", themeIdx);
 	};
 	if (themeIdx==null){themeIdx=0;}
+
 	colorSwitch();
 	for (let i = 0; i < 3; i++) {
 	var Name=localStorage.getItem(IdMap[i][0]+"Name");
