@@ -26,7 +26,7 @@ function load_fan() {
     var jbver = document.getElementById("jb_ver").value;
     if(jbver ==""){jbver="new";}
     var binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
-    setTimeout(function(){document.getElementsByTagName('head')[0].appendChild(binload);},500);
+    document.getElementsByTagName('head')[0].appendChild(binload);
 }
 
 function load_binloader() {
@@ -39,7 +39,7 @@ function load_binloader() {
     document.getElementsByTagName('head')[0].appendChild(script);
     if(jbver ==""){jbver="new";}
     var binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
-    setTimeout(function(){document.getElementsByTagName('head')[0].appendChild(binload);},500);
+    document.getElementsByTagName('head')[0].appendChild(binload);
 }
 function load_ftp() {
     msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 正在加载 FTP ...</h1>";
@@ -56,7 +56,7 @@ function load_ftp() {
     var jbver = document.getElementById("jb_ver").value;
     if(jbver ==""){jbver="new";}
     var binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
-    setTimeout(function(){document.getElementsByTagName('head')[0].appendChild(binload);},500);
+    document.getElementsByTagName('head')[0].appendChild(binload);
 }
 function load_dumper() {
     msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 正在加载 Dumper ...</h1>";
@@ -71,7 +71,7 @@ function load_dumper() {
     var jbver = document.getElementById("jb_ver").value;
     if(jbver ==""){jbver="new";}
     var binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
-    setTimeout(function(){document.getElementsByTagName('head')[0].appendChild(binload);},500);
+    document.getElementsByTagName('head')[0].appendChild(binload);
 }
 
 function load_linux() {
@@ -88,7 +88,7 @@ function load_linux() {
     var jbver = document.getElementById("jb_ver").value;
     if(jbver ==""){jbver="new";}
     var binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
-    setTimeout(function(){document.getElementsByTagName('head')[0].appendChild(binload);},500);
+    document.getElementsByTagName('head')[0].appendChild(binload);
 }
 
 function load_app2usb() {
@@ -105,7 +105,7 @@ function load_app2usb() {
     var jbver = document.getElementById("jb_ver").value;
     if(jbver ==""){jbver="new";}
     var binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
-    setTimeout(function(){document.getElementsByTagName('head')[0].appendChild(binload);},500);
+    document.getElementsByTagName('head')[0].appendChild(binload);
 }
 
 function load_kerneldump() {
@@ -121,7 +121,7 @@ function load_kerneldump() {
     var jbver = document.getElementById("jb_ver").value;
     if(jbver ==""){jbver="new";}
     var binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
-    setTimeout(function(){document.getElementsByTagName('head')[0].appendChild(binload);},500);
+    document.getElementsByTagName('head')[0].appendChild(binload);
 }
 
 function load_kernelclock() {
@@ -137,7 +137,7 @@ function load_kernelclock() {
     var jbver = document.getElementById("jb_ver").value;
     if(jbver ==""){jbver="new";}
     var binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
-    setTimeout(function(){document.getElementsByTagName('head')[0].appendChild(binload);},500);
+    document.getElementsByTagName('head')[0].appendChild(binload);
 }
 
 function load_todex() {
@@ -153,7 +153,7 @@ function load_todex() {
     var jbver = document.getElementById("jb_ver").value;
     if(jbver ==""){jbver="new";}
     var binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
-    setTimeout(function(){document.getElementsByTagName('head')[0].appendChild(binload);},500);
+    document.getElementsByTagName('head')[0].appendChild(binload);
 }
 
 function load_webrte() {
@@ -169,7 +169,7 @@ function load_webrte() {
     var jbver = document.getElementById("jb_ver").value;
     if(jbver ==""){jbver="new";}
     var binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
-    setTimeout(function(){document.getElementsByTagName('head')[0].appendChild(binload);},500);
+    document.getElementsByTagName('head')[0].appendChild(binload);
 }
 
 function load_debug() {
@@ -185,7 +185,7 @@ function load_debug() {
     var jbver = document.getElementById("jb_ver").value;
     if(jbver ==""){jbver="new";}
     var binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
-    setTimeout(function(){document.getElementsByTagName('head')[0].appendChild(binload);},500);
+    document.getElementsByTagName('head')[0].appendChild(binload);
 }
 
 function load_historyblock() {
@@ -202,7 +202,7 @@ function load_historyblock() {
     var jbver = document.getElementById("jb_ver").value;
     if(jbver ==""){jbver="new";}
     var binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
-    setTimeout(function(){document.getElementsByTagName('head')[0].appendChild(binload);},500);
+    document.getElementsByTagName('head')[0].appendChild(binload);
 }
 
 function load_updatesdisable() {
@@ -219,7 +219,7 @@ function load_updatesdisable() {
     var jbver = document.getElementById("jb_ver").value;
     if(jbver ==""){jbver="new";}
     var binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
-    setTimeout(function(){document.getElementsByTagName('head')[0].appendChild(binload);},500);
+    document.getElementsByTagName('head')[0].appendChild(binload);
 }
 
 function load_updatesenable() {
@@ -236,7 +236,7 @@ function load_updatesenable() {
     var jbver = document.getElementById("jb_ver").value;
     if(jbver ==""){jbver="new";}
     var binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
-    setTimeout(function(){document.getElementsByTagName('head')[0].appendChild(binload);},500);
+    document.getElementsByTagName('head')[0].appendChild(binload);
 }
 
 function load_dbbackup() {
@@ -253,7 +253,7 @@ function load_dbbackup() {
     var jbver = document.getElementById("jb_ver").value;
     if(jbver ==""){jbver="new";}
     var binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
-    setTimeout(function(){document.getElementsByTagName('head')[0].appendChild(binload);},500);
+    document.getElementsByTagName('head')[0].appendChild(binload);
 }
 
 function load_dbrestore() {
@@ -270,6 +270,6 @@ function load_dbrestore() {
     var jbver = document.getElementById("jb_ver").value;
     if(jbver ==""){jbver="new";}
     var binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
-    setTimeout(function(){document.getElementsByTagName('head')[0].appendChild(binload);},500);
+    document.getElementsByTagName('head')[0].appendChild(binload);
 }
 
