@@ -64079,7 +64079,7 @@ db([1000,0,0,0,0,0]);
 
 setTimeout(function(){
 pivot(ropchain);
-},1000);
+},500);
 var main_ret = read_ptr_at(main_ret);
 var printf_buf_end = read_ptr_at(ropchain+printf_buf_offset);
 var printf_ans = read_mem_as_string(printf_buf,printf_buf_end-printf_buf);
@@ -64102,13 +64102,12 @@ if (ExploitMira != null){
     else{
     var binL="usb";
     }   
-   
-    setTimeout(function(){
     let loaderjs = document.createElement('script');loaderjs.src = "./pl/"+Loader+"_loader.js";
     document.getElementsByTagName('head')[0].appendChild(loaderjs);
+    setTimeout(function(){
     let loadbin = document.createElement('script');loadbin.src = "./common/"+binL+"_loadcode.js";
-    document.getElementsByTagName('head')[0].appendChild(loadbin);}
-    ,500);
+    document.getElementsByTagName('head')[0].appendChild(loadbin);
+    },500);
     },500);
   }} 
 else {
