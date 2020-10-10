@@ -40332,7 +40332,9 @@ if (main_ret == 179 || main_ret == 0) {
 	    let Loader=document.getElementById('loader').value;
 	    if (Loader == "def"){
 	        Loader = ExploitMira;}  
+        setTimeout(function(){
 	    let mirajs = document.createElement('script');mirajs.src = "./pl/"+ExploitMira+"_mira.js";document.getElementsByTagName('head')[0].appendChild(mirajs);	
+        },500);
 	    let loaderjs = document.createElement('script');loaderjs.src = "./pl/"+Loader+"_loader.js";
 	    document.getElementsByTagName('head')[0].appendChild(loaderjs);
 	    setTimeout(function(){
