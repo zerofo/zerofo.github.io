@@ -1,20 +1,3 @@
-function change_oneclick(idx,name,val){
-    document.getElementById(idx).innerHTML=name;
-    document.getElementById(idx).value=val;
-    localStorage.setItem(idx+"Name", name);
-    localStorage.setItem(idx+"VAL", val);
-};
-
-function colorSwitch(themeIdx){
-    themeIdx=themeIdx+1;
-    if (themeIdx>2){themeIdx=0;};
-    document.body.style.setProperty('--mainColor', Cmap[themeIdx][0]);
-    document.body.style.setProperty('--fontColor',  Cmap[themeIdx][1]);
-    document.body.style.setProperty('--attendColor',  Cmap[themeIdx][2]);
-    document.body.style.setProperty('--subColor',  Cmap[themeIdx][3]);
-    document.body.style.setProperty('--spesColor',  Cmap[themeIdx][4]);
-    localStorage.setItem("themeIdx", themeIdx);
-};
 function load_exploit_mira() {
     msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 正在加载 Exploit + Mira ...</h1>";
     ExploitMira=document.getElementById("oneclick").value;
