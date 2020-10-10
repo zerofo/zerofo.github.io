@@ -11,23 +11,7 @@
 		var themeIdx=localStorage.getItem("themeIdx");
 
 		let IdMap = [["oneclick","_Al_Azif Mira","al"], ["loader","默认 loader","def"], ["jb_ver","默认 最新","new"]];
-		function change_oneclick(idx,name,val){
-		document.getElementById(idx).innerHTML=name;
-		document.getElementById(idx).value=val;
-		localStorage.setItem(idx+"Name", name);
-		localStorage.setItem(idx+"VAL", val);
-		};
 
-		function colorSwitch(themeIdx){
-		themeIdx=themeIdx+1;
-		if (themeIdx>2){themeIdx=0;};
-		document.body.style.setProperty('--mainColor', Cmap[themeIdx][0]);
-		document.body.style.setProperty('--fontColor',  Cmap[themeIdx][1]);
-		document.body.style.setProperty('--attendColor',  Cmap[themeIdx][2]);
-		document.body.style.setProperty('--subColor',  Cmap[themeIdx][3]);
-		document.body.style.setProperty('--spesColor',  Cmap[themeIdx][4]);
-		localStorage.setItem("themeIdx", themeIdx);
-		};
         </script>
         <script src="./common/function.js"></script>
         <title>
@@ -374,7 +358,23 @@
         </div>
 
 	<script>
-	
+	function change_oneclick(idx,name,val){
+	document.getElementById(idx).innerHTML=name;
+	document.getElementById(idx).value=val;
+	localStorage.setItem(idx+"Name", name);
+	localStorage.setItem(idx+"VAL", val);
+	};
+
+	function colorSwitch(themeIdx){
+	themeIdx=themeIdx+1;
+	if (themeIdx>2){themeIdx=0;};
+	document.body.style.setProperty('--mainColor', Cmap[themeIdx][0]);
+	document.body.style.setProperty('--fontColor',  Cmap[themeIdx][1]);
+	document.body.style.setProperty('--attendColor',  Cmap[themeIdx][2]);
+	document.body.style.setProperty('--subColor',  Cmap[themeIdx][3]);
+	document.body.style.setProperty('--spesColor',  Cmap[themeIdx][4]);
+	localStorage.setItem("themeIdx", themeIdx);
+	};
 	if (themeIdx==null){themeIdx=0;};
 	document.body.style.setProperty('--mainColor', Cmap[themeIdx][0]);
 	document.body.style.setProperty('--fontColor',  Cmap[themeIdx][1]);
