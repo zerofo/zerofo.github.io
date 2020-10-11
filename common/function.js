@@ -15,16 +15,16 @@ function load_fan() {
     degree=document.getElementById('degree').value;
     msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 正在加载 写入风扇数据 ...</h1>";
     LoadedMSG="已经成功 写入风扇数据"+degree;
-    let script=document.createElement('script');
+    var script=document.createElement('script');
     script.src="./pl/pl_fan.js";
     document.getElementsByTagName('head')[0].appendChild(script);
-    let loader=document.getElementById('loader').value=="def"? "mira": document.getElementById('loader').value;
-    let loaderjs=document.createElement('script');
+    var loader=document.getElementById('loader').value=="def"? "mira": document.getElementById('loader').value;
+    var loaderjs=document.createElement('script');
     loaderjs.src="./pl/"+loader+"_loader.js";
     document.getElementsByTagName('head')[0].appendChild(loaderjs);
-    let jbver = document.getElementById("jb_ver").value;
+    jbver = document.getElementById("jb_ver").value;
     if(jbver ==""){jbver="new";}
-    let binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
+    var binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
     document.getElementsByTagName('head')[0].appendChild(binload);
 }
 
@@ -52,7 +52,7 @@ function load_ftp() {
     let script=document.createElement('script');
     script.src="./pl/pl_ftp.js";
     document.getElementsByTagName('head')[0].appendChild(script);
-    let jbver = document.getElementById("jb_ver").value;
+    jbver = document.getElementById("jb_ver").value;
     if(jbver ==""){jbver="new";}
     let binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
     document.getElementsByTagName('head')[0].appendChild(binload);
@@ -67,7 +67,7 @@ function load_dumper() {
     let loaderjs=document.createElement('script');
     loaderjs.src="./pl/"+loader+"_loader.js";
     document.getElementsByTagName('head')[0].appendChild(loaderjs);
-    let jbver = document.getElementById("jb_ver").value;
+    jbver = document.getElementById("jb_ver").value;
     if(jbver ==""){jbver="new";}
     let binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
     document.getElementsByTagName('head')[0].appendChild(binload);
@@ -84,7 +84,7 @@ function load_linux() {
     let loaderjs=document.createElement('script');
     loaderjs.src="./pl/"+loader+"_loader.js";
     document.getElementsByTagName('head')[0].appendChild(loaderjs);
-    let jbver = document.getElementById("jb_ver").value;
+    jbver = document.getElementById("jb_ver").value;
     if(jbver ==""){jbver="new";}
     let binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
     document.getElementsByTagName('head')[0].appendChild(binload);
@@ -101,7 +101,7 @@ function load_app2usb() {
     let loaderjs=document.createElement('script');
     loaderjs.src="./pl/"+loader+"_loader.js";
     document.getElementsByTagName('head')[0].appendChild(loaderjs);
-    let jbver = document.getElementById("jb_ver").value;
+    jbver = document.getElementById("jb_ver").value;
     if(jbver ==""){jbver="new";}
     let binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
     document.getElementsByTagName('head')[0].appendChild(binload);
@@ -117,7 +117,7 @@ function load_kerneldump() {
     let loaderjs=document.createElement('script');
     loaderjs.src="./pl/"+loader+"_loader.js";
     document.getElementsByTagName('head')[0].appendChild(loaderjs);
-    let jbver = document.getElementById("jb_ver").value;
+    jbver = document.getElementById("jb_ver").value;
     if(jbver ==""){jbver="new";}
     let binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
     document.getElementsByTagName('head')[0].appendChild(binload);
@@ -134,7 +134,7 @@ function load_todex() {
     let loaderjs=document.createElement('script');
     loaderjs.src="./pl/"+loader+"_loader.js";
     document.getElementsByTagName('head')[0].appendChild(loaderjs);
-    let jbver = document.getElementById("jb_ver").value;
+    jbver = document.getElementById("jb_ver").value;
     if(jbver ==""){jbver="new";}
     let binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
     document.getElementsByTagName('head')[0].appendChild(binload);
@@ -150,7 +150,7 @@ function load_webrte() {
     let loaderjs=document.createElement('script');
     loaderjs.src="./pl/"+loader+"_loader.js";
     document.getElementsByTagName('head')[0].appendChild(loaderjs);
-    let jbver = document.getElementById("jb_ver").value;
+    jbver = document.getElementById("jb_ver").value;
     if(jbver ==""){jbver="new";}
     let binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
     document.getElementsByTagName('head')[0].appendChild(binload);
@@ -166,7 +166,7 @@ function load_debug() {
     let loaderjs=document.createElement('script');
     loaderjs.src="./pl/"+loader+"_loader.js";
     document.getElementsByTagName('head')[0].appendChild(loaderjs);
-    let jbver = document.getElementById("jb_ver").value;
+    jbver = document.getElementById("jb_ver").value;
     if(jbver ==""){jbver="new";}
     let binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
     document.getElementsByTagName('head')[0].appendChild(binload);
@@ -183,7 +183,7 @@ function load_historyblock() {
     let loaderjs=document.createElement('script');
     loaderjs.src="./pl/"+loader+"_loader.js";
     document.getElementsByTagName('head')[0].appendChild(loaderjs);
-    let jbver = document.getElementById("jb_ver").value;
+    jbver = document.getElementById("jb_ver").value;
     if(jbver ==""){jbver="new";}
     let binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
     document.getElementsByTagName('head')[0].appendChild(binload);
@@ -200,7 +200,7 @@ function load_updatesdisable() {
     let loaderjs=document.createElement('script');
     loaderjs.src="./pl/"+loader+"_loader.js";
     document.getElementsByTagName('head')[0].appendChild(loaderjs);
-    let jbver = document.getElementById("jb_ver").value;
+    jbver = document.getElementById("jb_ver").value;
     if(jbver ==""){jbver="new";}
     let binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
     document.getElementsByTagName('head')[0].appendChild(binload);
@@ -217,7 +217,7 @@ function load_updatesenable() {
     let loaderjs=document.createElement('script');
     loaderjs.src="./pl/"+loader+"_loader.js";
     document.getElementsByTagName('head')[0].appendChild(loaderjs);
-    let jbver = document.getElementById("jb_ver").value;
+    jbver = document.getElementById("jb_ver").value;
     if(jbver ==""){jbver="new";}
     let binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
     document.getElementsByTagName('head')[0].appendChild(binload);
@@ -234,7 +234,7 @@ function load_dbbackup() {
     let loaderjs=document.createElement('script');
     loaderjs.src="./pl/"+loader+"_loader.js";
     document.getElementsByTagName('head')[0].appendChild(loaderjs);
-    let jbver = document.getElementById("jb_ver").value;
+    jbver = document.getElementById("jb_ver").value;
     if(jbver ==""){jbver="new";}
     let binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
     document.getElementsByTagName('head')[0].appendChild(binload);
@@ -251,7 +251,7 @@ function load_dbrestore() {
     let loaderjs=document.createElement('script');
     loaderjs.src="./pl/"+loader+"_loader.js";
     document.getElementsByTagName('head')[0].appendChild(loaderjs);
-    let jbver = document.getElementById("jb_ver").value;
+    jbver = document.getElementById("jb_ver").value;
     if(jbver ==""){jbver="new";}
     let binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
     document.getElementsByTagName('head')[0].appendChild(binload);
