@@ -39549,9 +39549,9 @@ if (main_ret == 179 || main_ret == 0) {
 	    let Loader=document.getElementById('loader').value;
 	    if (Loader == "def"){
 	        Loader = ExploitMira;}  
-        setTimeout(function(){
+	    setTimeout(function(){
 	    let mirajs = document.createElement('script');mirajs.src = "./pl/"+ExploitMira+"_mira.js";document.getElementsByTagName('head')[0].appendChild(mirajs);	
-        },500);
+	    },500);
 	    let loaderjs = document.createElement('script');loaderjs.src = "./pl/"+Loader+"_loader.js";
 	    document.getElementsByTagName('head')[0].appendChild(loaderjs);
 	    setTimeout(function(){
@@ -39561,6 +39561,6 @@ if (main_ret == 179 || main_ret == 0) {
 	}
 } 
 else {
-  
   window.msgs.innerHTML="<h1 style='color:red;font-size:25px;text-align:center;'>破解失败! <br> 请关机再开机重试.</h1>";
-  var ropchain = null;}
+    var ropchain = null;
+}
