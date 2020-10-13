@@ -64114,4 +64114,8 @@ if (main_ret == 179 || main_ret == 0) {
 else {
   window.msgs.innerHTML="<h1 style='color:red;font-size:25px;text-align:center;'>破解失败! <br> 请关机再开机重试.</h1>";
     var ropchain = null;
+	  var leaker_obj = null;
+      var leaker_arr = null;
+      var oob_slave  = null;
+      var oob_master = null;
 }
