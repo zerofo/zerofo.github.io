@@ -11,6 +11,8 @@ common/old_jailbreak.js
 common/old_loadcode.js
 common/self_jailbreak.js
 common/self_loadcode.js
+common/build_jailbreak.js
+common/build_loadcode.js
 css/style.css
 index.html
 pl/al-test_loader.js
