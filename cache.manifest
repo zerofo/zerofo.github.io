@@ -9,8 +9,6 @@ common/new_jailbreak.js
 common/new_loadcode.js
 common/old_jailbreak.js
 common/old_loadcode.js
-common/self_jailbreak.js
-common/self_loadcode.js
 common/build_jailbreak.js
 common/build_loadcode.js
 css/style.css
