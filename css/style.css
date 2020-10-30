@@ -8,6 +8,20 @@
 body,html {
     margin:0px;
 }
+@keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+.processing {
+        display: inline-block; border: 10px solid var(--subColor);
+        border-radius: 100%;
+        border-top: 4px solid var(--attendColor);
+        border-left: 4px solid var(--attendColor);
+        width: 10px;
+        height: 10px;
+        -webkit-animation: spin 1s linear infinite;
+        animation: spin 1s linear infinite;
+    }
 .select_btn {
     background-color:var(--mainColor);
     color:var(--fontColor);
