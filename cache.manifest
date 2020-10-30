@@ -19,10 +19,6 @@ pl/al-now_loader.js
 pl/al-now_mira.js
 pl/al_loader.js
 pl/al_mira.js
-pl/ciss84_loader.js
-pl/ciss84_mira.js
-pl/ciss84hen_loader.js
-pl/ciss84hen_mira.js
 pl/exp_loader.js
 pl/hen213_loader.js
 pl/hen213_mira.js
@@ -30,6 +26,7 @@ pl/hen301_loader.js
 pl/hen301_mira.js
 pl/hen300_loader.js
 pl/hen300_mira.js
+pl/henloader_loader.js
 pl/hen_loader.js
 pl/hen_mira.js
 pl/temp_loader.js
