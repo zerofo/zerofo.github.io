@@ -1,5 +1,5 @@
 function load_exploit_mira() {
-    msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 正在加载 Exploit + Mira ...</h1>";
+    msgs.innerHTML="<div class='processing'></div><h1 style='font-size:25px;text-align:center;'> 正在加载 Exploit + Mira ...</h1>";
     ExploitMira=document.getElementById("oneclick").value;
     console.log(ExploitMira);
     jbver = document.getElementById("jb_ver").value;
