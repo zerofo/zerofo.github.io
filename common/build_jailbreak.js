@@ -37866,7 +37866,7 @@ if (main_ret == 179 || main_ret == 0) {
 	var main_ret = null;
 	window.msgs.innerHTML="<h1 style='color:green;font-size:25px;text-align:center;'>Exploit Loaded ✔</h1>";
 	if (ExploitMira != null){
-	  window.msgs.innerHTML="<div class="processing"></div><h1 style='color:green;font-size:25px;text-align:center;'>破解成功! ✔ 正在加载 Mira ...</h1>";
+	  window.msgs.innerHTML="<div class='processing'></div><h1 style='color:green;font-size:25px;text-align:center;'>破解成功! ✔ 正在加载 Mira ...</h1>";
 	    let Loader=document.getElementById('loader').value;
 	    if (Loader == "def"){
 	        Loader = ExploitMira;}  
