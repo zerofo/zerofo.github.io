@@ -1,10 +1,25 @@
-:root{
---mainColor: #FFFFFF;
---fontColor: #FFFFFF;
---attendColor: #FFFFFF;
---subColor: #FFFFFF;
---spesColor: #FFFFFF;
+:root[theme='BW']{
+--mainColor: #0080FF;
+--fontColor: white;
+--attendColor: #005AB5;
+--subColor: white;
+--spesColor: gray;
 }
+:root[theme='BG']{
+--mainColor: black;
+--fontColor: #ffd700;
+--attendColor: black;
+--subColor: #ffd700;
+--spesColor: black;
+}
+:root[theme='WX']{
+--mainColor: #4d4d4d;
+--fontColor: white;
+--attendColor: #1AAD19;
+--subColor: #AAAAAA;
+--spesColor: #1AAD19;
+}
+
 body,html {
     margin:0px;
 }
@@ -19,7 +34,6 @@ body,html {
         border-left: 4px solid var(--attendColor);
         width: 10px;
         height: 10px;
-        -webkit-animation: spin 1s linear infinite;
         animation: spin 1s linear infinite;
     }
 .select_btn {

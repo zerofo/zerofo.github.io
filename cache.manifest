@@ -1,17 +1,15 @@
 CACHE MANIFEST
 # randon 773df146638fcc616a9d47449461e129
 cache.html
-common/exploit.js
+common/webkit.js
 common/function.js
 common/new_jailbreak.js
 common/new_loadcode.js
-common/old_jailbreak.js
-common/old_loadcode.js
 common/build_jailbreak.js
 common/build_loadcode.js
 css/style.css
-common/build3_jailbreak.js
-common/build3_loadcode.js
+common/build4_jailbreak.js
+common/build4_loadcode.js
 index.html
 pl/al-test_loader.js
 pl/al-test_mira.js
@@ -26,7 +24,6 @@ pl/hen301_loader.js
 pl/hen301_mira.js
 pl/hen300_loader.js
 pl/hen300_mira.js
-pl/henloader_loader.js
 pl/zhen_loader.js
 pl/zhen_mira.js
 pl/hen_loader.js

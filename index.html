@@ -1,31 +1,16 @@
 <!DOCTYPE html>
-<html lang="zh_cn">
-    
     <head>
-        <link rel="stylesheet" type="text/css" href="./css/style.css"/>
+        <style>@import url("./css/style.css")</style>
         <meta charset="utf-8" />
-        <script>
-        	//alert("请等待初始化，待出现按钮后操作。");
-		let Cmap = {0: ["#0080FF", 'white', '#005AB5', 'white','gray'],
-			1: ["black", "#ffd700", "black", "#ffd700", 'black'],
-			2: ["#4d4d4d",  "white","#1AAD19", "#AAAAAA", "#1AAD19"]};
-		var themeIdx=localStorage.getItem("themeIdx");
-
-		let IdMap = [["oneclick","mtnjustme 2.1.3","hen213"], ["loader","默认 loader","def"], ["jb_ver","改源码10/15","build"]];
-
-        </script>
-        <script src="./common/function.js"></script>
-        
         <title>
             6.72专用破解网站 by zerofo
         </title>
-
     </head>
         <body>
+        <script>function print(){}</script>
+        <script src="./common/function.js"></script>
         <div class="webname">
-            
-               <a href="javascript:void(0);" onclick="colorSwitch(1);"> 6.72专用破解网站 by zerofo</a>
-            
+               <a href="#" onclick="colorSwitch(1);"> 6.72专用破解网站 by zerofo</a>
         </div>
         <div class="tablebody">
             <div class="tables">
@@ -34,19 +19,19 @@
                         常用
                     </button>
                     <div class="dropdown-content">
-                        <a href="javascript:void(0);" onclick="load_historyblock(); return false">
+                        <a href="#" onclick="load_script('historyBlocker'); return false">
                             禁用历史记录
                         </a>
-                        <a href="javascript:void(0);" onclick="load_ftp(); return false">
+                        <a href="#" onclick="load_script('ftp'); return false">
                             FTP
                         </a>
-                        <a href="javascript:void(0);" onclick="load_todex(); return false">
+                        <a href="#" onclick="load_script('todex'); return false">
                             toDEX
                         </a>
-                        <a href="javascript:void(0);" onclick="load_binloader(); return false">
+                        <a href="#" onclick="load_script('binLoader'); return false">
                             Bin Loader
                         </a>
-                        <a href="javascript:void(0);" onclick="load_dumper(); return false">
+                        <a href="#" onclick="load_script('dumper'); return false">
                             Dumper
                         </a>
                         
@@ -62,41 +47,23 @@
                                 目标温度
                             </a>
                             <select id="degree" class="degree select_btn" required="required">
-                                <option value=79 selected="selected">
-                                    默认79
-                                </option>
-                                <option value=55>
-                                    55
-                                </option>
-                                <option value=60>
-                                    60
-                                </option>
-                                <option value=65>
-                                    65
-                                </option>
-                                <option value=70>
-                                    70
-                                </option>
-                                <option value=75>
-                                    75
-                                </option>
-                                <option value=80>
-                                    80
-                                </option>
-                                <option value=85>
-                                    85
-                                </option>
-                                <option value=90>
-                                    90
-                                </option>
-                                <option value=95>
-                                    95
-                                </option>
-                                <option value=100>
-                                    100
-                                </option>
+                            <script>
+                            let select = document.getElementById("degree");
+                            let option = document.createElement("OPTION");
+                            select.options.add(option);
+                            option.text = "默认79";
+                            option.value = 79;
+                            option.selected = "selected";
+                            for(var i=55; i<=100; i+=5){
+                            let select = document.getElementById("degree");
+                            let option = document.createElement("OPTION");
+                            select.options.add(option);
+                            option.text = i;
+                            option.value = i;
+                            }
+                            </script>
                             </select>
-                            <a href="javascript:void(0);" onclick="load_fan();return false">
+                            <a href="#" onclick="load_script('fan');return false">
                                 设置
                             </a>
                         </div>
@@ -109,10 +76,10 @@
                         Save Mounter
                     </button>
                     <div class="dropdown-content">
-                        <a href="javascript:void(0);" onclick="load_webrte(); return false">
+                        <a href="#" onclick="load_script('webrte'); return false">
                             WebRTE
                         </a>
-                        <a href="javascript:void(0);" onclick="load_debug(); return false">
+                        <a href="#" onclick="load_script('ps4debug'); return false">
                             Debug(待测试)
                             </br>
                             修改器/存档解密
@@ -126,16 +93,16 @@
                         更新开关
                     </button>
                     <div class="dropdown-content">
-                        <a href="javascript:void(0);" onclick="load_updatesdisable(); return false">
+                        <a href="#" onclick="load_script('updatesDisable'); return false">
                             关闭更新
                         </a>
-                        <a href="javascript:void(0);" onclick="load_updatesenable(); return false">
+                        <a href="#" onclick="load_script('updatesEnable'); return false">
                             开启更新
                         </a>
-                        <a href="javascript:void(0);" onclick="load_dbbackup(); return false">
+                        <a href="#" onclick="load_script('dbBackup'); return false">
                             数据库备份
                         </a>
-                        <a href="javascript:void(0);" onclick="load_dbrestore(); return false">
+                        <a href="#" onclick="load_script('dbRestore'); return false">
                             数据库恢复
                         </a>
                     </div>
@@ -146,13 +113,13 @@
                     </button>
                     <div class="dropdown-content" style="left:0;">
 
-                        <a href="javascript:void(0);" onclick="load_kerneldump(); return false">
+                        <a href="#" onclick="load_script('kernelDumper'); return false">
                             内核 Dumper
                         </a>
-                        <a href="javascript:void(0);" onclick="load_linux(); return false">
+                        <a href="#" onclick="load_script('linux'); return false">
                             Linux
                         </a>
-                        <a href="javascript:void(0);" onclick="load_app2usb(); return false">
+                        <a href="#" onclick="load_script('app2usb'); return false">
                             App2USB
                         </a>
                     </div>
@@ -178,13 +145,8 @@
         <div class="tablebody">
             <div class="info_msgs">
               <b id="msgs"><div class="processing"></div><h1 style='font-size:25px;color:red;text-align:center;'>初始化请稍等 ！！！</h1></b>
-
             </div>
-                  
-                 
-        
         </div>
-
         <div class="tablebody">
             <div class="tables">
             <table>
@@ -197,30 +159,31 @@
                     <td>
                     
                     <div class="oneclick">
-                            <button id="oneclick" class="dropbtn diy-btn" type="button" onclick="load_exploit_mira(); return false" value="hen213">mtnjustme 2.1.3</button>
+                            <button id="oneclick" class="dropbtn diy-btn" type="button" onclick="load_exploit_mira(); return false" value="zhen">notzecoxao<br>henVR9.99</button>
                             <div class="dropdown diy-dropdown">
                             <button  id="pl_switch" class="diy-drop">▶</button>
                             <div class="dropdown-content diy-dropdown-content ">
                                     <table>
                                         <tr>
                                         <td vAlign=top>
-                                        <a href="javascript:void(0);" onclick="change_oneclick('oneclick','_AlAzif mira', 'al');" >_AlAzif mira</a>
-                                        <a href="javascript:void(0);" onclick="change_oneclick('oneclick','官方稳定','mira');">官方稳定</a>
-                                        <a href="javascript:void(0);" onclick="change_oneclick('oneclick','_AlAzif <br>new mira','al-now');">_AlAzif <br>new mira</a>
-                                        <a href="javascript:void(0);" onclick="change_oneclick('oneclick','_AlAzif test','al-test');">_AlAzif test</a>
-                                        <a href="javascript:void(0);" onclick="change_oneclick('oneclick','mira<br>温度报告', 'temp'); return false">mira<br>温度报告</a>
-                                        <a style='background-color:#CC6633;' href="javascript:void(0);" onclick="change_oneclick('oneclick','官方 开发版<br/>(不推荐)','miradev');">官方 开发版<br/>(不推荐)</a>
+                                        <a href="#" id="0al" value="al" onclick="change_oneclick(0,'al');return false" >_AlAzif mira</a>
+                                        <a href="#" id="0al-now" value="al-now" onclick="change_oneclick(0,'al-now');return false" >_AlAzif(now) mira</a>
+                                        <a href="#" id="0mira" value="mira" onclick="change_oneclick(0,'mira');return false">官方稳定</a>
+                                        <a href="#" id="0k" value="k" onclick="change_oneclick(0,'k');return false">k mira</a>
+                                        <a href="#" id="0al-test" value="al-test" onclick="change_oneclick(0,'al-test');return false">_AlAzif test</a>
+                                        <a href="#" id="0temp" value="temp" onclick="change_oneclick(0,'temp'); return false">mira<br>温度报告</a>
+                                        <a style='background-color:#CC6633;' href="#" value="miradev" onclick="change_oneclick(0,'miradev');return false">官方 开发版<br/>(不推荐)</a>
                                         </td>
                                         <td vAlign=top>
-                                        <a href="javascript:void(0);" onclick="change_oneclick('oneclick','mtnjustme hen2.1.3', 'hen213'); return false">mtnjustme hen2.1.3</a>
-                                        <a href="javascript:void(0);" onclick="change_oneclick('oneclick','notzecoxao henVR9.99', 'zhen'); return false">notzecoxao henVR9.99</a>
-                                        <a href="javascript:void(0);" onclick="change_oneclick('oneclick','Joonie 2.1.3','hen');">
+                                        <a href="#" id="0hen213" value="hen213" onclick="change_oneclick(0,'hen213'); return false">mtnjustme hen2.1.3</a>
+                                        <a href="#" id="0zhen" value="zhen" onclick="change_oneclick(0,, 'zhen'); return false">notzecoxao<br>henVR9.99</a>
+                                        <a href="#" id="0hen" value="hen" onclick="change_oneclick(0,'hen');return false">
                                             Joonie 2.1.3
                                         </a>
-                                        <a href="javascript:void(0);" onclick="change_oneclick('oneclick','ciss84 hen301','hen301');">
+                                        <a href="#" id="0hen301" value="hen301" onclick="change_oneclick(0,'hen301');return false">
                                             ciss84 hen301
                                         </a>
-                                        <a href="javascript:void(0);" onclick="change_oneclick('oneclick','ciss84 hen300','hen300');">
+                                        <a href="#" id="0hen300" value="hen300" onclick="change_oneclick(0,'hen300');return false">
                                             ciss84 hen300
                                         </a>
                                         </td>
@@ -236,66 +199,53 @@
             </table>
         </div>
         </div>           
-              
-
-        
-
-   
         <div class="tablebody">
-        
-        
-        
             <div class="c2l">
                 <table class="table_btn">
-                	<tr>
-                	<td>
+                    <tr>
+                    <td>
                     <h3>Loader版本</h3>
                    </td>
- 						</tr>
- 						<tr>
-						 <td>
+                        </tr>
+                        <tr>
+                         <td>
                    <div class="oneclick">
                             <button id="loader" class="dropbtn diy-btn" type="button" value="def">默认 loader</button>
                             <div class="dropdown diy-dropdown">
                             <button  id="other_switch" class="diy-drop">▶</button>
                             <div class="dropdown-content diy-dropdown-content bottom">
-                                    	<a href="javascript:void(0);" onclick="change_oneclick('loader','默认 loader','def');">默认 loader</a>
-                                        <a href="javascript:void(0);" onclick="change_oneclick('loader','_AlAzif loader', 'al');" >_AlAzif loader</a>
-                                        <a href="javascript:void(0);" onclick="change_oneclick('loader','Hen专属测试loader', 'henloader');" >Hen专属测试loader</a>
-                                        <a href="javascript:void(0);" onclick="change_oneclick('loader','官方稳定loader','mira');">官方稳定loader</a>
-                                        <a style='background-color:#CC6633;' href="javascript:void(0);" onclick="change_oneclick('loader','官方 开发版<br/>(不推荐)','miradev');">官方 开发版<br/>(不推荐)</a>
+                                        <a href="#" id="1def" value="def" onclick="change_oneclick(1,'def');return false">默认 loader</a>
+                                        <a href="#" id="1al" value="al" onclick="change_oneclick(1, 'al');return false" >_AlAzif loader</a>
+                                        <a href="#" id="1k" value="k" onclick="change_oneclick(1, 'k');return false" >k loader</a>
+                                        <a href="#" id="1mira" value="mira" onclick="change_oneclick(1,'mira');return false">官方稳定loader</a>
+                                        <a style='background-color:#CC6633;' href="#" id="1miradev" value="miradev" onclick="change_oneclick(1,'miradev');return false">官方 开发版<br/>(不推荐)</a>
                             </div>
                             </div>
                         </div>
-                   
                 </td>
                    </tr>
                 </table>
                 </div>
                 <div class="c2r">
                 <table class="table_btn">
-                   <tr>
-                   
-                <td>	
-						<h3>破解版本</h3>
-						</td>
-						</tr>
-						 <tr>
-                <td>
+                    <tr>
+                    <td>    
+                        <h3>破解版本</h3>
+                        </td>
+                        </tr>
+                         <tr>
+                    <td>
                     <div class="oneclick">
                             <button id="jb_ver" class="dropbtn diy-btn" type="button" value="build">改源码10/15</button>
                             <div class="dropdown diy-dropdown">
                             <button  id="other_switch" class="diy-drop">▶</button>
                             <div class="dropdown-content diy-dropdown-content bottom">
-                                    	 <a href="javascript:void(0);" onclick="change_oneclick('jb_ver','改源码10/31','build3');">改源码10/31</a>
-                                    	 <a href="javascript:void(0);" onclick="change_oneclick('jb_ver','改源码10/15','build');">改源码10/15</a>
-                                    	 <a href="javascript:void(0);" onclick="change_oneclick('jb_ver','默认 最新','new');">默认 最新</a>
-                                         <a href="javascript:void(0);" onclick="change_oneclick('jb_ver','8/5', 'old');" >8/5</a>
-                                      
+                                        <a href="#" id="2build4" value="build4" onclick="change_oneclick(2,'build4');return false">改源码11/3</a>
+                                        <a href="#" id="2build" value="build" onclick="change_oneclick(2,'build');return false">改源码10/15</a>
+                                        <a href="#" id="2new" value="new" onclick="change_oneclick(2,'new');return false">默认 最新</a>
                             </div>
                             </div>
                         </div>
-              
                 </td>
                 </tr>
                 </table>
@@ -306,7 +256,7 @@
                 <h3 class="noted">
                     开启网页提示"内存不足" 可以无视。 点击 破解按钮 后，如提示"内存不足" 请重启 PS4， 继续破解容易断电
                 </h3>
-<h6> version: 2020-10-18 04:09:01 </h6>
+<h6> version: 2020-10-19 22:40:01 </h6>
                 <details>
                     <summary>
                         请仔细阅读以下内容(点我展开)
@@ -329,60 +279,48 @@
                                 <b style="font-size: 22px;">
                                     关闭页面, 再PS回到桌面 电源菜单 重启机器
                                 </b>
-                                .
                             </li>
                         </ol>
                     </div>
                 </details>
-               
             </div>
         </div>
         <div class="tablebody">
-                        
-                    
                 <div class="floor" >
                         <hr>    
                     问题反馈 emptytaboo@gmail.com 或者 91联系我, 可加QQ(私下邮箱或者91 咨要)
                 </div>
 
         </div>
-
-	<script>
-	function change_oneclick(idx,name,val){
-	document.getElementById(idx).innerHTML=name;
-	document.getElementById(idx).value=val;
-	localStorage.setItem(idx+"Name", name);
-	localStorage.setItem(idx+"VAL", val);
-	};
-
-	function colorSwitch(btns){
-	if (btns != null)
-	{themeIdx=themeIdx+1;}
-	if (themeIdx>2){themeIdx=0;};
-	document.body.style.setProperty('--mainColor', Cmap[themeIdx][0]);
-	document.body.style.setProperty('--fontColor',  Cmap[themeIdx][1]);
-	document.body.style.setProperty('--attendColor',  Cmap[themeIdx][2]);
-	document.body.style.setProperty('--subColor',  Cmap[themeIdx][3]);
-	document.body.style.setProperty('--spesColor',  Cmap[themeIdx][4]);
-	localStorage.setItem("themeIdx", themeIdx);
-	};
-	if (themeIdx==null){themeIdx=0;}
-
-	colorSwitch();
-	for (let i = 0; i < 3; i++) {
-	var Name=localStorage.getItem(IdMap[i][0]+"Name");
-	var Value=localStorage.getItem(IdMap[i][0]+"VAL");
-	if (Name==null||Value==null){Name=IdMap[i][1]; Value=IdMap[i][2];}
-	document.getElementById(IdMap[i][0]).innerHTML=Name;
-	document.getElementById(IdMap[i][0]).value=Value;
-	};
-	var Name = null;
-	var Value = null;
-
-	</script>
+    <script>
+    var IdMap=[parent.oneclick, parent.loader, parent.jb_ver];
+    for (var i = 0; i < 3; i++) {
+        var value=localStorage.getItem(i.toString());
+        if (typeof value != "undefined"){
+            if ((value != null)&&(value!="")) {
+                IdMap[i].innerHTML=document.getElementById(i.toString()+value).innerHTML;
+                IdMap[i].value=value;
+                }
+            }
+        };
     
-    <script src="./common/exploit.js"></script>
-    <script>function print(){}</script>
-    </body>
+    function change_oneclick(idx,val){
+        var name=document.getElementById(idx.toString()+val).innerHTML;
+        localStorage.setItem(idx.toString(), val);
+        IdMap[idx].innerHTML=name;
+        IdMap[idx].value=val;
+    };
+    function colorSwitch(btns){
+        var cmap=["BW","BG","WX"];
+        if (btns != null)
+            {localStorage.clickcount = Number(localStorage.clickcount)+1;}
+        if (localStorage.clickcount > 2){localStorage.clickcount=0;}
+        document.documentElement.setAttribute('theme', cmap[localStorage.clickcount]);
+    };
+    if(typeof(Storage)!=="undefined"){localStorage.clickcount=0;}
+    colorSwitch();
+    </script>
+    <script src="./common/webkit.js"></script>
 
+    </body>
 </html>
