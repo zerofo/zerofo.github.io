@@ -41774,21 +41774,12 @@ var __swbuf_addr = null;
 if (main_ret == 179 || main_ret == 0) {
 	var main_ret = null;
 	window.msgs.innerHTML="<h1 style='color:green;font-size:25px;text-align:center;'>Exploit Loaded ✔</h1>";
-	if (ExploitMira != null){
-	  window.msgs.innerHTML="<div class='processing'></div><h1 style='color:green;font-size:25px;text-align:center;'>破解成功! ✔ 正在加载 Mira ...</h1>";
-	    var Loader=parent.loader.value;
-	    if (Loader == "def"){
-	        Loader = ExploitMira;}  
-	    setTimeout(function(){
-	    var mirajs = document.createElement('script');mirajs.src = "./pl/"+ExploitMira+"_mira.js";document.getElementsByTagName('head')[0].appendChild(mirajs);	
-	    },500);
-	    var loaderjs = document.createElement('script');loaderjs.src = "./pl/"+Loader+"_loader.js";
-	    document.getElementsByTagName('head')[0].appendChild(loaderjs);
-	    setTimeout(function(){
-	    var loadbin = document.createElement('script');loadbin.src = "./common/"+jbver+"_loadcode.js";
-	    document.getElementsByTagName('head')[0].appendChild(loadbin);
-	    },1000);
-	}
+    window.msgs.innerHTML="<div class='processing'></div><h1 style='color:green;font-size:25px;text-align:center;'>破解成功! ✔ 正在加载 Mira ...</h1>";
+   
+    setTimeout(function(){
+    var loadbin = document.createElement('script');loadbin.src = "./common/"+jbver+"_loadcode.js";
+    document.getElementsByTagName('head')[0].appendChild(loadbin);
+    },1000);
 } 
 else {
   window.msgs.innerHTML="<h1 style='color:red;font-size:25px;text-align:center;'>破解失败! <br> 请关机再开机重试.</h1>";
