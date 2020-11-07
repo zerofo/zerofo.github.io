@@ -10,8 +10,6 @@ common/old_loadcode.js
 common/build_jailbreak.js
 common/build_loadcode.js
 css/style.css
-common/build3_jailbreak.js
-common/build3_loadcode.js
 index.html
 pl/al-test_loader.js
 pl/al-test_mira.js
