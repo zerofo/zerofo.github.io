@@ -12,9 +12,10 @@ function load_exploit_mira() {
 }
 
 function load_fan() {
+
+    msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 正在加载 写入风扇数据 ...</h1>";
     setTimeout(function(){
     degree=document.getElementById('degree').value;
-    msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 正在加载 写入风扇数据 ...</h1>";
     LoadedMSG="已经成功 写入风扇数据"+degree;
     var script=document.createElement('script');
     script.src="./pl/pl_fan.js";
@@ -31,8 +32,8 @@ function load_fan() {
 }
 
 function load_binloader() {
-    setTimeout(function(){
     msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 正在加载 Bin Loader ...</h1>";
+    setTimeout(function(){
     LoadedMSG="发送 bin格式插件(payload) 到端口 9021, <br>请等待 左上角, 出现2次 以上 跳窗并等待跳窗结束再操作";
     let loader=document.getElementById('loader').value=="def"? "mira": document.getElementById('loader').value;
     jbver=document.getElementById("jb_ver").value=="usb"? "mira": document.getElementById("jb_ver").value;
@@ -45,8 +46,8 @@ function load_binloader() {
 },2500);
 }
 function load_ftp() {
-    setTimeout(function(){
     msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 正在加载 FTP ...</h1>";
+    setTimeout(function(){
 
     LoadedMSG="FTP 已加载 请等待 左上角,<br>出现2次 以上 跳窗并等待跳窗结束再操作";
 
@@ -64,8 +65,9 @@ function load_ftp() {
 },2500);
 }
 function load_dumper() {
-    setTimeout(function(){
     msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 正在加载 Dumper ...</h1>";
+    setTimeout(function(){
+
     LoadedMSG="Dumper 已加载 请等待 左上角,<br>出现2次 以上 跳窗并等待跳窗结束再操作";
     let script=document.createElement('script');
     script.src="./pl/pl_dumper.js";
@@ -82,8 +84,8 @@ function load_dumper() {
 }
 
 function load_linux() {
-    setTimeout(function(){
     msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 正在加载 Linux ...</h1>";
+    setTimeout(function(){
 
     LoadedMSG="Linux 已加载 请等待 左上角,<br>出现2次 以上 跳窗并等待跳窗结束再操作";
     let script=document.createElement('script');
@@ -101,8 +103,8 @@ function load_linux() {
 }
 
 function load_app2usb() {
-    setTimeout(function(){
     msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 正在加载 AppToUSB ...</h1>";
+    setTimeout(function(){
 
     LoadedMSG="AppToUSB 已加载 请等待 左上角,<br>出现2次 以上 跳窗并等待跳窗结束再操作";
     let script=document.createElement('script');
@@ -120,8 +122,9 @@ function load_app2usb() {
 }
 
 function load_kerneldump() {
-    setTimeout(function(){
     msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 正在加载 内核 Dumper ...</h1>";
+    setTimeout(function(){
+
     LoadedMSG="内核 Dumper 已加载 请等待 左上角,<br>出现2次 以上 跳窗并等待跳窗结束再操作";
     let script=document.createElement('script');
     script.src="./pl/pl_kernelDumper.js";
@@ -139,8 +142,9 @@ function load_kerneldump() {
 
 
 function load_todex() {
-    setTimeout(function(){
     msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 正在加载 toDEX ...</h1>";
+    setTimeout(function(){
+
     LoadedMSG="toDEX 已加载 请等待 左上角,<br>出现2次 以上 跳窗并等待跳窗结束再操作";
     let script=document.createElement('script');
     script.src="./pl/pl_todex.js";
@@ -157,8 +161,9 @@ function load_todex() {
 }
 
 function load_webrte() {
-    setTimeout(function(){
     msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 正在加载 WebRTE ...</h1>";
+    setTimeout(function(){
+
     LoadedMSG="WebRTE 已加载 请等待 左上角,<br>出现2次 以上 跳窗并等待跳窗结束再操作";
     let script=document.createElement('script');
     script.src="./pl/pl_webrte.js";
@@ -175,8 +180,9 @@ function load_webrte() {
 }
 
 function load_debug() {
-    setTimeout(function(){
     msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 正在加载 Debug...</h1>";
+    setTimeout(function(){
+    
     LoadedMSG="Ps4 Debug 已加载 请等待 左上角,<br>出现2次 以上 跳窗并等待跳窗结束再操作";
     let script=document.createElement('script');
     script.src="./pl/pl_ps4debug.js";
@@ -193,8 +199,8 @@ function load_debug() {
 }
 
 function load_historyblock() {
-    setTimeout(function(){
     msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 正在加载禁用历史记录...</h1>";
+    setTimeout(function(){
 
     LoadedMSG="禁用历史记录已加载 请等待 左上角,<br>出现2次 以上 跳窗并等待跳窗结束再操作";
     let script=document.createElement('script');
@@ -212,8 +218,8 @@ function load_historyblock() {
 }
 
 function load_updatesdisable() {
-    setTimeout(function(){
     msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 正在加载  屏蔽更新...</h1>";
+    setTimeout(function(){
 
     LoadedMSG="  屏蔽更新已加载 请等待 左上角,<br>出现2次 以上 跳窗并等待跳窗结束再操作";
     let script=document.createElement('script');
@@ -231,8 +237,8 @@ function load_updatesdisable() {
 }
 
 function load_updatesenable() {
-    setTimeout(function(){
     msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 正在加载 开启更新...</h1>";
+    setTimeout(function(){
 
     LoadedMSG=" 开启更新已加载 请等待 左上角,<br>出现2次 以上 跳窗并等待跳窗结束再操作";
     let script=document.createElement('script');
@@ -250,8 +256,8 @@ function load_updatesenable() {
 }
 
 function load_dbbackup() {
-    setTimeout(function(){
     msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 正在加载 存档备份 ...</h1>";
+    setTimeout(function(){
 
     LoadedMSG=" 存档备份 已加载 请等待 左上角,<br>出现2次 以上 跳窗并等待跳窗结束再操作";
     let script=document.createElement('script');
@@ -269,8 +275,8 @@ function load_dbbackup() {
 }
 
 function load_dbrestore() {
-    setTimeout(function(){
     msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 正在加载 存档恢复 ...</h1>";
+    setTimeout(function(){
 
     LoadedMSG=" 存档恢复 已加载 请等待 左上角,<br>出现2次 以上 跳窗并等待跳窗结束再操作";
     let script=document.createElement('script');
