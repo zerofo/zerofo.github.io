@@ -155,6 +155,7 @@ let get_got_addr = function(idx) {
   return read_ptr_at(offset);
 }
 var webkit_base = read_ptr_at(fake_vtable);
+try{
 var libkernel_base = get_got_addr(705) - 0x10000;
 var libc_base = get_got_addr(582);
 let saveall_addr = libc_base + 0x2e2c8;
@@ -225,4 +226,15 @@ setTimeout(function(){
 	window.msgs.innerHTML="<h1 style='font-size:25px;color:green;text-align:center;'> 初始化 完成 请操作。</h1>";
 document.getElementById("oneclick").style.display='block';
 document.getElementById("pl_switch").style.display='block';
+var sw = localStorage.getItem("auto_jb");
+var jb_status = sessionStorage.getItem('jb_status');
+if(sw=='1' && jb_status != '1')
+{
+  sessionStorage.setItem('jb_status','1');
+  load_exploit_mira();
+}
 },2500);
+}
+catch{
+  window.msgs.innerHTML="<h1 style='font-size:25px;color:red;text-align:center;'> webkit 载入失败(无法自动破解)。请使用 ps4 重新打开网页</h1>";
+}

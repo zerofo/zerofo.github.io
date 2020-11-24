@@ -37872,13 +37872,13 @@ if (main_ret == 179 || main_ret == 0) {
 	        Loader = ExploitMira;}  
 	    setTimeout(function(){
 	    let mirajs = document.createElement('script');mirajs.src = "./pl/"+ExploitMira+"_mira.js";document.getElementsByTagName('head')[0].appendChild(mirajs);	
-	    },500);
+	    },1000);
 	    let loaderjs = document.createElement('script');loaderjs.src = "./pl/"+Loader+"_loader.js";
 	    document.getElementsByTagName('head')[0].appendChild(loaderjs);
 	    setTimeout(function(){
 	    let loadbin = document.createElement('script');loadbin.src = "./common/"+jbver+"_loadcode.js";
 	    document.getElementsByTagName('head')[0].appendChild(loadbin);
-	    },1000);
+	    },1100);
 	}
 } 
 else {

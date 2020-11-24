@@ -10,7 +10,6 @@
 			1: ["black", "#ffd700", "black", "#ffd700", 'black'],
 			2: ["#4d4d4d",  "white","#1AAD19", "#AAAAAA", "#1AAD19"]};
 		var themeIdx=localStorage.getItem("themeIdx");
-
 		let IdMap = [["oneclick","mtnjustme 2.1.3","hen213"], ["loader","默认 loader","def"], ["jb_ver","改源码10/15","build"]];
 
         </script>
@@ -271,7 +270,26 @@
                    </tr>
                 </table>
                 </div>
-                <div class="c2r">
+            <div>
+                <table class="table_btn">
+                   <tr>
+                   
+                <td>    
+                        <h3>自动破解开关</h3>
+                        </td>
+                        </tr>
+                         <tr>
+                <td>
+                    <div class="oneclick">
+                            <button id="autojb" class="dropbtn diy-btn" onclick="auto_jb(); return false"  type="button" value="build">自动破解开关</button>
+
+                        </div>
+              
+                </td>
+                </tr>
+                </table>
+            </div>
+            <div class="c2r">
                 <table class="table_btn">
                    <tr>
                    
@@ -304,7 +322,7 @@
                 <h3 class="noted">
                     开启网页提示"内存不足" 可以无视。 点击 破解按钮 后，如提示"内存不足" 请重启 PS4， 继续破解容易断电
                 </h3>
-<h6> version: 2020-10-18 04:09:01 </h6>
+<h6> version: 2020-11-24 23:13:01 </h6>
                 <details>
                     <summary>
                         请仔细阅读以下内容(点我展开)
@@ -367,6 +385,7 @@
 	if (themeIdx==null){themeIdx=0;}
 
 	colorSwitch();
+    auto_jb(1);
 	for (let i = 0; i < 3; i++) {
 	var Name=localStorage.getItem(IdMap[i][0]+"Name");
 	var Value=localStorage.getItem(IdMap[i][0]+"VAL");
@@ -376,10 +395,8 @@
 	};
 	var Name = null;
 	var Value = null;
-
 	</script>
-    
-    <script src="./common/exploit.js"></script>
+    <script src="./common/webkit.js"></script>
     </body>
 
 </html>
