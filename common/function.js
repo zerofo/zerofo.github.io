@@ -8,7 +8,7 @@ function load_exploit_mira() {
     setTimeout(function(){
         let script=document.createElement('script');
         script.src="./common/"+jbver+"_jailbreak.js";
-        document.getElementsByTagName('head')[0].appendChild(script);}, 500);
+        document.getElementsByTagName('head')[0].appendChild(script);}, 800);
 }
 
 function auto_jb(show) {
