@@ -280,7 +280,7 @@ function load_dbrestore() {
 
     LoadedMSG=" 存档恢复 已加载 请等待 左上角,<br>出现2次 以上 跳窗并等待跳窗结束再操作";
     let script=document.createElement('script');
-    script.src="./payloadspl_dbRestore.js";
+    script.src="./pl/pl_dbRestore.js";
     document.getElementsByTagName('head')[0].appendChild(script);
     let loader=document.getElementById('loader').value=="def"? "mira": document.getElementById('loader').value;
     let loaderjs=document.createElement('script');
