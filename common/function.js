@@ -3,12 +3,18 @@ function load_exploit_mira() {
     ExploitMira=document.getElementById("oneclick").value;
     jbver = document.getElementById("jb_ver").value;
     if(jbver ==""){return 0;}
-    LoadedMSG="使用"+ jbver + "破解成功 + Mira/Hen 已加载。<br>请等待 左上角 跳窗结束再操作";
+    LoadedMSG="使用"+ jbver + "破解成功 + Mira/Hen 已加载。请等待 左上角 跳窗结束再操作<br> 同时页面将自动刷新(出现布局混乱请手动刷新)";
 
     setTimeout(function(){
-        let script=document.createElement('script');
+        var script=document.createElement('script');
         script.src="./common/"+jbver+"_jailbreak.js";
-        document.getElementsByTagName('head')[0].appendChild(script);}, 800);
+        document.getElementsByTagName('head')[0].appendChild(script);
+    delete window.mira_blob_2;
+    delete window.mira_blob_2_len;
+    delete window.mira_blob;
+
+    }, 1500);
+ 
 }
 
 function auto_jb(show) {
@@ -42,7 +48,9 @@ function load_fan() {
     if(jbver ==""){jbver="new";}
     var binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
     document.getElementsByTagName('head')[0].appendChild(binload);
-},2500);
+    
+},500);
+
 }
 
 function load_binloader() {
@@ -57,7 +65,9 @@ function load_binloader() {
     if(jbver ==""){jbver="new";}
     let binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
     document.getElementsByTagName('head')[0].appendChild(binload);
-},2500);
+    
+},500);
+
 }
 function load_ftp() {
     msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 正在加载 FTP ...</h1>";
@@ -76,7 +86,9 @@ function load_ftp() {
     if(jbver ==""){jbver="new";}
     let binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
     document.getElementsByTagName('head')[0].appendChild(binload);
-},2500);
+    
+},500);
+
 }
 function load_dumper() {
     msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 正在加载 Dumper ...</h1>";
@@ -94,7 +106,9 @@ function load_dumper() {
     if(jbver ==""){jbver="new";}
     let binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
     document.getElementsByTagName('head')[0].appendChild(binload);
-},2500);
+    
+},500);
+
 }
 
 function load_linux() {
@@ -113,7 +127,9 @@ function load_linux() {
     if(jbver ==""){jbver="new";}
     let binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
     document.getElementsByTagName('head')[0].appendChild(binload);
-},2500);
+    
+},500);
+
 }
 
 function load_app2usb() {
@@ -132,7 +148,9 @@ function load_app2usb() {
     if(jbver ==""){jbver="new";}
     let binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
     document.getElementsByTagName('head')[0].appendChild(binload);
-},2500);
+    
+},500);
+
 }
 
 function load_kerneldump() {
@@ -151,7 +169,9 @@ function load_kerneldump() {
     if(jbver ==""){jbver="new";}
     let binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
     document.getElementsByTagName('head')[0].appendChild(binload);
-},2500);
+    
+},500);
+
 }
 
 
@@ -171,7 +191,9 @@ function load_todex() {
     if(jbver ==""){jbver="new";}
     let binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
     document.getElementsByTagName('head')[0].appendChild(binload);
-},2500);
+    
+},500);
+
 }
 
 function load_webrte() {
@@ -190,7 +212,9 @@ function load_webrte() {
     if(jbver ==""){jbver="new";}
     let binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
     document.getElementsByTagName('head')[0].appendChild(binload);
-},2500);
+    
+},500);
+
 }
 
 function load_debug() {
@@ -209,7 +233,9 @@ function load_debug() {
     if(jbver ==""){jbver="new";}
     let binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
     document.getElementsByTagName('head')[0].appendChild(binload);
-},2500);
+    
+},500);
+
 }
 
 function load_historyblock() {
@@ -228,7 +254,9 @@ function load_historyblock() {
     if(jbver ==""){jbver="new";}
     let binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
     document.getElementsByTagName('head')[0].appendChild(binload);
-},2500);
+    
+},500);
+
 }
 
 function load_updatesdisable() {
@@ -247,7 +275,9 @@ function load_updatesdisable() {
     if(jbver ==""){jbver="new";}
     let binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
     document.getElementsByTagName('head')[0].appendChild(binload);
-},2500);
+    
+},500);
+
 }
 
 function load_updatesenable() {
@@ -266,7 +296,9 @@ function load_updatesenable() {
     if(jbver ==""){jbver="new";}
     let binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
     document.getElementsByTagName('head')[0].appendChild(binload);
-},2500);
+    
+},500);
+
 }
 
 function load_dbbackup() {
@@ -285,7 +317,9 @@ function load_dbbackup() {
     if(jbver ==""){jbver="new";}
     let binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
     document.getElementsByTagName('head')[0].appendChild(binload);
-},2500);
+    
+},500);
+
 }
 
 function load_dbrestore() {
@@ -304,6 +338,8 @@ function load_dbrestore() {
     if(jbver ==""){jbver="new";}
     let binload=document.createElement('script');binload.src="./common/"+jbver+"_loadcode.js";
     document.getElementsByTagName('head')[0].appendChild(binload);
-},2500);
+    
+},500);
+
 }
 

@@ -223,7 +223,7 @@ var sigaction_addr = sys_416_addr
 var socket_addr = sys_97_addr
 var write_addr = sys_4_addr
 setTimeout(function(){
-	window.msgs.innerHTML="<h1 style='font-size:25px;color:green;text-align:center;'> 初始化 完成 请操作。</h1>";
+window.msgs.innerHTML="<h1 style='font-size:25px;color:green;text-align:center;'> 初始化 完成 请 手动执行破解。</h1>";
 document.getElementById("oneclick").style.display='block';
 document.getElementById("pl_switch").style.display='block';
 var sw = localStorage.getItem("auto_jb");
@@ -233,6 +233,8 @@ if(sw=='1' && jb_status != '1')
   sessionStorage.setItem('jb_status','1');
   load_exploit_mira();
 }
+if(jb_status == '1')
+  {window.msgs.innerHTML="<h1 style='font-size:25px;color:green;text-align:center;'>已执行 破解。</h1><br>若未成功(破解后-跳窗前 内存不足) 请重启 或 关闭浏览器后 再试。";}
 },2500);
 }
 catch{

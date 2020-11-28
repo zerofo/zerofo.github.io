@@ -37853,6 +37853,7 @@ var printf_ans = read_mem_as_string(printf_buf,printf_buf_end-printf_buf);
 var _ = malloc_nogc.pop();
 var _ = malloc_nogc.pop();
 var _ = malloc_nogc.pop();
+/*
 var _ = null;
 var printf_buf_end = null;
 var printf_ans = null;
@@ -37861,9 +37862,19 @@ var ropchain_array = null;
 //var ropchain = null;
 var ropchain_offset = null;
 var printf_buf_offset = null;
-var __swbuf_addr = null;
+var __swbuf_addr = null;*/
+delete _;
+delete printf_buf_end;
+delete printf_ans;
+delete printf_buf;
+delete ropchain_array;
+delete ropchain;
+delete ropchain_offset;
+delete printf_buf_offset;
+delete __swbuf_addr;
 if (main_ret == 179 || main_ret == 0) {
-	var main_ret = null;
+	//var main_ret = null;
+	delete main_ret;
 	window.msgs.innerHTML="<h1 style='color:green;font-size:25px;text-align:center;'>Exploit Loaded ✔</h1>";
 	if (ExploitMira != null){
 	  window.msgs.innerHTML="<div class='processing'></div><h1 style='color:green;font-size:25px;text-align:center;'>破解成功! ✔ 正在加载 Mira ...</h1>";
@@ -37872,20 +37883,26 @@ if (main_ret == 179 || main_ret == 0) {
 	        Loader = ExploitMira;}  
 	    setTimeout(function(){
 	    let mirajs = document.createElement('script');mirajs.src = "./pl/"+ExploitMira+"_mira.js";document.getElementsByTagName('head')[0].appendChild(mirajs);	
-	    },300);
+	    },400);
 	    let loaderjs = document.createElement('script');loaderjs.src = "./pl/"+Loader+"_loader.js";
 	    document.getElementsByTagName('head')[0].appendChild(loaderjs);
 	    setTimeout(function(){
 	    let loadbin = document.createElement('script');loadbin.src = "./common/"+jbver+"_loadcode.js";
 	    document.getElementsByTagName('head')[0].appendChild(loadbin);
-	    },800);
+	    },500);
 	}
 } 
 else {
   window.msgs.innerHTML="<h1 style='color:red;font-size:25px;text-align:center;'>破解失败! <br> 请关机再开机重试.</h1>";
-    var ropchain = null;
-	  var leaker_obj = null;
+      /*var ropchain = null;
+      var leaker_obj = null;
       var leaker_arr = null;
       var oob_slave  = null;
-      var oob_master = null;
+      var oob_master = null;*/
+      delete ropchain;
+      delete leaker_obj;
+      delete leaker_arr;
+      delete oob_slave;
+      delete oob_master;
+
 }

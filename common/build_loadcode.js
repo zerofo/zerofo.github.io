@@ -11409,7 +11409,7 @@ var printf_buf_end = read_ptr_at(ropchain+printf_buf_offset);
 var printf_ans = read_mem_as_string(printf_buf, printf_buf_end-printf_buf);
 var _ = malloc_nogc.pop();
 var _ = malloc_nogc.pop();
-var _ = malloc_nogc.pop();
+var _ = malloc_nogc.pop();/*
 var _ = null;
 var printf_buf_end = null;
 var printf_ans = null;
@@ -11418,8 +11418,20 @@ var ropchain_array = null;
 //var ropchain = null;
 var ropchain_offset = null;
 var printf_buf_offset = null;
-var __swbuf_addr = null;
+var __swbuf_addr = null;*/
+delete _;
+delete printf_buf_end;
+delete printf_ans;
+delete printf_buf;
+delete ropchain_array;
+delete ropchain;
+delete ropchain_offset;
+delete printf_buf_offset;
+delete __swbuf_addr;
 if(main_ret==179|| main_ret==0){
-	var main_ret = null;
+	delete main_ret;
 	window.msgs.innerHTML="<h1 style='font-size:25px;color:green;text-align:center;'>"+LoadedMSG+"</h1>";
+	setTimeout(function(){
+	parent.location.reload();
+    }, 13000);
 }
