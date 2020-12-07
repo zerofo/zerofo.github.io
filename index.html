@@ -10,8 +10,6 @@
         </title>
     </head>
         <body>
-
-	    <!--<script>alert('test');</script>-->
         <div class="webname">
                <a href="javascript:void(0);" onclick="colorSwitch(1);"> 6.72专用破解网站 by zerofo</a>
         </div>
@@ -263,39 +261,18 @@
 
         </div>
     
-        
+    <script src="./common/function.js"></script>
+    
     <script>
-    var IdMap = ["mtnjustme 2.1.3","hen213"];
-	function change_oneclick(idx,name,val){
-	document.getElementById(idx).innerHTML=name;
-	document.getElementById(idx).value=val;
-	localStorage.setItem(idx+"Name", name);
-	localStorage.setItem(idx+"VAL", val);
-	};
-    function colorSwitch(btns){
-        var cmap=["BW","BG","WX"];
-        if(typeof(localStorage.getItem("themeVal"))=="undefined" || localStorage.getItem("themeVal") == null){
-            themeVal=0;
-            localStorage.setItem('themeVal',themeVal);
-        }
-        else{
-            themeVal=localStorage.getItem("themeVal");
-        }
-        if (btns != null)
-            {themeVal = Number(themeVal)+1;}
-        if (themeVal > 2){themeVal=0;}
-        document.documentElement.setAttribute('theme', cmap[themeVal]);
-        localStorage.setItem('themeVal',themeVal);
-    };
     colorSwitch();
     auto_jb(1);
+    var IdMap = ["mtnjustme 2.1.3","hen213"];
 	var Name=localStorage.getItem("oneclickName");
 	var Value=localStorage.getItem("oneclickVAL");
 	if (Name==null||Value==null){Name=IdMap[0]; Value=IdMap[i][1];}
 	document.getElementById("oneclick").innerHTML=Name;
 	document.getElementById("oneclick").value=Value;
 	</script>
-    <script src="./common/function.js"></script>
     <script src="./common/webkit.js"></script>
     </body>
 
