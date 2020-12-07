@@ -11430,5 +11430,5 @@ if(main_ret==179|| main_ret==0){
     var main_ret = null;                                                                                                                          
     setTimeout(function(){
     parent.location.reload();
-    }, 15000);                                      
+    }, 13000);                                      
 }
