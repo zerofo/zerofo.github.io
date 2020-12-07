@@ -4,12 +4,12 @@ function load_exploit_mira() {
     setTimeout(function(){
         var script=document.createElement('script');
         script.src="./common/buildN_jailbreak.js";
-        LoadedMSG= "破解成功 + Mira/Hen 已加载。请等待 左上角 跳窗结束再操作<br> 同时页面将自动刷新(出现布局混乱请手动刷新)";
+        LoadedMSG= "破解成功 + Mira/Hen 已加载。请等待 左上角 跳窗结束再操作";
         document.getElementsByTagName('head')[0].appendChild(script);
     delete window.mira_blob_2;
     delete window.mira_blob_2_len;
     delete window.mira_blob;
-    }, 1500);
+    }, 1300);
 }
 function auto_jb(show) {
     var sw = Number(localStorage.getItem("auto_jb"));
@@ -45,7 +45,6 @@ function colorSwitch(btns){
     localStorage.setItem('themeVal',themeVal);
 };
 function load_script(name) {
-    
     msgs.innerHTML="<div class='processing'></div><h1 style='font-size:25px;text-align:center;'> 正在加载 "+name+" ...</h1>";
     if (name == "fan"){
     degree=parent.degree.value;
