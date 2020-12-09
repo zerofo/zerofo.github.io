@@ -1,9 +1,9 @@
 CACHE MANIFEST
 cache.html
 common/webkit.js
+common/exploit.js
 common/function.js
 common/buildN_jailbreak.js
-common/buildN_loadcode.js
 css/style.css
 index.html
 pl/al-test_loader.js
