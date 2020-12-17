@@ -17,6 +17,7 @@ for(let i = 0; i < data.length; i++)
 ropchain_array[ropchain_offset++] = data[i];
 }
 
+var main_ret = malloc(8);
 var printf_buf = malloc(65536);
 var __swbuf_addr = 0;
 set_gadgets([
