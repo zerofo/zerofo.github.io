@@ -9,7 +9,8 @@
             6.72专用破解网站 by zerofo
         </title>
     </head>
-        <body>
+        <body onload="var script=document.createElement('script');
+        script.src='./common/webkit.js';document.getElementsByTagName('head')[0].appendChild(script);">
 
         <div class="webname">
                <a href="javascript:void(0);" onclick="colorSwitch(1);"> 6.72专用破解网站 by zerofo</a>
@@ -143,7 +144,7 @@
         </div>
         <div class="tablebody">
             <div class="info_msgs">
-              <b id="msgs"><div class="processing"></div><h1 style='font-size:25px;color:red;text-align:center;'>初始化请稍等 ！！！</h1></b>
+              <b id="msgs"></b>
 
             </div>
         </div>
@@ -250,18 +251,15 @@
         </div>
     
     <script src="./common/function.js"></script>
-    
     <script>
     colorSwitch();
     auto_jb(1);
     var IdMap = ["mtnjustme 2.1.3","hen213"];
-	var Name=localStorage.getItem("oneclickName");
-	var Value=localStorage.getItem("oneclickVAL");
-	if (Name==null||Value==null){Name=IdMap[0]; Value=IdMap[1];}
-	document.getElementById("oneclick").innerHTML=Name;
-	document.getElementById("oneclick").value=Value;
-    alert("正在加载");
-	</script>
-    <script src="./common/webkit.js"></script>
+    var Name=localStorage.getItem("oneclickName");
+    var Value=localStorage.getItem("oneclickVAL");
+    if (Name==null||Value==null){Name=IdMap[0]; Value=IdMap[1];}
+    document.getElementById("oneclick").innerHTML=Name;
+    document.getElementById("oneclick").value=Value;
+    </script>
     </body>
 </html>

@@ -5,6 +5,7 @@ function load_exploit_mira() {
         var script=document.createElement('script');
         script.src="./common/buildN_jailbreak.js";
         LoadedMSG= "破解成功 + Mira/Hen 已加载。请等待 左上角 跳窗结束再操作";
+       
         document.getElementsByTagName('head')[0].appendChild(script);
     delete window.mira_blob_2;
     delete window.mira_blob_2_len;
