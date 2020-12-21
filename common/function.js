@@ -62,4 +62,4 @@ function load_script(name) {
     document.getElementsByTagName('head')[0].appendChild(loaderjs);
     var binload=document.createElement('script');binload.src="./common/buildN_loadcode.js";
     document.getElementsByTagName('head')[0].appendChild(binload);
-}
+};

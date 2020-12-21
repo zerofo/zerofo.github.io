@@ -1,18 +1,11 @@
 CACHE MANIFEST
 cache.html
 common/webkit.js
-common/exploit.js
 common/function.js
 common/buildN_jailbreak.js
+common/buildN_loadcode.js
 css/style.css
 index.html
-pl/al-test_loader.js
-pl/al-test_mira.js
-pl/al-now_loader.js
-pl/al-now_mira.js
-pl/al_loader.js
-pl/al_mira.js
-pl/exp_loader.js
 pl/hen213_loader.js
 pl/hen213_mira.js
 pl/hen301_loader.js
@@ -23,12 +16,6 @@ pl/zhen_loader.js
 pl/zhen_mira.js
 pl/hen_loader.js
 pl/hen_mira.js
-pl/temp_loader.js
-pl/temp_mira.js
-pl/mira_loader.js
-pl/mira_mira.js
-pl/miradev_loader.js
-pl/miradev_mira.js
 pl/pl_app2usb.js
 pl/pl_dbBackup.js
 pl/pl_dbRestore.js
@@ -37,6 +24,7 @@ pl/pl_fan.js
 pl/pl_ftp.js
 pl/pl_historyBlocker.js
 pl/pl_kernelDumper.js
+pl/pl_kernelClock.js
 pl/pl_linux.js
 pl/pl_ps4debug.js
 pl/pl_todex.js
