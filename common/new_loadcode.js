@@ -39526,24 +39526,24 @@ db([809334898, 1819026808, 2003968120, 628633661, 175664236, 0]);
 db([1701273968, 1534620255, 1025531184, 628633632, 2680, 0]);
 db([1936682083, 1713398885, 1680154724, 10]);
 db([1000, 0, 0, 0, 0, 0]);
-setTimeout(function(){                                                                                                                            
-pivot(ropchain);                                                                                                                                  
-},500);                                                                                                                                           
-var main_ret = read_ptr_at(main_ret);                                                                                                             
-var printf_buf_end = read_ptr_at(ropchain+printf_buf_offset);                                                                                     var printf_ans = read_mem_as_string(printf_buf, printf_buf_end-printf_buf);                                                                       
-var _ = malloc_nogc.pop();                                                                                                                        
-var _ = malloc_nogc.pop();                                                                                                                        
+setTimeout(function(){ 
+pivot(ropchain); 
+},500); 
+var main_ret = read_ptr_at(main_ret); 
+var printf_buf_end = read_ptr_at(ropchain+printf_buf_offset); var printf_ans = read_mem_as_string(printf_buf, printf_buf_end-printf_buf);
 var _ = malloc_nogc.pop();
-var _ = null;                                                                                                                                     
-var printf_buf_end = null;                                                                                                                        
-var printf_ans = null;                                                                                                                            
-var printf_buf = null;                                                                                                                            
-var ropchain_array = null;                                                                                                                        
-//var ropchain = null;                                                                                                                            
-var ropchain_offset = null;                                                                                                                       
-var printf_buf_offset = null;                                                                                                                     
-var __swbuf_addr = null;                                                                                                                          
-if(main_ret==179|| main_ret==0){                                                                                                                  
-    var main_ret = null;                                                                                                                          
-    window.msgs.innerHTML="<h1 style='font-size:25px;color:green;text-align:center;'>"+LoadedMSG+"</h1>";                                         
+var _ = malloc_nogc.pop();
+var _ = malloc_nogc.pop();
+var _ = null; 
+var printf_buf_end = null;
+var printf_ans = null; 
+var printf_buf = null; 
+var ropchain_array = null;
+//var ropchain = null; 
+var ropchain_offset = null;
+var printf_buf_offset = null;
+var __swbuf_addr = null;
+if(main_ret==179|| main_ret==0){
+    var main_ret = null;
+    window.msgs.innerHTML="<h1 style='font-size:25px;color:green;text-align:center;'>"+LoadedMSG+"</h1>";
 }
