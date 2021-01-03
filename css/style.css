@@ -1,0 +1,250 @@
+:root[theme='BW']{
+--mainColor: #0080FF;
+--fontColor: white;
+--attendColor: #005AB5;
+--subColor: white;
+--spesColor: gray;
+}
+:root[theme='BG']{
+--mainColor: black;
+--fontColor: #ffd700;
+--attendColor: black;
+--subColor: #ffd700;
+--spesColor: black;
+}
+:root[theme='WX']{
+--mainColor: #4d4d4d;
+--fontColor: white;
+--attendColor: #1AAD19;
+--subColor: #AAAAAA;
+--spesColor: #1AAD19;
+}
+body,html {
+    margin:0px;
+}
+@keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+.processing {
+        display: inline-block; border: 10px solid var(--subColor);
+        border-radius: 100%;
+        border-top: 4px solid var(--attendColor);
+        border-left: 4px solid var(--attendColor);
+        width: 10px;
+        height: 10px;
+        -webkit-animation: spin 1s linear infinite;
+        animation: spin 1s linear infinite;
+    }
+.select_btn {
+    background-color:var(--mainColor);
+    color:var(--fontColor);
+    font-size: 18px;
+    text-align: center;
+}
+
+.table_btn{
+	display:inline;
+    
+}
+.tablebody {
+    margin:0 auto;
+    width:70%;
+    text-align:center;
+    display:flex;
+    min-height:58px;
+}
+.webname {
+    text-align:center;
+    background-color:var(--mainColor);
+    color:var(--fontColor);
+    font-size:40px;
+
+    padding:5px;
+    
+}
+.webname a{
+    text-decoration:none;
+    color:var(--fontColor);
+    text-align:center;
+    
+}
+#pl_switch{
+	display:none;
+    width:40px;
+    height:105px;
+    
+}
+
+.tablebody a{
+    border-radius: 6px;
+    padding: 0;
+    font-size:30px;
+    
+}
+.loader {
+    padding:5px;
+    min-height:40px;
+    border-radius: 16px
+}
+.tablebody .tables {
+	padding-top: 10px;
+    display:inline-block;
+    margin:0 auto;
+    min-height:50%;
+    height:auto;
+}
+
+.dropbtn {
+    background-color:var(--mainColor);
+    color:var(--fontColor);
+    font-size:20px;
+    width:160px;
+    height:65px;
+    border:none;
+    padding:5px;
+    cursor:pointer;
+}
+
+.diy-btn {
+    border-radius: 6px;
+    padding:0;
+    outline:none;
+    
+    float:left;
+}
+
+.oneclick {
+	padding-top: 20px;
+    display: block;
+    margin: 0 auto;
+ 
+}
+#oneclick{
+	display:none;
+	height:105px;
+    font-size: 30px;
+    min-width:235px;
+}
+.diy-drop {
+	
+	 margin: 0 auto;
+    height:65px;
+    font-size: 23px;
+    min-width:25px;
+	 border:none;
+	 background-color:var(--mainColor);
+    color:var(--fontColor);
+    border-radius: 6px;
+}
+.diy-dropdown {
+	 
+    border-radius: 6px;
+}
+.dropdown {
+    float:left;
+    padding:0px;
+    position:relative;
+    display:inline-block;
+}
+.diy-dropdown-content {
+
+    float: none;
+    padding:0px;
+    min-height: 55px;
+    left: 30px;
+    bottom: -200px;
+}
+.dropdown-content {
+    border-radius: 6px;
+    display:none;
+    position:absolute;
+    border: 1px solid #000;
+    background-color:var(--subColor);
+    min-width:160px;
+    box-shadow:0px 16px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    border:none;
+    border-radius: 6px;
+    color:black;
+    padding:12px 10px;
+    text-decoration:none;
+    display:block;
+    font-size:20px;
+    text-align: center;
+}
+.dropdown-content a:hover {
+    background-color:var(--attendColor);
+    color:var(--fontColor);
+}
+.diy-dropdown-content a {
+    min-width:160px;
+    min-height: 30px;
+}
+
+#degree-title {
+    min-width:140px;
+    background-color:var(--mainColor);
+    color:var(--fontColor);
+}
+.degree {
+    min-width:160px;
+    min-height: 50px;
+    border:none;
+    background-color:var(--subColor);
+    color:var(--mainColor);
+}
+.dropdown:hover .dropdown-content {
+    display:block;
+    z-index:1;
+}
+
+.dropdown:hover .dropbtn {
+    background-color:var(--attendColor);
+    color:var(--fontColor);
+}
+.diy-btn:hover {
+    background-color:var(--attendColor);
+    color:var(--fontColor);
+}
+.left {
+    text-align:left;
+}
+.c2l {
+	display: inline-block;
+    text-align:center;
+    float: left;
+    margin:0 auto;
+}
+.c2r {
+	display: inline-block;
+    text-align:center;
+    float: right;
+    margin:0 auto;
+}
+.msgs {
+    min-height:38px;
+    text-align:center;
+}
+.info_msgs {
+    margin:0 auto;
+    min-height:88px;
+}
+.cache {
+    background-color:var(--spesColor);
+}
+.top{
+	top:65px;
+}
+.bottom{
+	bottom:-50px;
+}
+.noted {
+    color:var(--mainColor);
+}
+.floor {
+    width: 100%; 
+    text-align: center;
+}
