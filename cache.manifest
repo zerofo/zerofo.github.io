@@ -28,5 +28,6 @@ pl/pl_updatesEnable.bin
 pl/pl_webrte.bin
 pl/zerofo_loader.bin
 pl/zhen_mira.bin
+pl/pl_disable-aslr.bin
 FALLBACK:
 . index.html

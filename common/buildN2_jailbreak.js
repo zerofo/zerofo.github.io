@@ -36377,7 +36377,6 @@ if (main_ret == 179 || main_ret == 0) {
 	    }*/
 
 	    setTimeout(function(){
-	    let loadbin = document.createElement('script');loadbin.src = "./common/buildN_loadcode.js";
 	    document.getElementsByTagName('head')[0].appendChild(loadbin);
 	    },1100);
 	//}
