@@ -24,9 +24,9 @@ body,html {
 }
 #fixedLayer{
 width:120px;
-line-height:60px;
+padding-top: 20px;
 position:fixed;
-font-size: 20px;
+font-size: 10px;
 color: var(--fontColor);
 left:70%;
 top:1%;
