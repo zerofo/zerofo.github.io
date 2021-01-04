@@ -105,8 +105,9 @@ function colorSwitch(btns){
     
     if (btns != null)themeVal = Number(themeVal)+1;
     if (themeVal > 2)themeVal=0;
-    document.documentEl
-
+    document.documentElement.setAttribute('theme', cmap[themeVal]);
+    localStorage.setItem('themeVal',themeVal);
+};
 function load_script(name) {
     msgs.innerHTML="<div class='processing'></div><h1 style='font-size:25px;text-align:center;'> 正在加载 "+name+" ...</h1>";
     var binload=document.createElement('script');binload.src="./common/buildN_loadcode.js";
