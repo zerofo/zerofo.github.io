@@ -26,8 +26,8 @@ var loader_ = function(name,jb=0){
 
                 LoadedMSG= "破解成功 + Mira/Hen 已加载。请等待 左上角 跳窗结束再操作";
                 document.getElementsByTagName('head')[0].appendChild(jbscript);
-                if(Number(localStorage.getItem("auto_jb")))
-                    load_script('disable-aslr');
+    		parent.oneclick2.style.display="none";
+	        parent.oneclick.style.display="block";
             }, 1300);
             }
         }};
@@ -55,8 +55,8 @@ var PLdr_ = function(name,jb=0,ld=1){
             setTimeout(function(){
                 LoadedMSG= "破解成功 + Mira/Hen 已加载。请等待 左上角 跳窗结束再操作";
                 document.getElementsByTagName('head')[0].appendChild(jbscript);
-                if(Number(localStorage.getItem("auto_jb")))
-                    load_script('disable-aslr');
+    		parent.oneclick2.style.display="none";
+	        parent.oneclick.style.display="block";
 
             }, 1300);
             }
@@ -72,8 +72,6 @@ function load_exploit_mira() {
     else{
         PLdr_("./pl/"+ExploitMira+"_mira.bin",1);
     }
-    parent.oneclick2.style.display="none";
-    parent.oneclick.style.display="block";
 };
 function auto_jb(show) {
     var sw = Number(localStorage.getItem("auto_jb"));
