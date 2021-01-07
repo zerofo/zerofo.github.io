@@ -54,7 +54,7 @@ top:1%;
 }
 
 .table_btn{
-	display:inline;
+    display:inline;
     
 }
 .tablebody {
@@ -80,7 +80,7 @@ top:1%;
     
 }
 #pl_switch{
-	display:none;
+    display:none;
     width:40px;
     height:105px;
     
@@ -98,7 +98,7 @@ top:1%;
     border-radius: 16px
 }
 .tablebody .tables {
-	padding-top: 10px;
+    padding-top: 10px;
     display:inline-block;
     margin:0 auto;
     min-height:50%;
@@ -125,30 +125,30 @@ top:1%;
 }
 
 .oneclick {
-	padding-top: 20px;
+    padding-top: 20px;
     display: block;
     margin: 0 auto;
  
 }
 #oneclick{
-	display:none;
-	height:105px;
+    display:none;
+    height:105px;
     font-size: 30px;
     min-width:235px;
 }
 .diy-drop {
-	
-	 margin: 0 auto;
+    
+     margin: 0 auto;
     height:65px;
     font-size: 23px;
     min-width:25px;
-	 border:none;
-	 background-color:var(--mainColor);
+     border:none;
+     background-color:var(--mainColor);
     color:var(--fontColor);
     border-radius: 6px;
 }
 .diy-dropdown {
-	 
+     
     border-radius: 6px;
 }
 .dropdown {
@@ -223,13 +223,13 @@ top:1%;
     text-align:left;
 }
 .c2l {
-	display: inline-block;
+    display: inline-block;
     text-align:center;
     float: left;
     margin:0 auto;
 }
 .c2r {
-	display: inline-block;
+    display: inline-block;
     text-align:center;
     float: right;
     margin:0 auto;
@@ -246,10 +246,10 @@ top:1%;
     background-color:var(--spesColor);
 }
 .top{
-	top:65px;
+    top:65px;
 }
 .bottom{
-	bottom:-50px;
+    bottom:-50px;
 }
 .noted {
     color:var(--mainColor);
