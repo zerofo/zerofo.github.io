@@ -2,7 +2,8 @@ var jbscript=document.createElement('script');
 jbscript.src="./common/buildN2_jailbreak.js";
 var loadbin = document.createElement('script');
 loadbin.src = "./common/buildN_loadcode.js";
-
+var webkit=document.createElement('script');
+webkit.src='./common/webkit.js';
 var loader_ = function(name,jb=0){
     var req=new XMLHttpRequest();
     req.responseType="arraybuffer";
@@ -57,7 +58,6 @@ var PLdr_ = function(name,jb=0,ld=1){
                 document.getElementsByTagName('head')[0].appendChild(jbscript);
     		parent.oneclick2.style.display="none";
 	        parent.oneclick.style.display="block";
-
             }, 1300);
             }
         }};

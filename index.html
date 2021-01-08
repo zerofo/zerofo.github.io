@@ -1,272 +1,211 @@
 <!DOCTYPE html>
 <html lang="zh_cn">
-    
-    <head>
-    	<link rel="stylesheet prefetch" href="css/style.css">
-        <meta charset="utf-8" />
-	<title>
-            6.72专用破解网站(bin) by zerofo
-        </title>
-    </head>
-        <body>
 
-        <div class="webname">
-               <a href="javascript:void(0);" onclick="colorSwitch(1);"> 6.72专用破解网站(bin) by zerofo</a><div id="fixedLayer">⇦点它切换颜色</div>
-        </div>
-        <div class="tablebody">
-            <div class="tables">
-                <div class="dropdown">
-                    <button class="dropbtn">
-                        常用
-                    </button>
-                    <div class="dropdown-content">
-                        <a href="javascript:void(0);" onclick="load_script('historyBlocker'); return false">
-                            禁用历史记录
-                        </a>
-                        <a href="javascript:void(0);" onclick="load_script('ftp'); return false">
-                            FTP
-                        </a>
-                        <a href="javascript:void(0);" onclick="load_script('todex'); return false">
-                            toDEX
-                        </a>
-                        <a href="javascript:void(0);" onclick="load_script('kernelClock'); return false">
-                            内核时间修复
-                        </a>
-                        <a href="javascript:void(0);" onclick="load_script('disable-aslr'); return false">
-                            关闭随机地址
-                        </a>
-                        <a href="javascript:void(0);" onclick="load_script('binLoader'); return false">
-                            Bin Loader
-                        </a>
-                        <a href="javascript:void(0);" onclick="load_script('dumper'); return false">
-                            Dumper
-                        </a>
-                        
-                    </div>
-                </div>
-                <div class="dropdown">
-                    <button class="dropbtn">
-                        风扇调速
-                    </button>
-                    <div class="dropdown-content">
-                        <div style="display: inline-block;">
-                            <a id="degree-title" disabled="disabled">
-                                目标温度
-                            </a>
-                            <select id="degree" class="degree select_btn" required="required">
-                            <script>
-                            let select = document.getElementById("degree");
-                            let option = document.createElement("OPTION");
-                            select.options.add(option);
-                            option.text = "默认79";
-                            option.value = 79;
-                            option.selected = "selected";
-                            for(var i=55; i<=100; i+=5){
-                            let select = document.getElementById("degree");
-                            let option = document.createElement("OPTION");
-                            select.options.add(option);
-                            option.text = i;
-                            option.value = i;
-                            }
-                            </script>
-                            </select>
-                            <a href="javascript:void(0);" onclick="load_script('fan');return false">
-                                设置
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="dropdown">
-                    <button class="dropbtn">
-                        金手指
-                        </br>
-                        Save Mounter
-                    </button>
-                    <div class="dropdown-content">
-                        <a href="javascript:void(0);" onclick="load_script('webrte'); return false">
-                            WebRTE
-                        </a>
-                        <a href="javascript:void(0);" onclick="load_script('ps4debug'); return false">
-                            Debug(待测试)
-                            </br>
-                            修改器/存档解密
-                        </a>
-                    </div>
-                </div>
-                <div class="dropdown">
-                    <button class="dropbtn">
-                        数据备份
-                        <br>
-                        更新开关
-                    </button>
-                    <div class="dropdown-content">
-                        <a href="javascript:void(0);" onclick="load_script('updatesDisable'); return false">
-                            关闭更新
-                        </a>
-                        <a href="javascript:void(0);" onclick="load_script('updatesEnable'); return false">
-                            开启更新
-                        </a>
-                        <a href="javascript:void(0);" onclick="load_script('dbBackup'); return false">
-                            数据库备份
-                        </a>
-                        <a href="javascript:void(0);" onclick="load_script('dbRestore'); return false">
-                            数据库恢复
-                        </a>
-                    </div>
-                </div>
-                <div class="dropdown">                
-                    <button class="dropbtn">
-                        其他
-                    </button>
-                    <div class="dropdown-content" style="left:0;">
-                        <a href="javascript:void(0);" onclick="load_script('kernelDumper'); return false">
-                            内核 Dumper
-                        </a>
-                        <a href="javascript:void(0);" onclick="load_script('linux'); return false">
-                            Linux
-                        </a>
-                        <a href="javascript:void(0);" onclick="load_script('app2usb'); return false">
-                            App2USB
-                        </a>
-                    </div>
-                </div>
-                <div class="dropdown">
-                    <div class="dropdown-content top">
-                        <a href="./cache.html">
-                            (点我)开启
-                            <br/>
-                            离线缓存
-                        </a>
-                        <hr/>
-                    </div>
-                    <button class="cache dropbtn">
-                        离线缓存
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div class="tablebody">
-            <div class="info_msgs">
-              <b id="msgs"></b>
+<head>
+<link rel="stylesheet prefetch" href="css/style.css">
+<script src="./common/function.js"></script>
 
-            </div>
-        </div>
-        <div class="tablebody">
-            <div class="tables">
-            <table>
-                <tr>
-                        <td>
-                        <a>一键⇩破解</a>
-                        </td>
-                </tr>
-                <tr>
-                    <td>
-                    
-                    <div class="oneclick">
-                            <button id="oneclick" class="dropbtn diy-btn" type="button" onclick="load_exploit_mira(); LoadedMSG=null;return false" value="zerofo">Zerofo hen</button>
-                            <button id="oneclick2" style="display: none;min-width:235px;height:105px;font-size: 30px;" class="dropbtn diy-btn" >执行中<br>请勿连点</button>
-                            
-                            <div class="dropdown diy-dropdown">
-                            <button  id="pl_switch" class="diy-drop">▶</button>
-                            <div class="dropdown-content diy-dropdown-content ">
-                                    <table>
-                                        <tr>
-                                        <td vAlign=top>
-                                        <a href="javascript:void(0);" onclick="change_oneclick('oneclick','Zerofo hen', 'zerofo'); return false">zerofo hen</a>
-                                        <a href="javascript:void(0);" onclick="change_oneclick('oneclick','mtnjustme hen2.1.3', 'hen213'); return false">mtnjustme hen2.1.3</a>
-                                        <a href="javascript:void(0);" onclick="change_oneclick('oneclick','notzecoxao henVR9.99', 'zhen'); return false">notzecoxao henVR9.99</a>
-                                        <a href="javascript:void(0);" onclick="change_oneclick('oneclick','Joonie 2.1.3','hen');">
-                                            Joonie 2.1.3
-                                        </a>
-                                        <a href="javascript:void(0);" onclick="change_oneclick('oneclick','ciss84 hen301','hen301');">
-                                            ciss84 hen301
-                                        </a>
-                                        <a href="javascript:void(0);" onclick="change_oneclick('oneclick','ciss84 hen300','hen300');">
-                                            ciss84 hen300
-                                        </a>
-                                        </td>
-                                        </tr>
-                                    </table>
-                            </div>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-                        
-                
-            </table>
-        </div>
-        </div>           
-        <div class="tablebody">
-                <table class="tables">
-                <tr>
-                        <td>    
-                        <h3>自动破解开关</h3>
-                        </td>
-                        </tr>
-                <tr>
-                <td>
-                    <button id="autojb" style="font-size:30px;" onclick="auto_jb(); return false"  type="button" value="build">自动破解开关</button>
-                </td>
-                </tr>
-                </table>
+<meta charset="utf-8"/>
+<title>
+6.72专用破解网站(bin) by zerofo
+</title>
+</head>
+<body onload="document.getElementsByTagName('head')[0].appendChild(webkit);">
+
+<div class="webname">
+    <a href="javascript:void(0);" onclick="colorSwitch(1);"> 6.72专用破解网站(bin) by zerofo</a><div id="fixedLayer">⇦点它切换颜色</div>
+</div>
+<div style="clear: both; padding-top: 45px;font-size: 0;">
+    <div class="dropdown">
+        <button class="dropbtn">
+            常用
+        </button>
+        <div class="dropdown-content">
+            <a href="javascript:void(0);" onclick="load_script('historyBlocker'); return false">
+            禁用历史记录
+            </a>
+            <a href="javascript:void(0);" onclick="load_script('ftp'); return false">
+                FTP
+            </a>
+            <a href="javascript:void(0);" onclick="load_script('todex'); return false">
+                toDEX
+            </a>
+            <a href="javascript:void(0);" onclick="load_script('kernelClock'); return false">
+                内核时间修复
+            </a>
+            <a href="javascript:void(0);" onclick="load_script('disable-aslr'); return false">
+                关闭随机地址
+            </a>
+            <a href="javascript:void(0);" onclick="load_script('binLoader'); return false">
+                Bin Loader
+            </a>
+            <a href="javascript:void(0);" onclick="load_script('dumper'); return false">
+                Dumper
+            </a>
             
         </div>
-        <div class="tablebody">
-            <div class="tables">
-                <h3 class="noted">
-                    开启网页提示"内存不足" 可以无视。 点击 破解按钮 后，如提示"内存不足" 请重启 PS4， 继续破解容易断电
-                </h3>
-<h6> version:2020/12/29  </h6>
-                <details>
-                    <summary>
-                        请仔细阅读以下内容(点我展开)
-                    </summary>
-                    <div>
-                        <ol class="left">
-                            <li>
-                                使用其他破解过后, 请重启后再使用本站.<br>
-                                使用离线缓存后, 如果需要更新网页(新的破解、新的mira), 需要双清, 需要重启
-                            </li>
-                            <li>
-                                <b>
-                                    建议 开启 -> 常用 -> 禁用历史记录 点一次即可.
-                                </b>
-                            </li>
-                            <li>
-                                等网页加载好, 白条跑完再操作 点击按钮。网络不好用手机热点, 再不行就本地化
-                            </li>
-                            <li>
-                                <b style="font-size: 22px;">
-                                    关闭页面, 再PS回到桌面 电源菜单 重启机器
-                                </b>
-                                .
-                            </li>
-                        </ol>
-                    </div>
-                </details>
-               
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn">
+            风扇调速
+        </button>
+        <div class="dropdown-content">
+            <div style="display: inline-block;">
+                <a id="degree-title" disabled="disabled">
+                    目标温度
+                </a>
+                <select id="degree" class="degree select_btn" required="required">
+                <script>
+                let select = document.getElementById("degree");
+                let option = document.createElement("OPTION");
+                select.options.add(option);
+                option.text = "默认79";
+                option.value = 79;
+                option.selected = "selected";
+                for(var i=55; i<=100; i+=5){
+                let select = document.getElementById("degree");
+                let option = document.createElement("OPTION");
+                select.options.add(option);
+                option.text = i;
+                option.value = i;
+                }
+                </script>
+                </select>
+                <a href="javascript:void(0);" onclick="load_script('fan');return false">
+                    设置
+                </a>
             </div>
         </div>
-        <div class="tablebody">
-                <div class="floor" >
-                        <hr>    
-                    问题反馈 emptytaboo@gmail.com 或者 91联系我, 可加QQ(私下邮箱或者91 咨要)
-                </div>
-
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn">
+            金手指
+            </br>
+            Save Mounter
+        </button>
+        <div class="dropdown-content">
+            <a href="javascript:void(0);" onclick="load_script('webrte'); return false">
+                WebRTE
+            </a>
+            <a href="javascript:void(0);" onclick="load_script('ps4debug'); return false">
+                Debug(待测试)
+                </br>
+                修改器/存档解密
+            </a>
         </div>
-	<script src='./common/webkit.js'></script>
-    
-    <script src="./common/function.js"></script>
-    <script>
-    colorSwitch();
-    auto_jb(1);
-    var IdMap = ["Zerofo hen","zerofo"];
-    var Name=localStorage.getItem("oneclickName");
-    var Value=localStorage.getItem("oneclickVAL");
-    if (Name==null||Value==null){Name=IdMap[0]; Value=IdMap[1];}
-    document.getElementById("oneclick").innerHTML=Name;
-    document.getElementById("oneclick").value=Value;
-    </script>
-    </body>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn">
+            数据备份
+            <br>
+            更新开关
+        </button>
+        <div class="dropdown-content">
+            <a href="javascript:void(0);" onclick="load_script('updatesDisable'); return false">
+                关闭更新
+            </a>
+            <a href="javascript:void(0);" onclick="load_script('updatesEnable'); return false">
+                开启更新
+            </a>
+            <a href="javascript:void(0);" onclick="load_script('dbBackup'); return false">
+                数据库备份
+            </a>
+            <a href="javascript:void(0);" onclick="load_script('dbRestore'); return false">
+                数据库恢复
+            </a>
+        </div>
+    </div>
+    <div class="dropdown">                
+        <button class="dropbtn">
+            其他
+        </button>
+        <div class="dropdown-content" >
+            <a href="javascript:void(0);" onclick="load_script('kernelDumper'); return false">
+                内核 Dumper
+            </a>
+            <a href="javascript:void(0);" onclick="load_script('linux'); return false">
+                Linux
+            </a>
+            <a href="javascript:void(0);" onclick="load_script('app2usb'); return false">
+                App2USB
+            </a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <div class="dropdown-content" style="top: 177px;" >
+            <a href="./cache.html">
+                (点我)开启
+                <br/>
+                离线缓存
+            </a>
+            <hr/>
+        </div>
+        <button class="cache dropbtn" >
+            离线缓存
+        </button>
+    </div>
+</div>
+<div class="info_msgs" >
+    <b id="msgs" style="min-height:38px;"></b>
+
+</div>
+<table style="margin: auto;text-align: center;">
+    <tr>
+        <td>
+        <a class="onea">一键⇩破解</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+        <div style="clear: both; font-size: 0;">
+            <button id="oneclick" class="dropbtn diy-btn" type="button" style="padding-top: 4px;" onclick="load_exploit_mira(); LoadedMSG=null;return false" value="zerofo">Zerofo hen</button>
+            <button id="oneclick2" class="dropbtn diy-btn"  style="display: none;min-width:235px;height:105px;font-size: 30px;vertical-align: top;">执行中<br>请勿连点</button>
+            <div class="dropdown" style="vertical-align: top;margin-left: -3px;margin-top: -2px;">
+            <button  id="pl_switch" class="diy-drop" >▶</button>
+            <div class="dropdown-content diy-dropdown-content ">
+                <a href="javascript:void(0);" onclick="change_oneclick('oneclick','Zerofo hen', 'zerofo'); return false">zerofo hen</a>
+                <a href="javascript:void(0);" onclick="change_oneclick('oneclick','mtnjustme hen2.1.3', 'hen213'); return false">mtnjustme hen2.1.3</a>
+                <a href="javascript:void(0);" onclick="change_oneclick('oneclick','notzecoxao henVR9.99', 'zhen'); return false">notzecoxao henVR9.99</a>
+                <a href="javascript:void(0);" onclick="change_oneclick('oneclick','Joonie 2.1.3','hen');">
+                    Joonie 2.1.3
+                </a>
+                <a href="javascript:void(0);" onclick="change_oneclick('oneclick','ciss84 hen301','hen301');">
+                    ciss84 hen301
+                </a>
+                <a href="javascript:void(0);" onclick="change_oneclick('oneclick','ciss84 hen300','hen300');">
+                    ciss84 hen300
+                </a>
+            </div>
+            </div>
+        </div>
+        </td>
+    </tr>
+</table>
+<table style="margin: auto;text-align: center;padding-top: 30px;">
+    <tr>
+        <td>    
+        <a class="onea" style="font-size: 20px;">自动破解开关</a>
+        </td>
+    </tr>
+    <tr>
+    <td>
+        <button id="autojb" style="font-size:24px;" onclick="auto_jb(); return false"  type="button" value="build">自动破解开关</button>
+    </td>
+    </tr>
+</table>
+<div style="width: 70%;">
+<hr>    
+        问题反馈 emptytaboo@gmail.com 或者 91联系我, 可加QQ(私下邮箱或者91 咨要)
+</div>
+<script>
+colorSwitch();
+auto_jb(1);
+var IdMap = ["Zerofo hen","zerofo"];
+var Name=localStorage.getItem("oneclickName");
+var Value=localStorage.getItem("oneclickVAL");
+if (Name==null||Value==null){Name=IdMap[0]; Value=IdMap[1];}
+document.getElementById("oneclick").innerHTML=Name;
+document.getElementById("oneclick").value=Value;
+</script>
+</body>
 </html>
