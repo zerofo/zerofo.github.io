@@ -1,5 +1,4 @@
 <html manifest="cache.manifest">
-<html lang="zh_cn">
 <head>
     <meta charset="utf-8"/>
 <title>6.72专用破解网站 by zerofo</title>
@@ -14,7 +13,8 @@
   
 <script>
 function DLProgress(e){Percent=(Math.round(e.loaded / e.total * 100));window.msgs.innerHTML="正在下载离线缓存 " + Percent + "%";}
-function DisplayCacheProgress(){setTimeout(function(){window.msgs.innerHTML="离线缓存 已成功，即将返回";},500);}window.applicationCache.addEventListener("progress",DLProgress,false);window.applicationCache.oncached=function(e){DisplayCacheProgress();window.location.href="./index.html";};window.applicationCache.onupdateready=function(e){DisplayCacheProgress();};
+function DisplayCacheProgress(){setTimeout(function(){window.msgs.innerHTML="离线缓存 已成功，即将返回";},500);};
+if(window.applicationCache)window.applicationCache.addEventListener("progress",DLProgress,false);if(window.applicationCache)window.applicationCache.oncached=function(e){DisplayCacheProgress();window.location.href="./index.html";};if(window.applicationCache)window.applicationCache.onupdateready=function(e){DisplayCacheProgress();};
 
 </script>
 </body>
