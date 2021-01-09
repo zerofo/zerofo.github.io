@@ -20,7 +20,7 @@ var loader_ = function(name,jb=0){
 
             window.mira_blob=malloc(65536);
             write_mem(window.mira_blob, payload);
-            }, 500);
+            }, 400);
 
             if(jb){
             setTimeout(function(){
@@ -29,7 +29,7 @@ var loader_ = function(name,jb=0){
                 document.getElementsByTagName('head')[0].appendChild(jbscript);
     		parent.oneclick2.style.display="none";
 	        parent.oneclick.style.display="block";
-            }, 1300);
+            }, 600);
             }
         }};
 };
@@ -51,14 +51,14 @@ var PLdr_ = function(name,jb=0,ld=1){
                 window.mira_blob_2_len=getlength;
                 window.mira_blob_2=malloc(window.mira_blob_2_len);
                 write_mem(window.mira_blob_2,payload_data);
-                }, 700);
+                }, 400);
             if(jb){
             setTimeout(function(){
                 LoadedMSG= "破解成功 + Mira/Hen 已加载。请等待 左上角 跳窗结束再操作";
                 document.getElementsByTagName('head')[0].appendChild(jbscript);
     		parent.oneclick2.style.display="none";
 	        parent.oneclick.style.display="block";
-            }, 1300);
+            }, 600);
             }
         }};
 };
