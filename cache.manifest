@@ -21,6 +21,7 @@ pl/pl_historyBlocker.bin
 pl/pl_kernelClock.bin
 pl/pl_kernelDumper.bin
 pl/pl_linux.bin
+pl/pl_linux3g.bin
 pl/pl_ps4debug.bin
 pl/pl_todex.bin
 pl/pl_updatesDisable.bin
