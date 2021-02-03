@@ -2,8 +2,6 @@ var jbscript=document.createElement('script');
 jbscript.src="./common/buildN2_jailbreak.js";
 var loadbin = document.createElement('script');
 loadbin.src = "./common/buildN_loadcode.js";
-var webkit=document.createElement('script');
-webkit.src='./common/webkit.js';
 var loader_ = function(name,jb=0){
     var req=new XMLHttpRequest();
     req.responseType="arraybuffer";
@@ -68,7 +66,7 @@ function load_exploit_mira() {
     parent.oneclick.style.display="none";
     parent.oneclick2.style.display="block";
 
-    if(ExploitMira=='zerofo')loader_("./pl/"+ExploitMira+"_loader.bin",1);
+    if((ExploitMira=='zerofo') || (ExploitMira=='zerofo2'))loader_("./pl/"+ExploitMira+"_loader.bin",1);
     else{
         PLdr_("./pl/"+ExploitMira+"_mira.bin",1);
     }

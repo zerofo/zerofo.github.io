@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
+<script src="./common/webkit.js"></script>
 <script src="./common/function.js"></script>
 <link rel="stylesheet prefetch" href="css/style.css">
 <meta charset="utf-8"/>
@@ -10,6 +11,7 @@
 <div class="webname">
     <a href="javascript:colorSwitch(1);"> 6.72专用破解网站(bin) by zerofo</a><div id="fixedLayer">⇦点它切换颜色</div>
 </div>
+<script>colorSwitch();</script>
 <div style="clear: both; padding-top: 45px;font-size: 0;">
     <div class="dropdown">
         <button class="dropbtn">常用</button>
@@ -21,7 +23,6 @@
             <a href="javascript:load_script('disable-aslr');">关闭随机地址</a>
             <a href="javascript:load_script('binLoader');">Bin Loader</a>
             <a href="javascript:load_script('dumper');">Dumper</a>
-            
         </div>
     </div>
     <div class="dropdown">
@@ -39,8 +40,7 @@
                 let option = document.createElement("OPTION");
                 select.options.add(option);
                 option.text = i;
-                option.value = i;
-                }
+                option.value = i;}
                 </script>
                 </select>
                 <a href="javascript:load_script('fan');">设置</a>
@@ -76,14 +76,14 @@
     </div>
     <div class="dropdown">
         <button class="dropbtn">
-            更多使用扩展<br>(完全复制leeful)
+            更多实用扩展<br>(复制自leeful)
         </button>
         <div class="dropdown-content" >
             <div style="float:left;">
-            <a href="javascript:load_script('saveBackup');">存档备份</a>
-            <a href="javascript:load_script('saveRestore');">存档还原</a>
+            <a href="javascript:load_script('saveBackup');">存档备份<br>(to USB)</a>
+            <a href="javascript:load_script('saveRestore');">存档还原<br>(from USB)</a>
             <a href="javascript:load_script('GetcacheDB');">离线数据<br>创建(to USB)</a>
-            <a href="javascript:load_script('SetcacheDB');">离线数据<br>还远(from USB)</a>
+            <a href="javascript:load_script('SetcacheDB');">离线数据<br>还原(from USB)</a>
             <a href="javascript:load_script('toRestore');">还原修改<br>dex/dev/krato</a>
             </div>
             <div style="float:left;">
@@ -106,7 +106,6 @@
     <b id="msgs" style="min-height:38px;"></b>
 </div>
 <div><a class="onea">一键⇩破解</a></div>
-
 <div style="display:inline-block;">
     <div>
     <button id="oneclick" class="dropbtn diy-btn" type="button" style="padding-top: 4px;" onclick="load_exploit_mira(); LoadedMSG=null;" value="zerofo">Zerofo hen</button>
@@ -124,18 +123,13 @@
     </div>
 </div>
 </div>
-
-
 <div><a class="onea" style="font-size: 20px;">自动破解开关</a></div><br>
 <div><button id="autojb" style="font-size:24px;" onclick="auto_jb();"  type="button" value="build">自动破解开关</button></div>
-
-
 <div style="width: 70%;">
-<hr>    
-        问题反馈 emptytaboo@gmail.com 或者 91联系我, 可加QQ(私下邮箱或者91 咨要)
+<hr>问题反馈 emptytaboo@gmail.com 或者 91联系我, 可加QQ(私下邮箱或者91 咨要)
 </div>
 <script>
-colorSwitch();
+window.msgs.innerHTML="<div class='processing'></div><h1 style='font-size:25px;color:red;text-align:center;'>初始化 请稍等 ！！！</h1>";
 auto_jb(1);
 var IdMap = ["Zerofo hen","zerofo"];
 var Name=localStorage.getItem("oneclickName");
@@ -143,7 +137,17 @@ var Value=localStorage.getItem("oneclickVAL");
 if (Name==null||Value==null){Name=IdMap[0]; Value=IdMap[1];}
 document.getElementById("oneclick").innerHTML=Name;
 document.getElementById("oneclick").value=Value;
-document.getElementsByTagName('head')[0].appendChild(webkit);
+if(WK){
+setTimeout(function(){
+    window.msgs.innerHTML="<h1 style='font-size:25px;color:green;text-align:center;'> 初始化 完成 请 手动执行破解。</h1>";
+    document.getElementById("oneclick").style.display='block';
+    document.getElementById("pl_switch").style.display='block';
+    var sw=localStorage.getItem("auto_jb");
+    var jb_status=sessionStorage.getItem('jb_status');
+    if(jb_status=='1'){window.msgs.innerHTML="<h1 style='font-size:25px;color:green;text-align:center;'>已执行 破解。</h1><br>若未成功(破解后-跳窗前 内存不足) 请重启 或 关闭浏览器后 再试。"}
+    else if(sw=='1'&&jb_status!='1'){sessionStorage.setItem('jb_status','1');load_exploit_mira()}
+},3500)}
+else{window.msgs.innerHTML="<h1 style='font-size:25px;color:red;text-align:center;'> webkit 载入失败(无法自动破解)。请使用 ps4 重新打开网页</h1>";}
 </script>
 </body>
 </html>
