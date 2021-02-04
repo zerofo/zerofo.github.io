@@ -36533,26 +36533,10 @@ delete printf_buf_offset;
 delete __swbuf_addr;
 if (main_ret == 179 || main_ret == 0) {
 	delete main_ret;
-	//if (ExploitMira != null){
-	  window.msgs.innerHTML="<div class='processing'></div><h1 style='color:green;font-size:25px;text-align:center;'>破解成功! ✔ 正在加载 Hen/Mira ...</h1>";
-	    /*if(ExploitMira != "zerofo"){
+	    window.msgs.innerHTML="<div class='processing'></div><h1 style='color:green;font-size:25px;text-align:center;'>破解成功! ✔ 正在加载 Hen/Mira ...</h1>";
 	    setTimeout(function(){
-	    let mirajs = document.createElement('script');mirajs.src = "./pl/"+ExploitMira+"_mira.js";document.getElementsByTagName('head')[0].appendChild(mirajs);	
-	    },600);
-	    let loaderjs = document.createElement('script');loaderjs.src = "./pl/"+ExploitMira+"_loader.js";
-	    document.getElementsByTagName('head')[0].appendChild(loaderjs);
-	    }
-	    else{
-	    setTimeout(function(){
-	    let henjs = document.createElement('script');henjs.src = "./pl/"+ExploitMira+"_mira.js";
-	    document.getElementsByTagName('head')[0].appendChild(henjs);
-	    },500);
-	    }*/
-
-	    //setTimeout(function(){
 	    document.getElementsByTagName('head')[0].appendChild(loadbin);
-	    //},1100);
-	//}
+	    },1500);
 } 
 else {
   window.msgs.innerHTML="<h1 style='color:red;font-size:25px;text-align:center;'>破解失败! <br> 请关机再开机重试.</h1>";

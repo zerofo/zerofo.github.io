@@ -114,11 +114,11 @@
     <button id="pl_switch" class="diy-drop">▶</button>
     <div class="dropdown-content diy-dropdown-content">
         <a href="javascript:change_oneclick('oneclick','Zerofo hen', 'zerofo');">Zerofo<br>hen2.1.3</a>
-        <a href="javascript:change_oneclick('oneclick','mtnjustme hen2.1.3', 'hen213');">mtnjustme<br>hen2.1.3</a>
-        <a href="javascript:change_oneclick('oneclick','notzecoxao henVR9.99', 'zhen');">notzecoxao<br>henVR9.99</a>
-        <a href="javascript:change_oneclick('oneclick','Joonie 2.1.3','hen');">Joonie<br>2.1.3</a>
-        <a href="javascript:change_oneclick('oneclick','ciss84 hen301','hen301');">ciss84<br>hen301</a>
-        <a href="javascript:change_oneclick('oneclick','ciss84 hen300','hen300');">ciss84<br>hen300</a>
+        <a href="javascript:change_oneclick('oneclick','mtnjustme<br>hen2.1.3', 'hen213');">mtnjustme<br>hen2.1.3</a>
+        <a href="javascript:change_oneclick('oneclick','notzecoxao<br>henVR9.99', 'zhen');">notzecoxao<br>henVR9.99</a>
+        <a href="javascript:change_oneclick('oneclick','Joonie<br>2.1.3','hen');">Joonie<br>2.1.3</a>
+        <a href="javascript:change_oneclick('oneclick','ciss84<br>hen301','hen301');">ciss84<br>hen301</a>
+        <a href="javascript:change_oneclick('oneclick','ciss84<br>hen300','hen300');">ciss84<br>hen300</a>
     </div>
     </div>
 </div>
@@ -131,7 +131,7 @@
 <script>
 window.msgs.innerHTML="<div class='processing'></div><h1 style='font-size:25px;color:red;text-align:center;'>初始化 请稍等 ！！！</h1>";
 auto_jb(1);
-var IdMap = ["Zerofo hen","zerofo"];
+var IdMap = ["notzecoxao<br>henVR9.99","zhen"];
 var Name=localStorage.getItem("oneclickName");
 var Value=localStorage.getItem("oneclickVAL");
 if (Name==null||Value==null){Name=IdMap[0]; Value=IdMap[1];}
@@ -146,7 +146,7 @@ setTimeout(function(){
     var jb_status=sessionStorage.getItem('jb_status');
     if(jb_status=='1'){window.msgs.innerHTML="<h1 style='font-size:25px;color:green;text-align:center;'>已执行 破解。</h1><br>若未成功(破解后-跳窗前 内存不足) 请重启 或 关闭浏览器后 再试。"}
     else if(sw=='1'&&jb_status!='1'){sessionStorage.setItem('jb_status','1');load_exploit_mira()}
-},3500)}
+},5500)}
 else{window.msgs.innerHTML="<h1 style='font-size:25px;color:red;text-align:center;'> webkit 载入失败(无法自动破解)。请使用 ps4 重新打开网页</h1>";}
 </script>
 </body>

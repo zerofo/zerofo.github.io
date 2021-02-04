@@ -24,10 +24,14 @@ var loader_ = function(name,jb=0){
             setTimeout(function(){
 
                 LoadedMSG= "破解成功 + Mira/Hen 已加载。请等待 左上角 跳窗结束再操作";
+                setTimeout(function(){
+
                 document.getElementsByTagName('head')[0].appendChild(jbscript);
+                }, 800);
+
     		parent.oneclick2.style.display="none";
 	        parent.oneclick.style.display="block";
-            }, 600);
+            }, 1600);
             }
         }};
 };
