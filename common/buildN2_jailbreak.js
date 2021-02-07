@@ -36532,9 +36532,9 @@ delete __swbuf_addr;
 if (main_ret == 179 || main_ret == 0) {
 	delete main_ret;
 	    window.msgs.innerHTML="<div class='processing'></div><h1 style='color:green;font-size:25px;text-align:center;'>破解成功! ✔ 正在加载 Hen/Mira ...</h1>";
-	    setTimeout(function(){
+	    //setTimeout(function(){
 	    document.getElementsByTagName('head')[0].appendChild(loadbin);
-	    },1500);
+	    //},1500);
 } 
 else {
   window.msgs.innerHTML="<h1 style='color:red;font-size:25px;text-align:center;'>破解失败! <br> 请关机再开机重试.</h1>";

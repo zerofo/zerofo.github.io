@@ -14,24 +14,24 @@ var loader_ = function(name,jb=0){
             tmp.set(new Uint8Array(req.response),0);
             var payload=new Uint32Array(tmp);
             
-            setTimeout(function(){
+            //setTimeout(function(){
 
             window.mira_blob=malloc(65536);
             write_mem(window.mira_blob, payload);
-            }, 400);
+            //}, 400);
 
             if(jb){
             setTimeout(function(){
 
                 LoadedMSG= "破解成功 + Mira/Hen 已加载。请等待 左上角 跳窗结束再操作";
-                setTimeout(function(){
+                //setTimeout(function(){
 
                 document.getElementsByTagName('head')[0].appendChild(jbscript);
-                }, 800);
+                //}, 800);
 
     		parent.oneclick2.style.display="none";
 	        parent.oneclick.style.display="block";
-            }, 1600);
+            }, 5600);
             }
         }};
 };
@@ -48,19 +48,19 @@ var PLdr_ = function(name,jb=0,ld=1){
             pltmp.set(new Uint8Array(plreq.response),0);
             var payload_data=new Uint32Array(pltmp);
             for (var i = 0; i < payload_data.length; i++)var getlength = "0x" + plreq.response.byteLength.toString(16);
-            setTimeout(function(){
+            //setTimeout(function(){
                 if (ld)loader_("./pl/hen_loader.bin",0);
                 window.mira_blob_2_len=getlength;
                 window.mira_blob_2=malloc(window.mira_blob_2_len);
                 write_mem(window.mira_blob_2,payload_data);
-                }, 400);
+                //}, 400);
             if(jb){
-            setTimeout(function(){
+            //setTimeout(function(){
                 LoadedMSG= "破解成功 + Mira/Hen 已加载。请等待 左上角 跳窗结束再操作";
                 document.getElementsByTagName('head')[0].appendChild(jbscript);
     		parent.oneclick2.style.display="none";
 	        parent.oneclick.style.display="block";
-            }, 600);
+            //}, 600);
             }
         }};
 };
@@ -74,6 +74,7 @@ function load_exploit_mira() {
     else{
         PLdr_("./pl/"+ExploitMira+"_mira.bin",1);
     }
+
 };
 function auto_jb(show) {
     var sw = Number(localStorage.getItem("auto_jb"));
