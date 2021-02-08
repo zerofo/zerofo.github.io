@@ -21,17 +21,13 @@ var loader_ = function(name,jb=0){
             //}, 400);
 
             if(jb){
-            setTimeout(function(){
+            //setTimeout(function(){
 
                 LoadedMSG= "破解成功 + Mira/Hen 已加载。请等待 左上角 跳窗结束再操作";
-                //setTimeout(function(){
-
                 document.getElementsByTagName('head')[0].appendChild(jbscript);
-                //}, 800);
 
-    		parent.oneclick2.style.display="none";
-	        parent.oneclick.style.display="block";
-            }, 5600);
+
+            //}, 5600);
             }
         }};
 };
@@ -55,20 +51,17 @@ var PLdr_ = function(name,jb=0,ld=1){
                 write_mem(window.mira_blob_2,payload_data);
                 //}, 400);
             if(jb){
-            //setTimeout(function(){
                 LoadedMSG= "破解成功 + Mira/Hen 已加载。请等待 左上角 跳窗结束再操作";
                 document.getElementsByTagName('head')[0].appendChild(jbscript);
-    		parent.oneclick2.style.display="none";
-	        parent.oneclick.style.display="block";
-            //}, 600);
+
             }
         }};
 };
 function load_exploit_mira() {
     msgs.innerHTML="<div class='processing'></div><h1 style='font-size:25px;text-align:center;'> 正在加载 Exploit + Mira ...</h1>";
     var ExploitMira=document.getElementById("oneclick").value;
-    parent.oneclick.style.display="none";
-    parent.oneclick2.style.display="block";
+    //parent.oneclick.style.display="none";
+    //parent.oneclick2.style.display="block";
 
     if((ExploitMira=='zerofo') || (ExploitMira=='zerofo2'))loader_("./pl/"+ExploitMira+"_loader.bin",1);
     else{
@@ -125,5 +118,4 @@ function load_script(name) {
     setTimeout(function(){
     document.getElementsByTagName('head')[0].appendChild(binload);
     }, 1300);
-
 };
