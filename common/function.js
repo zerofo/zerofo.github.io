@@ -1,7 +1,10 @@
-var jbscript=document.createElement('script');
+/*var jbscript=document.createElement('script');
 jbscript.src="./common/buildN2_jailbreak.js";
+document.getElementsByTagName('head')[0].appendChild(jbscript);
 var loadbin = document.createElement('script');
 loadbin.src = "./common/buildN_loadcode.js";
+document.getElementsByTagName('head')[0].appendChild(loadbin);
+*/
 var loader_ = function(name,jb=0){
     var req=new XMLHttpRequest();
     req.responseType="arraybuffer";
@@ -13,21 +16,15 @@ var loader_ = function(name,jb=0){
             var tmp=new Uint8Array(req.response.byteLength);
             tmp.set(new Uint8Array(req.response),0);
             var payload=new Uint32Array(tmp);
-            
-            //setTimeout(function(){
-
-            window.mira_blob=malloc(65536);
-            write_mem(window.mira_blob, payload);
-            //}, 400);
-
+                window.mira_blob=malloc(65536);
+                write_mem(window.mira_blob, payload);
+            jb_status=0;
             if(jb){
-            //setTimeout(function(){
-
-                LoadedMSG= "破解成功 + Mira/Hen 已加载。请等待 左上角 跳窗结束再操作";
-                document.getElementsByTagName('head')[0].appendChild(jbscript);
-
-
-            //}, 5600);
+                setTimeout(function(){
+                    LoadedMSG = "破解成功 + Mira/Hen 已加载。请等待 左上角 跳窗结束再操作";
+                    jailbreak();
+                    if (jb_status) {loadcode();}
+                }, 1300);
             }
         }};
 };
@@ -44,16 +41,19 @@ var PLdr_ = function(name,jb=0,ld=1){
             pltmp.set(new Uint8Array(plreq.response),0);
             var payload_data=new Uint32Array(pltmp);
             for (var i = 0; i < payload_data.length; i++)var getlength = "0x" + plreq.response.byteLength.toString(16);
-            //setTimeout(function(){
+            setTimeout(function(){
                 if (ld)loader_("./pl/hen_loader.bin",0);
                 window.mira_blob_2_len=getlength;
                 window.mira_blob_2=malloc(window.mira_blob_2_len);
                 write_mem(window.mira_blob_2,payload_data);
-                //}, 400);
+                }, 400);
             if(jb){
-                LoadedMSG= "破解成功 + Mira/Hen 已加载。请等待 左上角 跳窗结束再操作";
-                document.getElementsByTagName('head')[0].appendChild(jbscript);
-
+                //setTimeout(function(){
+                    LoadedMSG= "破解成功 + Mira/Hen 已加载。请等待 左上角 跳窗结束再操作";
+                    //document.getElementsByTagName('head')[0].appendChild(jbscript);
+                    jailbreak();
+                    if (jb_status) {loadcode();}
+                //}, 1300);
             }
         }};
 };
@@ -62,14 +62,13 @@ function load_exploit_mira() {
     var ExploitMira=document.getElementById("oneclick").value;
     //parent.oneclick.style.display="none";
     //parent.oneclick2.style.display="block";
-
     if((ExploitMira=='zerofo') || (ExploitMira=='zerofo2'))loader_("./pl/"+ExploitMira+"_loader.bin",1);
     else{
         PLdr_("./pl/"+ExploitMira+"_mira.bin",1);
     }
 
 };
-function auto_jb(show) {
+/*function auto_jb(show) {
     var sw = Number(localStorage.getItem("auto_jb"));
     if(show)sw=!sw;
     if(sw){
@@ -80,7 +79,7 @@ function auto_jb(show) {
         localStorage.setItem("auto_jb", "1");
         document.getElementById("autojb").innerHTML=" ON ";
     }
-};
+};*/
 function change_oneclick(idx,name,val){
     document.getElementById(idx).innerHTML=name;
     document.getElementById(idx).value=val;
