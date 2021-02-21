@@ -48,12 +48,12 @@ var PLdr_ = function(name,jb=0,ld=1){
                 write_mem(window.mira_blob_2,payload_data);
                 }, 400);
             if(jb){
-                //setTimeout(function(){
+                setTimeout(function(){
                     LoadedMSG= "破解成功 + Mira/Hen 已加载。请等待 左上角 跳窗结束再操作";
                     //document.getElementsByTagName('head')[0].appendChild(jbscript);
                     jailbreak();
                     if (jb_status) {loadcode();}
-                //}, 1300);
+                }, 1300);
             }
         }};
 };
