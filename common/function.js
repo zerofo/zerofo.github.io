@@ -103,8 +103,6 @@ function colorSwitch(btns){
 };
 function load_script(name) {
     msgs.innerHTML="<div class='processing'></div><h1 style='font-size:25px;text-align:center;'> 正在加载 "+name+" ...</h1>";
-    var binload=document.createElement('script');binload.src="./common/buildN_loadcode.js";
-
     if (name == "fan"){
     degree=parent.degree.value;
     var pl=document.createElement('script');
@@ -115,6 +113,7 @@ function load_script(name) {
     loader_("./pl/hen_loader.bin",0);
     LoadedMSG="已经成功载入 "+name+" 插件";
     setTimeout(function(){
-    document.getElementsByTagName('head')[0].appendChild(binload);
+    loadcode();
     }, 1300);
+    
 };
