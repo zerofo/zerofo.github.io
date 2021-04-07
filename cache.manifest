@@ -5,8 +5,6 @@ CACHE MANIFEST
 ./pl/pl_dumperIn1.bin
 ./pl/goldhen_mira.bin
 ./pl/hen300_mira.bin
-./pl/pl_SetcacheDB.bin
-./pl/pl_GetcacheDB.bin
 ./pl/hen213_mira.bin
 ./pl/pl_dumperDLC.bin
 ./pl/pl_app2usb.bin
