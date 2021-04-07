@@ -54,7 +54,7 @@ text-align: center;
 }
 .webname {
 margin: 0px;
-	
+
 text-align:center;
 background-color:var(--mainColor);
 color:var(--fontColor);
@@ -169,4 +169,7 @@ font-size: 24px;
 }
 .cache {
 background-color:var(--spesColor);
+}
+h1,h2,h3 {
+cursor:pointer;
 }
