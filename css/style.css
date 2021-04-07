@@ -23,6 +23,9 @@ body,html,div,table,a{
 text-align: center;
 margin: auto;
 }
+h1,h2,h3 {
+cursor:pointer;
+}
 #fixedLayer{
 width:240px;
 padding-top: 20px;
@@ -83,7 +86,6 @@ width:160px;
 height:65px;
 border:none;
 padding:5px;
-cursor:pointer;
 }
 .dropdown {
 vertical-align: top;
@@ -169,7 +171,4 @@ font-size: 24px;
 }
 .cache {
 background-color:var(--spesColor);
-}
-h1,h2,h3 {
-cursor:pointer;
 }
