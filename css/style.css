@@ -53,20 +53,19 @@ font-size: 18px;
 text-align: center;
 }
 .webname {
+margin: 0px;
+	
 text-align:center;
 background-color:var(--mainColor);
 color:var(--fontColor);
 font-size:40px;
 padding:5px;
 }
-.webname a{
-text-decoration:none;
-color:var(--fontColor);
-}
 #pl_switch{
 display:none;
 width:40px;
-height:105px;
+height:110px;
+line-height:110px;
 }
 .onea{
 border-radius: 6px;
@@ -75,9 +74,11 @@ font-size:30px;
 }
 #oneclick{
 display:none;
+margin: 0px;
 height:105px;
 font-size: 30px;
 min-width:235px;
+text-decoration:none;
 }
 .dropbtn {
 background-color:var(--mainColor);
@@ -102,7 +103,7 @@ background-color:var(--subColor);
 min-width:160px;
 box-shadow:0px 16px 16px 0px rgba(0,0,0,0.2);
 }
-.dropdown-content a {
+.pllink {
 border:none;
 border-radius: 6px;
 color:black;
@@ -110,8 +111,9 @@ padding:12px 10px;
 text-decoration:none;
 display:block;
 font-size:20px;
+margin: 0px;
 }
-.dropdown-content a:hover {
+.pllink:hover {
 background-color:var(--attendColor);
 color:var(--fontColor);
 }
@@ -150,7 +152,7 @@ min-height: 55px;
 margin-top:-300px;
 margin-left:35px;
 }
-.diy-dropdown-content a {
+.link{
 min-width:160px;
 min-height: 30px;
 }
