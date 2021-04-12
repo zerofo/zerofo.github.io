@@ -11605,5 +11605,7 @@ delete __swbuf_addr;
 if(main_ret==179|| main_ret==0){                          
     delete main_ret;
     window.msgs.innerHTML="<h1 style='font-size:25px;color:green;text-align:center;'>"+LoadedMSG+"</h1>";
+}else{
+	window.msgs.innerHTML="<h1 style='color:red;font-size:25px;text-align:center;'>失败! <br> 请关机再开机重试.<br>"+main_ret+"</h1>";
 }
 }

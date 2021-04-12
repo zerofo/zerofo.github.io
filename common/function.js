@@ -1,59 +1,51 @@
-var loader_ = function(name,jb=0){
-    var req=new XMLHttpRequest();
-    req.responseType="arraybuffer";
-    req.open("GET",name,true);
-    req.send();
-    req.onreadystatechange=function(){
-        if(req.readyState==4)
-        {
-            var tmp=new Uint8Array(req.response.byteLength);
-            tmp.set(new Uint8Array(req.response),0);
-            var payload=new Uint32Array(tmp);
-                window.ldr_bin=malloc(65536);
-                write_mem(window.ldr_bin, payload);
-            //jb_status=0;
-            if(jb){
-                setTimeout(function(){
-                    LoadedMSG = "破解成功 + Mira/Hen 已加载。\n请等待 左上角 跳窗结束再操作";
-                    jailbreak();
-                    //if (jb_status) {loadcode();}
+function getfile(path) {
+  return fetch(path)
+    .then(function(response) {
+      return response.blob();
+    })
+    .then(function(data) {
+      return data;
+    })
+}
+var loader_ = async function(name,jb=0,pl=0){
+    file = await getfile(name);
+    data = await new Response(file).arrayBuffer()
+    var tmp=new Uint8Array(data.byteLength);
+    tmp.set(new Uint8Array(data),0);
+    var payload=new Uint32Array(tmp);
 
-                }, 1300);
-            }
-        }};
-};
+    if (pl) {
+        var getlength = payload.length;
+        window.pl_bin_len=getlength;
+        window.pl_bin=malloc(window.pl_bin_len);
+        write_mem(window.pl_bin,payload);
+    }
+    else{
+        window.ldr_bin=malloc(65536);
+        write_mem(window.ldr_bin, payload);
+    }
+    if(jb){
+        setTimeout(function(){
+            LoadedMSG = "破解成功 + Mira/Hen 已加载。\n请等待 左上角 跳窗结束再操作";
+            jailbreak();
+        }, 1300);
+    }
+}
 
 var PLdr_ = function(name,jb=0,ld=1){
-    var plreq=new XMLHttpRequest();
-    plreq.responseType="arraybuffer";
-    plreq.open("GET",name,true);
-    plreq.send();
-    
-    plreq.onreadystatechange=function(){
-        if(plreq.readyState==4)
-        {
-            //jb_status=0;
+    if (ld)loader_("./pl/hen_loader.bin",0);
+    setTimeout(function(){
 
-            var pltmp=new Uint8Array(plreq.response.byteLength);
-            pltmp.set(new Uint8Array(plreq.response),0);
-            var payload_data=new Uint32Array(pltmp);
-            for (var i = 0; i < payload_data.length; i++)var getlength = "0x" + plreq.response.byteLength.toString(16);
-            setTimeout(function(){
-                if (ld)loader_("./pl/hen_loader.bin",0);
-                window.pl_bin_len=getlength;
-                window.pl_bin=malloc(window.pl_bin_len);
-                write_mem(window.pl_bin,payload_data);
-                }, 400);
-            if(jb){
-                setTimeout(function(){
-                    LoadedMSG= "破解成功 + Mira/Hen 已加载。\n请等待 左上角 跳窗结束再操作";
-                    //document.getElementsByTagName('head')[0].appendChild(jbscript);
-                    jailbreak();
-                    //if (jb_status) {loadcode();}
-                }, 1300);
-            }
-        }};
-};
+    loader_(name,0,1);
+    }, 300);
+    if(jb){
+        setTimeout(function(){
+            LoadedMSG= "破解成功 + Mira/Hen 已加载。\n请等待 左上角 跳窗结束再操作";
+            jailbreak();
+        }, 800);
+    }
+}
+
 function load_exploit_mira() {
     msgs.innerHTML="<div class='processing'></div><h1 style='font-size:25px;text-align:center;'> 正在加载 Exploit + Mira ...</h1>";
     var ExploitMira=document.getElementById("oneclick").value;
@@ -72,18 +64,6 @@ function load_exploit_mira() {
     }
 
 };
-/*function auto_jb(show) {
-    var sw = Number(localStorage.getItem("auto_jb"));
-    if(show)sw=!sw;
-    if(sw){
-        localStorage.setItem("auto_jb", "0");
-        document.getElementById("autojb").innerHTML="OFF";
-    }
-    else{
-        localStorage.setItem("auto_jb", "1");
-        document.getElementById("autojb").innerHTML=" ON ";
-    }
-};*/
 function change_oneclick(idx,name,val){
     document.getElementById(idx).innerHTML=name;
     document.getElementById(idx).value=val;
@@ -114,7 +94,6 @@ function load_script(name) {
     document.getElementsByTagName('head')[0].appendChild(pl);
     }
     else if (name != "binLoader") loader_("./pl/pl_"+name+".bin",0,0);
-    //loader_("./pl/hen_loader.bin",0);
     LoadedMSG="已经成功载入 "+name+" 插件";
     setTimeout(function(){
     loadcode();
