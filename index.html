@@ -129,10 +129,10 @@
 <script>
 fail_times = Number(localStorage.getItem("fail_times"))||0;
 jb_times = Number(localStorage.getItem("jb_times"))||0;
+
 document.getElementById("fail_times").innerHTML="失败次数: "+String(fail_times);
 document.getElementById("jb_times").innerHTML="成功次数: "+String(jb_times);
 window.msgs.innerHTML="<div class='processing'></div><h1 style='font-size:25px;color:red;text-align:center;'>初始化 请稍等 ！！！</h1>";
-/*auto_jb(1);*/
 var IdMap = ["Zerofo<br>hen2.1.3","zerofo"];
 var Name=localStorage.getItem("oneclickName");
 var Value=localStorage.getItem("oneclickVAL");
