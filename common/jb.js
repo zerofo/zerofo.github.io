@@ -1,4 +1,4 @@
-var jailbreak = function(){
+var jailbreak =function(){
 var ropchain_array = new Uint32Array(155728);
 var ropchain = read_ptr_at(addrof(ropchain_array)+0x10);
 var ropchain_offset = 2;
@@ -41253,7 +41253,6 @@ else {
     window.msgs.innerHTML="<h1 style='color:red;font-size:25px;text-align:center;'>破解失败! <br> 请关机再开机重试.<br>"+main_ret+"</h1>";
     localStorage.setItem("fail_times", fail_times);
 	document.getElementById("fail_times").innerHTML="失败次数: "+String(fail_times);
-    
     delete ropchain;
     delete leaker_obj;
     delete leaker_arr;
