@@ -29,7 +29,7 @@ var loader_ = async function(name,jb=0,pl=0){
         setTimeout(function(){
             LoadedMSG = "破解成功 + Mira/Hen 已加载。\n请等待 左上角 跳窗结束再操作";
             jailbreak();
-        }, 800);
+        }, 1300);
     }
 }
 
@@ -42,7 +42,7 @@ var PLdr_ = function(name,jb=0,ld=1){
         setTimeout(function(){
             LoadedMSG= "破解成功 + Mira/Hen 已加载。\n请等待 左上角 跳窗结束再操作";
             jailbreak();
-        }, 800);
+        }, 1300);
 
     }
 }
