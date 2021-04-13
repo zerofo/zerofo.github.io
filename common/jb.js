@@ -1,4 +1,4 @@
-var jailbreak =function(){
+var jailbreak = function(){
 var ropchain_array = new Uint32Array(155728);
 var ropchain = read_ptr_at(addrof(ropchain_array)+0x10);
 var ropchain_offset = 2;
@@ -41236,15 +41236,15 @@ delete ropchain_offset;
 delete printf_buf_offset;
 delete __swbuf_addr;
 if (main_ret == 179 || main_ret == 0) {
+    //delete main_ret;
     window.msgs.innerText=LoadedMSG;
 
     fail_times = Number(localStorage.getItem("fail_times"))||0;
     jb_times = Number(localStorage.getItem("jb_times"))||0;
-
-	fail_times-=1;
-	jb_times+=1;
-	localStorage.setItem("fail_times", fail_times);
-	localStorage.setItem("jb_times", jb_times);
+    fail_times-=1;
+    jb_times+=1;
+    localStorage.setItem("fail_times", fail_times);
+    localStorage.setItem("jb_times", jb_times);
 	document.getElementById("fail_times").innerHTML="失败次数: "+String(fail_times);
 	document.getElementById("jb_times").innerHTML="成功次数: "+String(jb_times);
 
