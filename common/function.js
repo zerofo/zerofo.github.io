@@ -48,7 +48,7 @@ var PLdr_ = function(name,jb=0,ld=1){
 }
 
 function load_exploit_mira() {
-    msgs.innerHTML="<div class='processing'></div><h1 style='font-size:25px;text-align:center;'> 正在加载 Exploit + Mira ...</h1>";
+    msgs.innerHTML="<div class='processing'></div><h1 style='font-size:25px;text-align:center;'> 正在加载 Exploit + Mira ...<br> 如果等待时间稍长请立即重启</h1>";
     var ExploitMira=document.getElementById("oneclick").value;
     fail_times = Number(localStorage.getItem("fail_times"))||0;
     localStorage.setItem("fail_times", fail_times+1);
