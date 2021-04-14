@@ -37,7 +37,7 @@ var PLdr_ = function(name,jb=0,ld=1){
     if (ld)loader_("./pl/hen_loader.bin",0);
     setTimeout(function(){
     loader_(name,0,1);
-    }, 500);
+    }, 100);
     if(jb){
         setTimeout(function(){
             LoadedMSG= "破解成功 + Mira/Hen 已加载。\n请等待 左上角 跳窗结束再操作";

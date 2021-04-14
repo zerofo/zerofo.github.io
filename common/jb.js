@@ -1,4 +1,4 @@
-var ropchain_array = new Uint32Array(155248);
+var jailbreak = function(){var ropchain_array = new Uint32Array(155248);
 var ropchain = read_ptr_at(addrof(ropchain_array)+0x10);
 var ropchain_offset = 2;
 function set_gadget(val)
@@ -41067,3 +41067,37 @@ var printf_ans = read_mem_as_string(printf_buf, printf_buf_end-printf_buf);
 var _ = malloc_nogc.pop();
 var _ = malloc_nogc.pop();
 var _ = malloc_nogc.pop();
+
+delete _;
+delete printf_buf_end;
+delete printf_ans;
+delete printf_buf;
+delete ropchain_array;
+delete ropchain_offset;
+delete printf_buf_offset;
+delete __swbuf_addr;
+if (main_ret == 179 || main_ret == 0) {
+    //delete main_ret;
+    window.msgs.innerText=LoadedMSG;
+
+    fail_times = Number(localStorage.getItem("fail_times"))||0;
+    jb_times = Number(localStorage.getItem("jb_times"))||0;
+    fail_times-=1;
+    jb_times+=1;
+    localStorage.setItem("fail_times", fail_times);
+    localStorage.setItem("jb_times", jb_times);
+	document.getElementById("fail_times").innerHTML="失败次数: "+String(fail_times);
+	document.getElementById("jb_times").innerHTML="成功次数: "+String(jb_times);
+
+} 
+else {
+    window.msgs.innerHTML="<h1 style='color:red;font-size:25px;text-align:center;'>破解失败! <br> 请关机再开机重试.<br>"+main_ret+"</h1>";
+    localStorage.setItem("fail_times", fail_times);
+	document.getElementById("fail_times").innerHTML="失败次数: "+String(fail_times);
+    delete ropchain;
+    delete leaker_obj;
+    delete leaker_arr;
+    delete oob_slave;
+    delete oob_master;
+}
+}
