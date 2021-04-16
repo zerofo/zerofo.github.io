@@ -26,6 +26,19 @@ margin: auto;
 h1,h2,h3 {
 cursor:pointer;
 }
+.btn-twinkle{
+    animation: fade-in 5s alternate 1;
+    /*transition: show 5s;*/
+}
+@keyframes fade-in {  
+    0% {opacity: 0;}/*初始状态 透明度为0*/  
+    40% {opacity: 0;}/*过渡状态 透明度为0*/  
+    100% {opacity: 1;}/*结束状态 透明度为1*/  
+}  
+@keyframes moving {  
+    from {left:  30%;}/*初始状态 透明度为0*/  
+    to {right: : 80%;}/*过渡状态 透明度为0*/  
+}  
 #fixedLayer{
 width:240px;
 padding-top: 20px;
@@ -46,7 +59,6 @@ border-top: 4px solid var(--attendColor);
 border-left: 4px solid var(--attendColor);
 width: 10px;
 height: 10px;
--webkit-animation: spin 1s linear infinite;
 animation: spin 1s linear infinite;
 }
 .select_btn {
@@ -65,13 +77,13 @@ font-size:40px;
 padding:5px;
 }
 #pl_switch{
-display:none;
+display: none;
 width:40px;
 height:110px;
 line-height:110px;
 }
 #oneclick{
-display:none;
+display: none;
 margin: 0px;
 height:105px;
 font-size: 30px;
@@ -86,6 +98,8 @@ width:160px;
 height:65px;
 border:none;
 padding:5px;
+padding-top: 15px;
+
 }
 .dropdown {
 vertical-align: top;

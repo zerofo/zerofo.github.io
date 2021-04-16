@@ -18,6 +18,7 @@
     if (themeVal > 2)themeVal=0;
     document.documentElement.setAttribute('theme', cmap[themeVal]);
     localStorage.setItem('themeVal',themeVal);
+    return;
 };
 </script>
 
@@ -121,12 +122,13 @@
         </div>
     </div>
 </div>
+<div id='ing' class='processing' visibility='hidden'></div>
     <h2 id="msgs" style="min-height:38px;"></h2>
 <h1>一键⇩破解</h1>
 <div style="display:inline-block;">
-    <h3 id="oneclick" class="dropbtn diy-btn" style="padding-top: 4px;" onclick="load_exploit_mira();" value="zerofo">Zerofo hen</h3>
+    <h3 id="oneclick" class="dropbtn diy-btn btn-twinkle" style="padding-top: 4px;" onclick="load_exploit_mira();" value="zerofo">Zerofo hen</h3>
     <div class="dropdown">
-    <h2 id="pl_switch" class="diy-drop">▶</h2>
+    <h2 id="pl_switch" class="diy-drop btn-twinkle">▶</h2>
     <div class="dropdown-content diy-dropdown-content">
         <h3 class='link pllink' onclick="change_oneclick('oneclick','SiSTRo<br>GoldHen1.1', 'goldhen');">SiSTRo<br>GoldHen1.1</h3>
         <h3 class='link pllink' onclick="change_oneclick('oneclick','Zerofo<br>hen2.1.3', 'zerofo');">Zerofo<br>hen2.1.3</h3>
@@ -142,13 +144,15 @@
 <div style="width: 70%;">
 <hr>问题反馈 emptytaboo@gmail.com 或者 91联系我, 可加QQ(私下邮箱或者91 咨要)
 </div>
+<div id='timeC'  style="visibility='hidden'"></div>
 <script>
 fail_times = Number(localStorage.getItem("fail_times"))||0;
 jb_times = Number(localStorage.getItem("jb_times"))||0;
 
 document.getElementById("fail_times").innerHTML="失败次数: "+String(fail_times);
 document.getElementById("jb_times").innerHTML="成功次数: "+String(jb_times);
-window.msgs.innerHTML="<div class='processing'></div><h1 style='font-size:25px;color:red;text-align:center;'>初始化 请稍等 ！！！</h1>";
+window.ing.style.visibility='visible';
+window.msgs.innerHTML="<h1 style='font-size:25px;color:red;text-align:center;'>初始化 请稍等 ！！！</h1>";
 var IdMap = ["Zerofo<br>hen2.1.3","zerofo"];
 var Name=localStorage.getItem("oneclickName");
 var Value=localStorage.getItem("oneclickVAL");
@@ -156,15 +160,30 @@ if (Name==null||Value==null){Name=IdMap[0]; Value=IdMap[1];}
 
 document.getElementById("oneclick").innerHTML=Name;
 document.getElementById("oneclick").value=Value;
-    
-if(WK)
-    setTimeout(function(){
-        window.msgs.innerHTML="<h1 style='font-size:25px;color:green;text-align:center;'> 初始化 完成 请 手动执行破解。</h1>";
-        document.getElementById("oneclick").style.display='block';
-        document.getElementById("pl_switch").style.display='block';
-    }, 5000);
-else
+
+function init_done(){
+    window.ing.style.visibility='hidden';
+    window.msgs.innerHTML="<h1 style='font-size:25px;color:green;text-align:center;'> 初始化 完成 , 手动执行破解。</h1>";
+    window.oneclick.removeEventListener("animationend", init_done);
+    return;
+}
+WK=1;
+if(WK){
+    document.getElementById("oneclick").style.display='block';
+    document.getElementById("pl_switch").style.display='block';
+    startTime = new Date(); 
+    window.oneclick.addEventListener("animationend", init_done);
+}
+else{
+    window.ing.style.visibility='hidden';
+    window.oneclick.removeEventListener("animationend", init_done);
+
     window.msgs.innerHTML="<h1 style='font-size:25px;color:red;text-align:center;'> webkit 载入失败(无法自动破解)。请使用 ps4 重新打开网页</h1>";
+}
+
+
+
+
 </script>
 </body>
 </html>
