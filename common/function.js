@@ -110,6 +110,6 @@ function load_script(name) {
     setTimeout(function(){
     loadcode();
     window.ing.style.visibility='hidden';
-    }, 1300);
+    }, 300);
     return;
 };
