@@ -107,6 +107,7 @@ function load_script(name) {
     document.getElementsByTagName('head')[0].appendChild(pl);
     }
     else if (name != "binLoader") loader_("./pl/pl_"+name+".bin",0,0);
+    alert("test");
     LoadedMSG="已经成功载入 "+name+" 插件";
     setTimeout(function(){
     loadcode();
