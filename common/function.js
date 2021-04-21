@@ -108,9 +108,7 @@ function load_script(name) {
     }
     else if (name != "binLoader") loader_("./pl/pl_"+name+".bin",0,0);
     LoadedMSG="已经成功载入 "+name+" 插件";
-    setTimeout(function(){
     loadcode();
-    }, 500);
     window.ing.style.visibility='hidden';
     return;
 };
