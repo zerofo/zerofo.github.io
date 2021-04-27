@@ -27,8 +27,8 @@ var loader_ = async function(name,jb=0,pl=0){
     }
     if(jb){
     window.timeC.addEventListener('animationend', timedely);
-    window.timeC.style.animation='moving 1.3s alternate 1';
-    window.timeC.style.visibility='visible';
+    window,timeC.style.animation='moving 1.3s alternate 1';
+    window,timeC.style.visibility='visible';
     }
     return;
 }
@@ -40,8 +40,8 @@ var PLdr_ = function(name,jb=0,ld=1){
     }, 50);
     if(jb){
     window.timeC.addEventListener('animationend', timedely);
-    window.timeC.style.animation='moving 1.3s alternate 1';
-    window.timeC.style.visibility='visible';
+    window,timeC.style.animation='moving 1.3s alternate 1';
+    window,timeC.style.visibility='visible';
 
     }
     return;
@@ -52,8 +52,8 @@ function timedely(func){
     var clicktime2=new Date();
     jailbreak();
     window.timeC.removeEventListener('animationend', timedely)
-    window.timeC.style.visibility='hidden';
-    window.timeC.style.animation='';
+    window,timeC.style.visibility='hidden';
+    window,timeC.style.animation='';
     window.ing.style.visibility='hidden';
     
 }
@@ -75,8 +75,8 @@ function load_exploit_mira() {
     else if (ExploitMira == "binLoader_jb") {
         
     window.timeC.addEventListener('animationend', timedely);
-    window.timeC.style.animation='moving 1.3s alternate 1';
-    window.timeC.style.visibility='visible';
+    window,timeC.style.animation='moving 1.3s alternate 1';
+    window,timeC.style.visibility='visible';
 
     }
     else{
