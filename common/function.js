@@ -105,9 +105,11 @@ function load_script(name) {
     pl.src="./pl/pl_"+name+".js";
     document.getElementsByTagName('head')[0].appendChild(pl);
     }
-    else if (name != "binLoader") loader_("./pl/pl_"+name+".bin",0,0);
+    else if (name != "binLoader") PLdr_("./pl/pl_"+name+".bin",0,1);
+    setTimeout(function(){
     LoadedMSG="已经成功载入 "+name+" 插件";
     loadcode();
     window.ing.style.visibility='hidden';
     return;
+    },500);
 };
