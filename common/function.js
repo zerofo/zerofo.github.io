@@ -50,7 +50,6 @@ var PLdr_ = function(name,jb=0,ld=1){
 function timedely(func){
     LoadedMSG= "破解成功 已加载。\n请等待 左上角 跳窗结束再操作";
     var clicktime2=new Date();
-    console.log(clicktime2.getTime()-clicktime.getTime());
     jailbreak();
     window.timeC.removeEventListener('animationend', timedely)
     window.timeC.style.visibility='hidden';
