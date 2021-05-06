@@ -27,8 +27,10 @@ var loader_ = async function(name,jb=0,pl=0){
     }
     if(jb){
     window.timeC.addEventListener('animationend', timedely);
-    window,timeC.style.animation='moving 1.3s alternate 1';
-    window,timeC.style.visibility='visible';
+    window.timeC.style.animation='moving 1s alternate 1';
+    window.timeC.style.webkitanimation='moving 1s alternate 1';
+
+    window.timeC.style.visibility='visible';
     }
     return;
 }
@@ -40,8 +42,10 @@ var PLdr_ = function(name,jb=0,ld=1){
     }, 50);
     if(jb){
     window.timeC.addEventListener('animationend', timedely);
-    window,timeC.style.animation='moving 1.3s alternate 1';
-    window,timeC.style.visibility='visible';
+    window.timeC.style.animation='moving 1s alternate 1';
+    window.timeC.style.webkitanimation='moving 1s alternate 1';
+
+    window.timeC.style.visibility='visible';
 
     }
     return;
@@ -51,9 +55,9 @@ function timedely(func){
     LoadedMSG= "破解成功 已加载。\n请等待 左上角 跳窗结束再操作";
     var clicktime2=new Date();
     jailbreak();
-    window.timeC.removeEventListener('animationend', timedely)
-    window,timeC.style.visibility='hidden';
-    window,timeC.style.animation='';
+    window.timeC.style.visibility='hidden';
+    window.timeC.style.animation='';
+    window.timeC.style.webkitanimation='';
     window.ing.style.visibility='hidden';
     
 }
@@ -65,8 +69,9 @@ function load_exploit_mira() {
         return;
     }
     window.ing.style.visibility='visible';
-
-    msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 正在加载 Exploit + Mira ...<br> 如果等待时间稍长请立即重启</h1>";
+    window.oneclick.style.visibility='hidden';
+    window.pl_switch.style.visibility='hidden';
+    msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 正在加载 Exploit + Mira ...</h1>";
     var ExploitMira=document.getElementById("oneclick").value;
     fail_times = Number(localStorage.getItem("fail_times"))||0;
     localStorage.setItem("fail_times", fail_times+1);
@@ -75,8 +80,10 @@ function load_exploit_mira() {
     else if (ExploitMira == "binLoader_jb") {
         
     window.timeC.addEventListener('animationend', timedely);
-    window,timeC.style.animation='moving 1.3s alternate 1';
-    window,timeC.style.visibility='visible';
+    window.timeC.style.animation='moving 1s alternate 1';
+    window.timeC.style.webkitanimation='moving 1s alternate 1';
+
+    window.timeC.style.visibility='visible';
 
     }
     else{

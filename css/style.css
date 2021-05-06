@@ -28,7 +28,7 @@ cursor:pointer;
 }
 .btn-twinkle{
     animation: fade-in 5s alternate 1;
-    /*transition: show 5s;*/
+    -webkit-animation: fade-in 5s alternate 1;
 }
 @keyframes fade-in {  
     0% {opacity: 0;}/*初始状态 透明度为0*/  
@@ -60,6 +60,8 @@ border-left: 4px solid var(--attendColor);
 width: 10px;
 height: 10px;
 animation: spin 1s linear infinite;
+-webkit-animation: spin 1s linear infinite;
+
 }
 .select_btn {
 background-color:var(--mainColor);
