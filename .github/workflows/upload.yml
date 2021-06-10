@@ -21,7 +21,8 @@ jobs:
         env:
           DEBIAN_FRONTEND: noninteractive
         run: |
-
+          sudo -E apt update
+          sudo -E apt install docker.io wget -y
           sudo -E apt-get -y autoremove --purge
           sudo -E apt-get clean
       - name: build 
