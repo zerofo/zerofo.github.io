@@ -30,7 +30,7 @@ jobs:
           cd ../
           sudo -E git clone https://github.com/zerofo/docker-8266-builder
           cd docker-8266-builder;
-          sudo sed -i "s/-it/-d/g" runsd.sh 
+          sudo sed -i "s/-it/-i/g" runsd.sh 
           sudo -E bash runsd.sh ../zerofo.github.io
       - name: upload binfile
         uses: actions/upload-artifact@v2
