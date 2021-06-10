@@ -34,6 +34,7 @@ jobs:
           sudo mkdir -p output
           sudo sed -i "s/\/:\/output/\/output:\/output/g" runsd.sh
           sudo -E bash runsd.sh ../zerofo.github.io
+          ls ./output/
       - name: upload binfile
         uses: actions/upload-artifact@v2
         with:
