@@ -32,8 +32,9 @@ jobs:
           cd docker-8266-builder;
           sudo -E bash rungit.sh ../zerofo.github.io
           ls ./output/
+          pwd
       - name: upload binfile
         uses: actions/upload-artifact@v2
         with:
           name: 8266_bin
-          path: ../docker-8266-builder/output/
+          path: output/
