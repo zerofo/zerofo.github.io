@@ -46,7 +46,7 @@ jobs:
           sudo -E cp ./docker-8266-builder/Ps4-wifi-http /Ps4-wifi-http -rf
           sudo -E mkdir -p /output
           sudo -E bash /mk8266.sh
-          if ( 'cat zerofo.github.io/.github/packup' -eq 1 ); then sudo -E BaiduPCS-Py upload /output/*.zip /8266/8266bin/672/; else echo "此commit 不打包" fi;
+          if [ `cat zerofo.github.io/.github/packup` -eq 1 ]; then sudo -E BaiduPCS-Py upload /output/*.zip /8266/8266bin/672/; else echo "此commit 不打包"; fi;
           
       - name: upload binfile
         uses: actions/upload-artifact@v2
