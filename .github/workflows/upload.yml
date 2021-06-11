@@ -32,10 +32,10 @@ jobs:
             # 注意替换为你的 Gitee 仓库
             gitee-repo: zerofo/c672
             
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          ref: 672
+      #- name: Checkout
+        #uses: actions/checkout@v2
+        #with:
+        #  ref: 672
 
       - name: cleanup & env setup
         env:
