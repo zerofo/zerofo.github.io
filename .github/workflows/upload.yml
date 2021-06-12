@@ -50,7 +50,7 @@ jobs:
           sudo -E curl -sSLo mklittlefs.tar.gz https://github.com/earlephilhower/mklittlefs/releases/download/3.0.0/x86_64-linux-gnu-mklittlefs-295fe9b.tar.gz 
           sudo -E tar xfz mklittlefs.tar.gz -C /bin/ --strip-components=1
           sudo -E rm mklittlefs.tar.gz
-          sudo -E arduino-cli core install esp8266:esp8266 --additional-urls http://arduino.esp8266.com/stable/package_esp8266com_index.json 
+          sudo -E arduino-cli core install esp8266:esp8266:2.7.4 --additional-urls http://arduino.esp8266.com/stable/package_esp8266com_index.json 
           sudo -E arduino-cli core upgrade --additional-urls http://arduino.esp8266.com/stable/package_esp8266com_index.json 
           sudo -E arduino-cli lib upgrade --additional-urls http://arduino.esp8266.com/stable/package_esp8266com_index.json 
           sudo -E arduino-cli lib install SdFat --additional-urls http://arduino.esp8266.com/stable/package_esp8266com_index.json
