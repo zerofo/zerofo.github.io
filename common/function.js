@@ -35,11 +35,10 @@ var loader_ = async function(name,jb=0,pl=0){
     return;
 }
 
-var PLdr_ = function(name,jb=0,ld=1){
+var PLdr_ = function(name,jb=0,ld=1,timedelay=50){
     if (ld)loader_("./pl/hen_loader.bin",0);
     setTimeout(function(){
     loader_(name,0,1);
-    }, 50);
     if(jb){
     window.timeC.addEventListener('animationend', timedely);
     window.timeC.style.animation='moving 1s alternate 1';
@@ -48,29 +47,22 @@ var PLdr_ = function(name,jb=0,ld=1){
     window.timeC.style.visibility='visible';
 
     }
+    }, timedelay);
     return;
 }
 
-function timedely2(func){
-    window.orbis.style.visibility='visible';
-    window.timeC.style.visibility='hidden';
-    window.timeC.style.animation='';
-    window.timeC.style.webkitanimation='';
-    window.ing.style.visibility='hidden';
-}
 function timedely(func){
     LoadedMSG= "破解成功 已加载。\n请等待 左上角 跳窗结束再操作";
     var clicktime2=new Date();
     jailbreak();
     window.timeC.style.visibility='hidden';
-    window.timeC.removeEventListener('animationend', timedely2);
+    window.timeC.removeEventListener('animationend', timedely);
 
-    window.timeC.addEventListener('animationend', timedely2);
-    window.timeC.style.animation='moving 1s alternate 1';
-    window.timeC.style.webkitanimation='moving 1s alternate 1';
-
-    window.timeC.style.visibility='visible';
+    window.timeC.style.visibility='hidden';
+    window.timeC.style.animation='';
+    window.timeC.style.webkitanimation='';
     window.ing.style.visibility='hidden';
+
     
 }
 function load_exploit_mira() {
@@ -116,7 +108,9 @@ function change_oneclick(idx,name,val){
 function load_script(name) {
 
     window.ing.style.visibility='visible';
-
+    window.pl_bin=null;
+    window.pl_len=null;
+    window.ldr_bin=null;
     msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 正在加载 "+name+" ...</h1>";
     if (name == "fan"){
     degree=window.degree.value;
@@ -124,11 +118,14 @@ function load_script(name) {
     pl.src="./pl/pl_"+name+".js";
     document.getElementsByTagName('head')[0].appendChild(pl);
     }
-    else if (name != "binLoader") PLdr_("./pl/pl_"+name+".bin",0,1);
+    else if (name != "binLoader") {
+	    PLdr_("./pl/pl_"+name+".bin",0,1,300);
+	    PLdr_("./pl/pl_"+name+".bin",0,1,300);
+	}
     setTimeout(function(){
     LoadedMSG="已经成功载入 "+name+" 插件";
+    
     loadcode();
     window.ing.style.visibility='hidden';
-    return;
-    },500);
+    return;},2000);
 };
