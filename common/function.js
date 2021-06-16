@@ -52,7 +52,7 @@ var PLdr_ = function(name,jb=0,ld=1){
 }
 
 function timedely2(func){
-    window.obris.style.visibility='visible';
+    window.orbis.style.visibility='visible';
     window.timeC.style.visibility='hidden';
     window.timeC.style.animation='';
     window.timeC.style.webkitanimation='';
