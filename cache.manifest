@@ -4,15 +4,13 @@ CACHE MANIFEST
 ./pl/pl_dumper.bin
 ./pl/pl_dumperIn1.bin
 ./pl/goldhen_mira.bin
-./pl/hen300_mira.bin
-./pl/hen213_mira.bin
+./pl/Orbis.bin
 ./pl/pl_dumperDLC.bin
 ./pl/pl_app2usb.bin
 ./pl/pl_todex.bin
 ./pl/pl_linux3g.bin
 ./pl/pl_tokratos.bin
 ./pl/pl_dbBackup.bin
-./pl/hen301_mira.bin
 ./pl/hen_mira.bin
 ./pl/pl_saveBackup.bin
 ./pl/pl_toRestore.bin
