@@ -51,13 +51,25 @@ var PLdr_ = function(name,jb=0,ld=1){
     return;
 }
 
+function timedely2(func){
+    window.obris.style.visibility='visible';
+    window.timeC.style.visibility='hidden';
+    window.timeC.style.animation='';
+    window.timeC.style.webkitanimation='';
+    window.ing.style.visibility='hidden';
+}
 function timedely(func){
     LoadedMSG= "破解成功 已加载。\n请等待 左上角 跳窗结束再操作";
     var clicktime2=new Date();
     jailbreak();
     window.timeC.style.visibility='hidden';
-    window.timeC.style.animation='';
-    window.timeC.style.webkitanimation='';
+    window.timeC.removeEventListener('animationend', timedely2);
+
+    window.timeC.addEventListener('animationend', timedely2);
+    window.timeC.style.animation='moving 1s alternate 1';
+    window.timeC.style.webkitanimation='moving 1s alternate 1';
+
+    window.timeC.style.visibility='visible';
     window.ing.style.visibility='hidden';
     
 }
