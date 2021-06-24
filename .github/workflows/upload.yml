@@ -70,7 +70,7 @@ jobs:
           sudo -E mkdir -p /output
           sudo -E bash /mk8266.sh
           sudo -E mkdir /672;
-          sudo -E zip -r zerofo_672.zip /672/zerofo.github.io 
+          sudo -E zip -r /672/zerofo_672.zip ./zerofo.github.io 
           if [ `cat zerofo.github.io/.github/packup` -eq 1 ]; then sudo -E BaiduPCS-Py upload /output/*.zip /8266/8266固件包---bin/672/;sudo -E BaiduPCS-Py sync /672 /8266/网站_离线包/672/; else echo "此commit 不打包"; fi;
           
       - name: upload binfile
