@@ -1,9 +1,5 @@
 name: Sync
 
-on:
-  push:
-    branches: [ master ]
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -28,4 +24,4 @@ jobs:
           gitee-password: ${{ secrets.GITEE_PASSWORD }}
           # 注意替换为你的 Gitee 仓库
           gitee-repo: zerofo/zerofo
-          branch: 672
+
