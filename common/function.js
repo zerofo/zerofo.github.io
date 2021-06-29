@@ -84,7 +84,7 @@ function load_exploit_mira() {
     
     if(ExploitMira=='zerofo') loader_("./pl/"+ExploitMira+"_loader.bin",1);
     else if (ExploitMira == "binLoader_jb") {
-    msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 已加载 binLoader 9020端口 ...</h1>";
+    msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 已加载 binLoader 请发送 9020端口 左上角没有提示！！！</h1>";
         
     window.timeC.addEventListener('animationend', timedely);
     window.timeC.style.animation='moving 1s alternate 1';
