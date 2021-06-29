@@ -40673,7 +40673,15 @@ if (main_ret == 179 || main_ret == 0) {
     localStorage.setItem("jb_times", jb_times);
 	document.getElementById("fail_times").innerHTML="失败次数: "+String(fail_times);
 	document.getElementById("jb_times").innerHTML="成功次数: "+String(jb_times);
+    sessionStorage.setItem("jb_done", 1);
+    window.pl_bin_len=getlength;
+    for(i=0;i<getlength;i++)
+    {
+        Cpayload[i]=null;
+    }
+    write_mem(window.pl_bin,Cpayload);
 
+    //read_ptr_at(0);
 } 
 else {
     window.msgs.innerHTML="<h1 style='color:red;font-size:25px;text-align:center;'>破解失败! <br> 请关机再开机重试.<br>"+main_ret+"</h1>";
