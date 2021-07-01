@@ -2,7 +2,7 @@ name: upload
 
 on:
   push:
-    branches: [ 672 ]
+    branches: [ n672 ]
 
 jobs:
   build:
@@ -14,7 +14,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          ref: 672
+          ref: n672
       - name: Sync to Gitee
         uses: wearerequired/git-mirror-action@master
         env:
@@ -24,7 +24,7 @@ jobs:
             # 注意替换为你的 GitHub 源仓库地址
             source-repo: "git@github.com:zerofo/zerofo.github.io.git"
             # 注意替换为你的 Gitee 目标仓库地址
-            destination-repo: "git@gitee.com:zerofo/c672.git"
+            destination-repo: "git@gitee.com:zerofo/n672.git"
 
       - name: Build Gitee Pages
         uses: yanglbme/gitee-pages-action@master
@@ -34,8 +34,8 @@ jobs:
             # 注意在 Settings->Secrets 配置 GITEE_PASSWORD
             gitee-password: ${{ secrets.GITEE_PASSWORD }}
             # 注意替换为你的 Gitee 仓库
-            gitee-repo: zerofo/c672
-            branch: 672
+            gitee-repo: zerofo/n672
+            branch: n672
             
 
 
@@ -61,7 +61,7 @@ jobs:
         run: |
           cd ../
           sudo -E git clone https://github.com/zerofo/docker-8266-builder
-          sudo -E sed -i "s/ps4-zerofo/ps4-zerofo---------github自动上传版本------Fat32格式_底包(修复 binload  增加提示。)----/g" ./docker-8266-builder/config.txt
+          sudo -E sed -i "s/ps4-zerofo/ps4-zerofo---------github自动上传版本------v2.0.0---/g" ./docker-8266-builder/config.txt
           sudo -E cp ./docker-8266-builder/config.txt /config.txt
           sudo -E cp ./docker-8266-builder/mk8266.sh /mk8266.sh
           sudo -E rm ./zerofo.github.io/zerofo.github.io.git -rf
