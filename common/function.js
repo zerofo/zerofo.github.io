@@ -56,8 +56,6 @@ function timedely(func){
     var clicktime2=new Date();
     jailbreak();
 
-
-    
 }
 
 function load_exploit_mira() {
@@ -70,6 +68,7 @@ function load_exploit_mira() {
     window.ing.style.visibility='visible';
     window.oneclick.style.visibility='hidden';
     window.pl_switch.style.visibility='hidden';
+    document.getElementById("onekey").style.display='none';
     msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 正在加载 Exploit + Hen ...<br>完成但  没有跳窗 请重启！！！<br> 时间太长请重启！！！</h1>";
     var ExploitMira=document.getElementById("oneclick").value;
     fail_times = Number(localStorage.getItem("fail_times"))||0;
@@ -88,7 +87,6 @@ function load_exploit_mira() {
         PLdr_("./pl/"+ExploitMira+"_mira.bin",1,timedelay=100);
     }
     startTime = new Date();
-
     return;
 };
 function change_oneclick(idx,name,val){
