@@ -29,7 +29,7 @@ var loader_ = async function(name,jb=0,pl=0){
         setTimeout(function(){
             LoadedMSG = "破解成功 + Mira/Hen 已加载。\n请等待 左上角 跳窗结束再操作";
             jailbreak();
-        }, 1300);
+        }, 800);
     }
 }
 
@@ -42,8 +42,7 @@ var PLdr_ = function(name,jb=0,ld=1){
         let jb_time = setTimeout(function(){
             LoadedMSG= "破解成功 + Mira/Hen 已加载。\n请等待 左上角 跳窗结束再操作";
             jailbreak();
-        }, 1300);
-        clearTimeout(jb_time);
+        }, 800);
 
     }
 }
@@ -59,8 +58,7 @@ function load_exploit_mira() {
         let jb_time = setTimeout(function(){
         LoadedMSG= "破解成功 已加载。\n请等待 左上角 跳窗结束再操作";
         jailbreak();
-        }, 1300);
-        clearTimeout(jb_time);
+        }, 800);
     }
     else{
         PLdr_("./pl/"+ExploitMira+"_mira.bin",1);
@@ -90,9 +88,9 @@ function load_script(name) {
     }
     else
         loader_("./pl/hen_loader.bin",0);
-        
+
     LoadedMSG="已经成功载入 "+name+" 插件";
     setTimeout(function(){
     loadcode();
-    }, 1300);
+    }, 800);
 };
