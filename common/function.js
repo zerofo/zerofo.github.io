@@ -39,10 +39,11 @@ var PLdr_ = function(name,jb=0,ld=1){
     loader_(name,0,1);
     }, 50);
     if(jb){
-        setTimeout(function(){
+        let jb_time = setTimeout(function(){
             LoadedMSG= "破解成功 + Mira/Hen 已加载。\n请等待 左上角 跳窗结束再操作";
             jailbreak();
         }, 1300);
+        clearTimeout(jb_time);
 
     }
 }
@@ -81,7 +82,15 @@ function load_script(name) {
     pl.src="./pl/pl_"+name+".js";
     document.getElementsByTagName('head')[0].appendChild(pl);
     }
-    else if (name != "binLoader") loader_("./pl/pl_"+name+".bin",0,0);
+    else if (name != "binLoader") {
+    setTimeout(function(){
+        loader_("./pl/pl_"+name+".bin",0,1);
+        loader_("./pl/hen_loader.bin",0);
+    },300);
+    }
+    else
+        loader_("./pl/hen_loader.bin",0);
+        
     LoadedMSG="已经成功载入 "+name+" 插件";
     setTimeout(function(){
     loadcode();
