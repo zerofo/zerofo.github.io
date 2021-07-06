@@ -27,8 +27,8 @@ var loader_ = async function(name,jb=0,pl=0){
     }
     if(jb){
     window.timeC.addEventListener('animationend', timedely);
-    window.timeC.style.animation='moving 0.8s alternate 1';
-    window.timeC.style.webkitanimation='moving 0.8s alternate 1';
+    window.timeC.style.animation='moving 1s alternate 1';
+    window.timeC.style.webkitanimation='moving 1s alternate 1';
 
     window.timeC.style.visibility='visible';
     }
@@ -46,8 +46,8 @@ var PLdr_ = function(name,jb=0,ld=1,timedelay=50/*,movetime='1.5'*/){
     loader_(name,0,1);
     }, 150);
     window.timeC.addEventListener('animationend', timedely);
-    window.timeC.style.animation='moving 0.8s alternate 1';
-    window.timeC.style.webkitanimation='moving 0.8s alternate 1';
+    window.timeC.style.animation='moving 1s alternate 1';
+    window.timeC.style.webkitanimation='moving 1s alternate 1';
 
     window.timeC.style.visibility='visible';
 
