@@ -51,9 +51,12 @@ jobs:
           sudo -E curl -sSLo mklittlefs.tar.gz https://github.com/earlephilhower/mklittlefs/releases/download/3.0.0/x86_64-linux-gnu-mklittlefs-295fe9b.tar.gz 
           sudo -E tar xfz mklittlefs.tar.gz -C /bin/ --strip-components=1
           sudo -E rm mklittlefs.tar.gz
-          sudo -E arduino-cli core install esp8266:esp8266@3.0.0 --additional-urls http://arduino.esp8266.com/stable/package_esp8266com_index.json 
-          sudo -E arduino-cli core upgrade --additional-urls http://arduino.esp8266.com/stable/package_esp8266com_index.json 
-          sudo -E arduino-cli lib upgrade --additional-urls http://arduino.esp8266.com/stable/package_esp8266com_index.json 
+          sudo -E arduino-cli config init && arduino-cli config add board_manager.additional_urls http://arduino.esp8266.com/stable/package_esp8266com_index.json
+          sudo -E arduino-cli core install esp8266:esp8266
+          sudo -E arduino-cli core upgrade
+          sudo -E arduino-cli lib install --git-url https://github.com/me-no-dev/ESPAsyncTCP.git
+          sudo -E arduino-cli lib install --git-url https://github.com/me-no-dev/ESPAsyncWebServer.git
+          sudo -E arduino-cli lib upgrade
           sudo -E apt-get -y autoremove --purge
           sudo -E apt-get clean
           echo ${{ secrets.BD_USS }} | BaiduPCS-Py useradd --cookies ${{ secrets.BD_COOKIE }} --bduss ${{ secrets.BD_USS }}
@@ -61,13 +64,13 @@ jobs:
         run: |
           cd ../
           sudo -E git clone https://github.com/zerofo/docker-8266-builder
-          sudo -E sed -i "s/ps4-zerofo/ps4-zerofo---------github自动上传版本------v2.1.0---/g" ./docker-8266-builder/config.txt
+          sudo -E sed -i "s/ps4-zerofo/ps4-zerofo---------github自动上传版本---全新测试底包---v2.1.0---/g" ./docker-8266-builder/config.txt
           sudo -E cp ./docker-8266-builder/config.txt /config.txt
           sudo -E cp ./docker-8266-builder/mk8266.sh /mk8266.sh
           sudo -E rm ./zerofo.github.io/zerofo.github.io.git -rf
           sudo -E cp ./zerofo.github.io /mk8266 -rf
           sudo -E ls /mk8266
-          sudo -E cp ./docker-8266-builder/Ps4-wifi-http /Ps4-wifi-http -rf
+          sudo -E cp ./docker-8266-builder/Ps4-wifi-http_async /Ps4-wifi-http -rf
           sudo -E mkdir -p /output
           sudo -E bash /mk8266.sh
           sudo -E mkdir /672;
