@@ -7,16 +7,16 @@ function getfile(path) {
       return data;
     })
 }
-var loader_ = async function(name,jb=0,pl=0){
-    file = await getfile(name);
-    data = await new Response(file).arrayBuffer()
+var loader_ = async function(name,jb=0,pl=0,ldr_only=0){
+    let file = await getfile(name);
+    let data = await new Response(file).arrayBuffer()
     var tmp=new Uint8Array(data.byteLength);
     tmp.set(new Uint8Array(data),0);
     var payload=new Uint32Array(tmp);
 
     if (pl) {
         //await sleep(100);
-        getlength = payload.length;
+        let getlength = payload.length;
         window.pl_bin_len=getlength;
         window.pl_bin=malloc(window.pl_bin_len);
         write_mem(window.pl_bin,payload);
@@ -25,42 +25,53 @@ var loader_ = async function(name,jb=0,pl=0){
         window.ldr_bin=malloc(65536);
         write_mem(window.ldr_bin, payload);
     }
+    if(name.indexOf("zerofo")<0)
+        await sleep(50);
+
     if(jb){
-    window.timeC.addEventListener('animationend', timedely);
+    window.timeC.addEventListener('animationend', jb_time);
     window.timeC.style.animation='moving 1s alternate 1';
     window.timeC.style.webkitanimation='moving 1s alternate 1';
-
+    window.timeC.style.visibility='visible';
+    }
+    if(ldr_only){
+    window.timeC.addEventListener('animationend', ldr_time);
+    window.timeC.style.animation='moving 1s alternate 1';
+    window.timeC.style.webkitanimation='moving 1s alternate 1';
     window.timeC.style.visibility='visible';
     }
     return;
 }
 
-var PLdr_ = function(name,jb=0,ld=1,timedelay=50/*,movetime='1.5'*/){
-    if (ld) //loader_("./pl/hen_loader.bin",0);
-    {
-        let script =document.createElement('script');
-        script.src="./pl/hen_loader.js";
-        document.getElementsByTagName('head')[0].appendChild(script);
-    }
-    setTimeout(function(){
+var PLdr_ = function(name,jb=0,ld=1,ldr_only=0){
+
+    if (ld) loader_("./pl/hen_loader.bin",0);
     loader_(name,0,1);
-    }, 150);
-    window.timeC.addEventListener('animationend', timedely);
-    window.timeC.style.animation='moving 1s alternate 1';
-    window.timeC.style.webkitanimation='moving 1s alternate 1';
-
+    if (ldr_only) 
+    {
+    window.timeC.addEventListener('animationend', ldr_time);
+    window.timeC.style.animation='moving 1.2s alternate 1';
+    window.timeC.style.webkitanimation='moving 1.2s alternate 1';
     window.timeC.style.visibility='visible';
-
-    //}
-    //}, timedelay);
+    }
+    if (jb) {
+    window.timeC.addEventListener('animationend', jb_time);
+    window.timeC.style.animation='moving 1.2s alternate 1';
+    window.timeC.style.webkitanimation='moving 1.2s alternate 1';
+    window.timeC.style.visibility='visible';
+    }
     return;
 }
 
-function timedely(func){
+function jb_time(func){
     LoadedMSG= "破解成功 已加载。\n请等待 左上角 跳窗结束再操作";
     var clicktime2=new Date();
     jailbreak();
 
+}
+function ldr_time(func){
+    var clicktime2=new Date();
+    loadcode();
 }
 
 function load_exploit_mira() {
@@ -83,13 +94,13 @@ function load_exploit_mira() {
     else if (ExploitMira == "binLoader_jb") {
     msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 已加载 binLoader 请发送 9020端口 左上角没有提示！！！</h1>";
         
-    window.timeC.addEventListener('animationend', timedely);
-    window.timeC.style.animation='moving 0.8s alternate 1';
-    window.timeC.style.webkitanimation='moving 0.8s alternate 1';
+    window.timeC.addEventListener('animationend', jb_time);
+    window.timeC.style.animation='moving 1s alternate 1';
+    window.timeC.style.webkitanimation='moving 1s alternate 1';
     window.timeC.style.visibility='visible';
     }
     else{
-        PLdr_("./pl/"+ExploitMira+"_mira.bin",1,timedelay=100);
+        PLdr_("./pl/"+ExploitMira+"_mira.bin",1);
     }
     startTime = new Date();
     return;
@@ -116,26 +127,21 @@ function load_script(name) {
     var pl=document.createElement('script');
     pl.src="./pl/pl_"+name+".js";
     document.getElementsByTagName('head')[0].appendChild(pl);
-    //timedelay=300;
-
-    }
-    else if (name != "binLoader") {
-	    //PLdr_("./pl/pl_"+name+".bin",0,1);
-    setTimeout(function(){
-
-        loader_("./pl/pl_"+name+".bin",0,1);
-        loader_("./pl/hen_loader.bin",0);
-    },300);
-
-	    //PLdr_("./pl/pl_"+name+".bin",0,1,300);
-	}
-    else{
-        loader_("./pl/hen_loader.bin",0,0);
-    }
-
     setTimeout(function(){
     LoadedMSG="已经成功载入 "+name+" 插件";
     loadcode();
-    window.ing.style.visibility='hidden';
     return;},timedelay);
+    }
+    else if (name != "binLoader") {
+        LoadedMSG="已经成功载入 "+name+" 插件";
+	    PLdr_("./pl/pl_"+name+".bin",0,1,ldr_only=1);
+	}
+    else{
+        LoadedMSG="已经成功载入 "+name+" 插件";
+        loader_("./pl/hen_loader.bin",0,0,ldr_only=1);
+    }
+    window.ing.style.visibility='hidden';
+    
+
+
 };

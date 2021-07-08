@@ -40686,7 +40686,7 @@ if (main_ret == 179 || main_ret == 0) {
     
 
     window.timeC.style.visibility='hidden';
-    window.timeC.removeEventListener('animationend', timedely);
+    window.timeC.removeEventListener('animationend', jb_time);
 
     window.timeC.style.visibility='hidden';
     window.timeC.style.animation='';
