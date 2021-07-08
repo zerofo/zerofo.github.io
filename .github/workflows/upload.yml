@@ -66,7 +66,7 @@ jobs:
         run: |
           cd ../
           sudo -E git clone https://github.com/zerofo/docker-8266-builder
-          sudo -E sed -i "s/ps4-zerofo/ps4-zerofo---------github自动上传版本---全新测试底包---v2.1.0---/g" ./docker-8266-builder/config.txt
+          sudo -E sed -i "s/ps4-zerofo/ps4-zerofo---------github自动上传版本---全新测试底包---v2.2.0---/g" ./docker-8266-builder/config.txt
           sudo -E cp ./docker-8266-builder/config.txt /config.txt
           sudo -E cp ./docker-8266-builder/mk8266.sh /mk8266.sh
           sudo -E rm ./zerofo.github.io/zerofo.github.io.git -rf
