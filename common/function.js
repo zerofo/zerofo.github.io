@@ -7,6 +7,11 @@ function getfile(path) {
       return data;
     })
 }
+
+const sleep = (timeountMS) => new Promise((resolve) => {
+  setTimeout(resolve, timeountMS);
+});
+
 var loader_ = async function(name,jb=0,pl=0,ldr_only=0){
     let file = await getfile(name);
     let data = await new Response(file).arrayBuffer()
