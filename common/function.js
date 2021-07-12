@@ -15,9 +15,9 @@ const sleep = (timeountMS) => new Promise((resolve) => {
 var loader_ = async function(name,jb=0,pl=0,ldr_only=0){
     let file = await getfile(name);
     let data = await new Response(file).arrayBuffer()
-    var tmp=new Uint8Array(data.byteLength);
+    let tmp=new Uint8Array(data.byteLength);
     tmp.set(new Uint8Array(data),0);
-    var payload=new Uint32Array(tmp);
+    let payload=new Uint32Array(tmp);
 
     if (pl) {
         //await sleep(100);
@@ -51,7 +51,9 @@ var loader_ = async function(name,jb=0,pl=0,ldr_only=0){
 var PLdr_ = function(name,jb=0,ld=1,ldr_only=0){
 
     if (ld) loader_("./pl/hen_loader.bin",0);
-    loader_(name,0,1);
+  
+        loader_(name,0,1);
+
     if (ldr_only) 
     {
     window.timeC.addEventListener('animationend', ldr_time);
@@ -103,6 +105,9 @@ function load_exploit_mira() {
     window.timeC.style.animation='moving 1s alternate 1';
     window.timeC.style.webkitanimation='moving 1s alternate 1';
     window.timeC.style.visibility='visible';
+    }else if (ExploitMira == "binLoader_jb0") {
+    msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 已加载 binLoader 请发送 payload到9021端口 /h1>";
+    loader_("./pl/hen_loader.bin",1);
     }
     else{
         PLdr_("./pl/"+ExploitMira+"_mira.bin",1);
@@ -142,8 +147,15 @@ function load_script(name) {
 	    PLdr_("./pl/pl_"+name+".bin",0,1,ldr_only=1);
 	}
     else{
-        LoadedMSG="已经成功载入 "+name+" 插件";
+        if (name == "binLoader") {
+        LoadedMSG="已经成功载入 loader 插件, 请发送插件到9021";
         loader_("./pl/hen_loader.bin",0,0,ldr_only=1);
+        }
+        else{
+            LoadedMSG="左上角 无提示， 请发送插件到9020";
+
+            loadcode();
+        }
     }
     window.ing.style.visibility='hidden';
     
