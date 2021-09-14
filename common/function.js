@@ -88,14 +88,16 @@ function load_exploit_mira() {
         alert("请等待按钮 完全显示(共5s)");
         return;
     }
+    fail_times = Number(localStorage.getItem("fail_times"))||0;
+    fail_times += 1
+    localStorage.setItem("fail_times", fail_times);
     window.ing.style.visibility='visible';
     window.oneclick.style.visibility='hidden';
     window.pl_switch.style.visibility='hidden';
     document.getElementById("onekey").style.display='none';
     msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 正在加载 Exploit + Hen ...<br>完成但  没有跳窗 请重启！！！<br> 时间太长请重启！！！</h1>";
     var ExploitMira=document.getElementById("oneclick").value;
-    fail_times = Number(localStorage.getItem("fail_times"))||0;
-    localStorage.setItem("fail_times", fail_times+1);
+
     
     if(ExploitMira=='zerofo') loader_("./pl/"+ExploitMira+"_loader.bin",1);
     else if (ExploitMira == "binLoader_jb") {
@@ -115,6 +117,29 @@ function load_exploit_mira() {
     startTime = new Date();
     return;
 };
+function move() {
+  window.myBar.style.visibility='visible';
+  
+  var elem = document.getElementById("myBar");   
+  var width = 1;
+  var id = setInterval(frame, 1000);
+  function frame() {
+    if (width >= 20) {
+        elem.innerHTML = 'reboot';
+      //window.msgs.innerHTML="<h1 style='color:red;font-size:25px;text-align:center;'>破解失败! <br> 请先长按退出关闭本网页。退出浏览器，长按"PS\"键关机再开机重试.<br>"+main_ret+"</h1>";
+        if (typeof(main_ret) == "undefined"){
+            main_ret='x'
+        }; 
+        window.msgs.innerHTML="<h1 style='color:red;font-size:25px;text-align:center;'>破解失败! "+main_ret+"<br> 1. 请先长按退出关闭本网页。<br>2. 退出浏览器<br> 3. 长按\"PS\"键关机再开机重试.<br></h1>";
+
+      clearInterval(id);
+    } else {
+      width++; 
+      elem.style.width = width + '%'; 
+      elem.innerHTML = width * 5  + '%';
+    }
+  }
+}
 function change_oneclick(idx,name,val){
     document.getElementById(idx).innerHTML=name;
     document.getElementById(idx).value=val;
@@ -124,7 +149,6 @@ function change_oneclick(idx,name,val){
 };
 
 function load_script(name) {
-
     window.ing.style.visibility='visible';
     window.pl_bin=null;
     window.pl_bin_len=null;

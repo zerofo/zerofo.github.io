@@ -30,6 +30,22 @@ cursor:pointer;
     animation: fade-in 5s alternate 1;
     -webkit-animation: fade-in 5s alternate 1;
 }
+#myProgress {
+
+  width: 100%;
+  /*background-color: #ddd;*/
+}
+
+#myBar {
+border-radius: 6px;
+	
+  width: 10%;
+  height: 30px;
+  background-color: red;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+}
 @keyframes fade-in {  
     0% {opacity: 0;}/*初始状态 透明度为0*/  
     40% {opacity: 0;}/*过渡状态 透明度为0*/  
