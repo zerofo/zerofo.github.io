@@ -83,7 +83,6 @@ function ldr_time(func){
 
 function load_exploit_mira() {
     clicktime = new Date();
-
     if ((clicktime.getTime()-startTime.getTime())<5000){
         alert("请等待按钮 完全显示(共5s)");
         return;
@@ -98,7 +97,6 @@ function load_exploit_mira() {
     msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 正在加载 Exploit + Hen ...<br>完成但  没有跳窗 请重启！！！<br> 时间太长请重启！！！</h1>";
     var ExploitMira=document.getElementById("oneclick").value;
 
-    
     if(ExploitMira=='zerofo') loader_("./pl/"+ExploitMira+"_loader.bin",1);
     else if (ExploitMira == "binLoader_jb") {
     msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 已加载 binLoader 请发送 9020端口 左上角没有提示！！！</h1>";
