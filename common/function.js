@@ -94,7 +94,7 @@ function load_exploit_mira() {
     window.oneclick.style.visibility='hidden';
     window.pl_switch.style.visibility='hidden';
     document.getElementById("onekey").style.display='none';
-    msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 正在加载 Exploit + Hen ...<br>完成但  没有跳窗 请重启！！！<br> 时间太长请重启！！！</h1>";
+    msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 正在加载 Exploit + Hen ...<br> 时间太长请重启！！！</h1>";
     var ExploitMira=document.getElementById("oneclick").value;
 
     if(ExploitMira=='zerofo') loader_("./pl/"+ExploitMira+"_loader.bin",1);
