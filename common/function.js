@@ -27,6 +27,8 @@ var loader_ = async function(name,jb=0,pl=0,ldr_only=0){
         write_mem(window.pl_bin,payload);
     }
     else{
+        window.pl_bin_len=0;
+
         window.ldr_bin=malloc(65536);
         write_mem(window.ldr_bin, payload);
     }
@@ -107,7 +109,7 @@ function load_exploit_mira() {
     window.timeC.style.visibility='visible';
     }else if (ExploitMira == "binLoader_jb0") {
     msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 已加载 binLoader 请发送 payload到9021端口 /h1>";
-    loader_("./pl/hen_loader.bin",1);
+    loader_("./pl/hen_loader_net.bin",1);
     }
     else{
         PLdr_("./pl/"+ExploitMira+"_mira.bin",1);
@@ -149,7 +151,7 @@ function load_script(name) {
     else{
         if (name == "binLoader") {
         LoadedMSG="已经成功载入 loader 插件, 请发送插件到9021";
-        loader_("./pl/hen_loader.bin",0,0,ldr_only=1);
+        loader_("./pl/hen_loader_net.bin",0,0,ldr_only=1);
         }
         else{
             LoadedMSG="左上角 无提示， 请发送插件到9020";

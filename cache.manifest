@@ -17,6 +17,7 @@ CACHE MANIFEST
 ./pl/pl_linux.bin
 ./pl/pl_historyBlocker.bin
 ./pl/hen_loader.bin
+./pl/hen_loader_net.bin
 ./pl/pl_dbRestore.bin
 ./pl/pl_disable-aslr.bin
 ./pl/zhen_mira.bin
