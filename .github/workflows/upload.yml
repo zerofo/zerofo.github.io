@@ -26,16 +26,16 @@ jobs:
             # 注意替换为你的 Gitee 目标仓库地址
             destination-repo: "git@gitee.com:zerofo/zerofo.git"
 
-      - name: Build Gitee Pages
-        uses: yanglbme/gitee-pages-action@master
-        with:
-            # 注意替换为你的 Gitee 用户名
-            gitee-username: zerofo
-            # 注意在 Settings->Secrets 配置 GITEE_PASSWORD
-            gitee-password: ${{ secrets.GITEE_PASSWORD }}
-            # 注意替换为你的 Gitee 仓库
-            gitee-repo: zerofo/zerofo
-            branch: l672
+     # - name: Build Gitee Pages
+     #   uses: yanglbme/gitee-pages-action@master
+     #   with:
+     #       # 注意替换为你的 Gitee 用户名
+     #       gitee-username: zerofo
+     #       # 注意在 Settings->Secrets 配置 GITEE_PASSWORD
+     #       gitee-password: ${{ secrets.GITEE_PASSWORD }}
+     #       # 注意替换为你的 Gitee 仓库
+     #       gitee-repo: zerofo/zerofo
+     #       branch: l672
             
 
 
