@@ -1,6 +1,7 @@
 function getfile(path) {
   return fetch(path)
     .then(function(response) {
+        if(response.ok)
       return response.blob();
     })
     .then(function(data) {
@@ -20,12 +21,14 @@ var loader_ = async function(name,jb=0,pl=0,ldr_only=0){
     let payload=new Uint32Array(tmp);
 
     if (pl) {
-        //await sleep(100);
+        if(jb==0)
+        await sleep(100);
+        window.other_hen=1;
+    
         let getlength = payload.length;
         window.pl_bin_len=getlength;
         window.pl_bin=malloc(window.pl_bin_len);
         write_mem(window.pl_bin,payload);
-        window.other_hen=1;
     }
     else{
         window.pl_bin_len=0;
