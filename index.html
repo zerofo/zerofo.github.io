@@ -24,7 +24,6 @@
 </script>
 
 <script src="./common/jb.js" defer></script>
-<script src="./common/ldr2.js" defer></script>
 <script src="./common/ldr.js" defer></script>
 <script src="./common/function.js" defer></script>
 <link id="css" rel="stylesheet prefetch" href="css/style.css">
@@ -33,10 +32,12 @@
 <body>
     <h1 class="webname" onclick="colorSwitch(1);"> 6.72折腾网站 by zerofo</h1><div id="fixedLayer">⇦点它切换颜色</div>
 <script>colorSwitch();</script>
+<div class="status" style="-webkit-column-count:3;width: 80%;">
+<div style="text-align:center;width:200px; font-size:25px;color:green;"><b id="jb_times">成功次数: xx</b></div>
+<div id="cached" style=";text-align:center;width:200px; font-size:25px;color:white;background-color: red;"><b >使用缓存状态:??</b></div>
 
-<div style="margin-left:26%;text-align:center;width:200px; font-size:25px;color:green;float: left;"><b id="jb_times">成功次数: xx</b></div>
-
-<div style="margin-right:26%;text-align:center;width:200px; font-size:25px;color:red;float: right;"><b id="fail_times">失败次数: xx</b></div>
+<div style="text-align:center;width:200px; font-size:25px;color:red;"><b id="fail_times">失败次数: xx</b></div>
+</div>
 <div style="clear: both; font-size: 0;">
     <div class="dropdown">
         <h2 class="dropbtn">常用</h2>
@@ -149,7 +150,7 @@
 	<h3 id='orbis' class='pllink' onclick="load_script('Orbis');" style="background-color: purple;">Orbis UI<br>(限goldhen后用,用<br>了别待机会断电！)</h3>
 </div>
 <div style="width: 70%;">
-<hr>问题反馈 emptytaboo@gmail.com 或者 91联系我, 可加QQ(私下邮箱或者91 咨要) ver.3.0.0
+<hr>问题反馈 emptytaboo@gmail.com 或者 91联系我, 可加QQ(私下邮箱或者91 咨要) ver.3.2.3
 </div>
 <div id='timeC'  style="visibility: hidden"></div>
 <script>
@@ -167,6 +168,13 @@ if (Name==null||Value==null){Name=IdMap[0]; Value=IdMap[1];}
 
 document.getElementById("oneclick").innerHTML=Name;
 document.getElementById("oneclick").value=Value;
+if (window.applicationCache.status==0){
+    window.cached.innerHTML="未使用缓存"
+}
+else{
+    window.cached.style.backgroundColor="green";
+    window.cached.innerHTML="使用缓存";
+}
 
 function init_done(){
 
