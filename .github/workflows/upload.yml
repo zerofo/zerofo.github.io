@@ -68,10 +68,12 @@ jobs:
           sudo -E git clone https://github.com/zerofo/docker-8266-builder
           sudo -E sed -i "s/ps4-zerofo/ps4-zerofo---------github自动上传版本---底包---v3.2.9---/g" ./docker-8266-builder/config.txt
           sudo -E cp ./docker-8266-builder/config.txt /config.txt
+          sudo -E sed -i "s/compress=y/compress=n/g" /config.txt
           sudo -E cp ./docker-8266-builder/mk8266.sh /mk8266.sh
           sudo -E rm ./zerofo.github.io/zerofo.github.io.git -rf
           sudo -E cp ./zerofo.github.io /mk8266 -rf
           sudo -E ls /mk8266
+          sudo -E rm /mk8266/pl/zerofo_loader.bin
           sudo -E cp ./docker-8266-builder/Ps4-wifi-http_async /Ps4-wifi-http -rf
           sudo -E mkdir -p /output
           sudo -E bash /mk8266.sh
