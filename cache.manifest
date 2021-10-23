@@ -31,6 +31,7 @@ CACHE MANIFEST
 ./pl/pl_kernelDumper.bin
 ./pl/pl_updatesEnable.bin
 ./common/ldr.js
+./common/webkit.js
 ./common/jb.js
 ./common/function.js
 ./cache.html
