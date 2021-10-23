@@ -29,7 +29,7 @@ var loader_ = async function(name,jb=0,pl=0,ldr_only=0){
         write_mem(window.pl_bin,payload);
     }
     else{
-        window.ldr_bin=malloc(66000);
+        window.ldr_bin=malloc(65536);
         write_mem(window.ldr_bin, payload);
     }
     if(name.indexOf("zerofo")<0)
