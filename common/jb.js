@@ -44594,7 +44594,7 @@ delete ropchain_array;
 delete ropchain_offset;
 delete printf_buf_offset;
 delete __swbuf_addr;
-if ( main_ret == 0) {
+if ( main_ret == 0|| main_ret==81) {
     //delete main_ret;
         
     window.msgs.innerText=LoadedMSG;
