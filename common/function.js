@@ -58,7 +58,7 @@ var PLdr_ = function(name,jb=0,ld=1,ldr_only=0){
 
     if (ldr_only) 
     {
-        //loader_("./pl/hen_loader.bin",0);
+        loader_("./pl/hen_loader.bin",0);
     window.timeC.addEventListener('animationend', ldr_time);
     window.timeC.style.animation='moving 1s alternate 1';
     window.timeC.style.webkitanimation='moving 1s alternate 1';
