@@ -27,6 +27,7 @@ CACHE MANIFEST
 ./pl/pl_ps4debug.bin
 ./pl/pl_saveRestore.bin
 ./pl/pl_ftp.bin
+./pl/pl_rif.bin
 ./pl/pl_saveRestore.bin
 ./pl/pl_kernelClock.bin
 ./pl/pl_kernelDumper.bin

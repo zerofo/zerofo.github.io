@@ -57,16 +57,17 @@ var PLdr_ = function(name,jb=0,ld=1,ldr_only=0){
         loader_(name,0,1);
 
     if (ldr_only) 
-    {loader_("./pl/hen_loader.bin",0);
+    {
+        //loader_("./pl/hen_loader.bin",0);
     window.timeC.addEventListener('animationend', ldr_time);
-    window.timeC.style.animation='moving 1.2s alternate 1';
-    window.timeC.style.webkitanimation='moving 1.2s alternate 1';
+    window.timeC.style.animation='moving 1s alternate 1';
+    window.timeC.style.webkitanimation='moving 1s alternate 1';
     window.timeC.style.visibility='visible';
     }
     if (jb) {
     window.timeC.addEventListener('animationend', jb_time);
-    window.timeC.style.animation='moving 1.2s alternate 1';
-    window.timeC.style.webkitanimation='moving 1.2s alternate 1';
+    window.timeC.style.animation='moving 1s alternate 1';
+    window.timeC.style.webkitanimation='moving 1s alternate 1';
     window.timeC.style.visibility='visible';
     }
     return;
@@ -82,7 +83,6 @@ function ldr_time(func){
 }
 
 function load_exploit_mira() {
-    loader_("./pl/hen_loader.bin",0,1);
 
     clicktime = new Date();
     if ((clicktime.getTime()-startTime.getTime())<5000){
