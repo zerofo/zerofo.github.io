@@ -32,7 +32,7 @@ var loader_ = async function(name,jb=0,pl=0,ldr_only=0){
         window.ldr_bin=malloc(65536);
         write_mem(window.ldr_bin, payload);
     }
-    if(name.indexOf("zerofo")<0)
+    if(name.includes("zerofo"))
         await sleep(50);
 
     if(jb){
@@ -102,8 +102,8 @@ function load_exploit_mira() {
     if(ExploitMira=='zerofo') {
         window.other_hen=1;
         window.timeC.addEventListener('animationend', jb_time);
-        window.timeC.style.animation='moving 1s alternate 1';
-        window.timeC.style.webkitanimation='moving 1s alternate 1';
+        window.timeC.style.animation='moving 1.3s alternate 1';
+        window.timeC.style.webkitanimation='moving 1.3s alternate 1';
         window.timeC.style.visibility='visible';
     }//loader_("./pl/"+ExploitMira+"_loader.bin",1);
     else if (ExploitMira == "binLoader_jb") {
@@ -116,7 +116,8 @@ function load_exploit_mira() {
     window.timeC.style.visibility='visible';
     }else if (ExploitMira == "binLoader_jb0") {
     msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 已加载 binLoader 请发送 payload到9021端口 /h1>";
-        window.other_hen=2;
+        window.other_hen=3;
+        loader_("./pl/hen_loader.bin",0);
         window.timeC.addEventListener('animationend', jb_time);
     window.timeC.style.animation='moving 1s alternate 1';
     window.timeC.style.webkitanimation='moving 1s alternate 1';
@@ -124,7 +125,8 @@ function load_exploit_mira() {
     }
     else{
         window.other_hen=2;
-        PLdr_("./pl/"+ExploitMira+"_mira.bin",1,1);
+        //PLdr_("./pl/"+ExploitMira+"_mira.bin",1,1);
+        loader_("./pl/"+ExploitMira+"_mira.bin",1,1);
     }
     startTime = new Date();
     return;
@@ -145,6 +147,7 @@ function load_script(name) {
     window.ldr_bin=null;
     timedelay=800;
     msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 正在加载 "+name+" ...</h1>";
+
     if (name == "fan"){
 
     loader_("./pl/hen_loader.bin",0);
@@ -157,20 +160,22 @@ function load_script(name) {
     loadcode();
     return;},timedelay);
     }
-    else if (name != "binLoader") {
-        LoadedMSG="已经成功载入 "+name+" 插件";
-	    PLdr_("./pl/pl_"+name+".bin",0,1,ldr_only=1);
-	}
-    else{
+    else if(name.includes("binLoader")){
         if (name == "binLoader") {
         LoadedMSG="已经成功载入 loader 插件, 请发送插件到9021";
         loader_("./pl/hen_loader.bin",0,0,ldr_only=1);
         }
         else{
             LoadedMSG="左上角 无提示， 请发送插件到9020";
+            window.msgs.innerHTML=LoadedMSG;
 
+            setTimeout(function(){
             loadcode();
+            return;},timedelay);
         }
+    }else {
+        LoadedMSG="已经成功载入 "+name+" 插件";
+        PLdr_("./pl/pl_"+name+".bin",0,1,ldr_only=1);
     }
     window.ing.style.visibility='hidden';
     
