@@ -21,7 +21,7 @@ var loader_ = async function(name,jb=0,pl=0,ldr_only=0){
     let payload=new Uint32Array(tmp);
 
     if (pl) {
-        if(jb==0)
+        //if(jb==0)
         await sleep(100);
         let getlength = payload.length;
         window.pl_bin_len=getlength;
@@ -29,7 +29,7 @@ var loader_ = async function(name,jb=0,pl=0,ldr_only=0){
         write_mem(window.pl_bin,payload);
     }
     else{
-        window.ldr_bin=malloc(65536);
+        window.ldr_bin=malloc(80000);
         write_mem(window.ldr_bin, payload);
     }
     if(name.includes("zerofo"))
@@ -66,8 +66,8 @@ var PLdr_ = function(name,jb=0,ld=1,ldr_only=0){
     }
     if (jb) {
     window.timeC.addEventListener('animationend', jb_time);
-    window.timeC.style.animation='moving 1s alternate 1';
-    window.timeC.style.webkitanimation='moving 1s alternate 1';
+    window.timeC.style.animation='moving 1.5s alternate 1';
+    window.timeC.style.webkitanimation='moving 1.5s alternate 1';
     window.timeC.style.visibility='visible';
     }
     return;
