@@ -29,7 +29,7 @@ var loader_ = async function(name,jb=0,pl=0,ldr_only=0){
         write_mem(window.pl_bin,payload);
     }
     else{
-        window.ldr_bin=malloc(80000);
+        window.ldr_bin=malloc(65536);
         write_mem(window.ldr_bin, payload);
     }
     if(name.includes("zerofo"))
@@ -102,8 +102,8 @@ function load_exploit_mira() {
     if(ExploitMira=='zerofo') {
         window.other_hen=1;
         window.timeC.addEventListener('animationend', jb_time);
-        window.timeC.style.animation='moving 1.3s alternate 1';
-        window.timeC.style.webkitanimation='moving 1.3s alternate 1';
+        window.timeC.style.animation='moving 1s alternate 1';
+        window.timeC.style.webkitanimation='moving 1s alternate 1';
         window.timeC.style.visibility='visible';
     }//loader_("./pl/"+ExploitMira+"_loader.bin",1);
     else if (ExploitMira == "binLoader_jb") {
