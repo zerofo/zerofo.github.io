@@ -3,7 +3,8 @@ CACHE MANIFEST
 ./pl/pl_dumperGame.bin
 ./pl/pl_dumper.bin
 ./pl/pl_dumperIn1.bin
-./pl/goldhen_mira.bin
+./pl/goldhen_loader.bin
+./pl/zerofohen_loader.bin
 ./pl/pl_Orbis.bin
 ./pl/pl_dumperDLC.bin
 ./pl/pl_app2usb.bin
@@ -11,15 +12,14 @@ CACHE MANIFEST
 ./pl/pl_linux3g.bin
 ./pl/pl_tokratos.bin
 ./pl/pl_dbBackup.bin
-./pl/hen_mira.bin
 ./pl/pl_saveBackup.bin
 ./pl/pl_toRestore.bin
 ./pl/pl_linux.bin
 ./pl/pl_historyBlocker.bin
 ./pl/hen_loader.bin
+./pl/hen_loader_net.bin
 ./pl/pl_dbRestore.bin
 ./pl/pl_disable-aslr.bin
-./pl/zhen_mira.bin
 ./pl/pl_webrte.bin
 ./pl/pl_todev.bin
 ./pl/pl_updatesDisable.bin
