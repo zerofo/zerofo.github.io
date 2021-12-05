@@ -28,7 +28,6 @@ CACHE MANIFEST
 ./pl/pl_saveRestore.bin
 ./pl/pl_ftp.bin
 ./pl/pl_rif.bin
-./pl/pl_saveRestore.bin
 ./pl/pl_kernelClock.bin
 ./pl/pl_kernelDumper.bin
 ./pl/pl_updatesEnable.bin
@@ -39,5 +38,6 @@ CACHE MANIFEST
 ./cache.html
 ./css/style.css
 ./index.html
+
 FALLBACK:
 . index.html

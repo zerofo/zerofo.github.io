@@ -14,8 +14,8 @@
   
 <script>
 function CacheProgress(e){Percent=(Math.round(e.loaded / e.total * 100));msgs.innerHTML="正在下载离线缓存(如长时间卡进度 请双清重启再试): " + Percent + "%";}
-function CachingDone(){setTimeout(function(){msgs.innerHTML="离线缓存 已成功，即将返回";},1000)}
-window.applicationCache.addEventListener("progress",CacheProgress,false);window.applicationCache.oncached=function(e){CachingDone(); setTimeout(function(){window.location.href="./index.html";},5000)};
+function CachingDone(){setTimeout(function(){msgs.innerHTML="离线缓存 已成功，即将返回";},100)}
+window.applicationCache.addEventListener("progress",CacheProgress,false);window.applicationCache.oncached=function(e){CachingDone(); setTimeout(function(){window.location.href="./index.html";},1000)};
 
 if (window.applicationCache.status==0){
     window.cached.innerHTML="未使用缓存"
