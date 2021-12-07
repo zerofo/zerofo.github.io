@@ -62,7 +62,7 @@ var PLdr_ = function(name,jb=0,ld=1,ldr_only=0){
 
     if (ld) 
         loader_(name,0,1);
-    if (!ldr_only)
+    if (ldr_only)
     loader_("./pl/hen_loader_net.bin",0);
 
     if (ldr_only) 
