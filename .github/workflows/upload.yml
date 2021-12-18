@@ -2,7 +2,7 @@ name: upload
 
 on:
   push:
-    branches: [ b672w ]
+    branches: [ pre-test ]
 
 jobs:
   build:
@@ -14,7 +14,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          ref: b672w
+          ref: pre-test
       - name: Sync to Gitee
         uses: wearerequired/git-mirror-action@master
         env:
@@ -66,7 +66,7 @@ jobs:
         run: |
           cd ../
           sudo -E git clone https://github.com/zerofo/docker-8266-builder
-          sudo -E sed -i "s/ps4-zerofo/ps4-zerofo-----旧版jb代码大修改(实验)----github自动上传版本---底包---v3.7.8b10+ghen2--/g" ./docker-8266-builder/config.txt
+          sudo -E sed -i "s/ps4-zerofo/ps4-zerofo-----旧版jb代码大修改----github自动上传版本---底包---v3.7.8x+ghen2--/g" ./docker-8266-builder/config.txt
           sudo -E cp ./docker-8266-builder/config.txt /config.txt
           sudo -E sed -i "s/compress\=y/compress\=n/g" /config.txt
           sudo -E sed -i "s/#blockList/blockList/g" /config.txt

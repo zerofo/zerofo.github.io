@@ -1,4 +1,4 @@
-var jailbreak = /*async*/ function(){
+var jailbreak = async function(){
 var ropchain_array = new Uint32Array(146290);
 var ropchain = read_ptr_at(addrof(ropchain_array)+0x10);
 var ropchain_offset = 2;
@@ -37459,7 +37459,7 @@ db([1701273968, 1534620255, 1025531184, 628633632, 2680, 0]);
 db([1936682083, 1713398885, 1680154724, 10]);
 db([1000, 0, 0, 0, 0, 0]);
 db([0, 0, 100000, 0, 0, 0]);
-pivot(ropchain);
+await pivot(ropchain);
 // await sleep(200);
 var main_ret = read_ptr_at(main_ret);
 var printf_buf_end = read_ptr_at(ropchain+printf_buf_offset);
@@ -37479,6 +37479,12 @@ delete printf_buf_offset;
 delete __swbuf_addr;
 if ( main_ret == 0|| main_ret==81) {
     //delete main_ret;
+    var ExploitMira=document.getElementById("oneclick").value;
+    if(ExploitMira=="goldhen2b"){
+    	window.orbis.style.display='block';
+    	window.titleONE.style.display='none';
+    }
+
     window.msgs.innerText=LoadedMSG;
     fail_times = Number(localStorage.getItem("fail_times"))||0;
     jb_times = Number(localStorage.getItem("jb_times"))||0;
