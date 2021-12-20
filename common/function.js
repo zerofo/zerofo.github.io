@@ -83,7 +83,6 @@ var PLdr_ = function(name,jb=0,ld=1,ldr_only=0){
 
 async function jb_time(func){
     await jailbreak();
-    await sleep(1500);
     // await read_ptr_at(0);
 }
 function ldr_time(func){

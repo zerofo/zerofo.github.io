@@ -10045,6 +10045,13 @@ if(main_ret==179|| main_ret==0){
     window.timeC.style.visibility='hidden';
     window.timeC.style.animation='';
     window.timeC.style.webkitanimation='';
+     window.pl_bin_len=getlength;
+    let Cpayload=new Uint32Array(getlength);
+    for(i=0;i<getlength;i++)
+    {
+        Cpayload[i]=null;
+    }
+    write_mem(window.pl_bin,Cpayload);
 }else{
 	window.msgs.innerHTML="<h1 style='color:red;font-size:25px;text-align:center;'>失败! <br> 请关机再开机重试.<br>"+main_ret+"</h1>";
 }

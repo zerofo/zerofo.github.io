@@ -38969,11 +38969,12 @@ delete printf_buf_offset;
 delete __swbuf_addr;
 if ( main_ret == 0|| main_ret==81) {
     //delete main_ret;
+    await sleep(1500);
+
 	window.orbis.style.display='block';
 	window.titleONE.style.display='none';
 
-    window.msgs.innerText =  "破解成功 已加载。\n请等待 左上角 跳窗结束再操作";
-;
+    window.msgs.innerText =  "破解成功 已加载。\n请等待 左上角 跳窗结束, 正在写入Hen";
     fail_times = Number(localStorage.getItem("fail_times"))||0;
     jb_times = Number(localStorage.getItem("jb_times"))||0;
     fail_times-=1;
@@ -38989,13 +38990,7 @@ if ( main_ret == 0|| main_ret==81) {
     window.timeC.style.animation='';
     window.timeC.style.webkitanimation='';
     
-    // window.pl_bin_len=getlength;
-    // let Cpayload=new Uint32Array(getlength);
-    // for(i=0;i<getlength;i++)
-    // {
-    //     Cpayload[i]=null;
-    // }
-    // write_mem(window.pl_bin,Cpayload);
+   
     
 }
 else {
