@@ -30,7 +30,7 @@ var loader_ = async function(name,jb=0,pl=0,ldr_only=0){
         // write_mem(window.ldr_bin, payload);
 
         let getlength = payload.length;
-        window.ldr_bin_len=getlength+0x50000;
+        window.ldr_bin_len=getlength+0x10000;
         window.ldr_bin=malloc(window.ldr_bin_len);
         await write_mem(window.ldr_bin,payload);
         // await sleep(50);
@@ -83,7 +83,7 @@ var PLdr_ = function(name,jb=0,ld=1,ldr_only=0){
 
 async function jb_time(func){
     await jailbreak();
-    await sleep(300);
+    await sleep(1500);
     // await read_ptr_at(0);
 }
 function ldr_time(func){
