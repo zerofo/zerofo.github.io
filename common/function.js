@@ -1,14 +1,11 @@
-function getfile(path) {
-  return fetch(path)
-    .then(function(response) {
-        if(response.ok)
-      return response.blob();
-    })
-    .then(function(data) {
-      return data;
-    })
+async function getfile(path) {
+    var file = await fetch(path);
+    if(file.ok){
+        data = await file.arrayBuffer();
+        return data;
+    }
+    return ''
 }
-
 const sleep = (timeountMS) => new Promise((resolve) => {
   setTimeout(resolve, timeountMS);
 });
@@ -26,30 +23,32 @@ var loader_ = async function(name,jb=0,pl=0,ldr_only=0){
         let getlength = payload.length;
         window.pl_bin_len=getlength;
         window.pl_bin=malloc(window.pl_bin_len);
-        write_mem(window.pl_bin,payload);
+        await write_mem(window.pl_bin,payload);
     }
     else{
         // window.ldr_bin=malloc(150000);
         // write_mem(window.ldr_bin, payload);
 
         let getlength = payload.length;
-        window.ldr_bin_len=getlength;
+        window.ldr_bin_len=getlength+0x50000;
         window.ldr_bin=malloc(window.ldr_bin_len);
-        write_mem(window.ldr_bin,payload);
-        await sleep(50);
+        await write_mem(window.ldr_bin,payload);
+        // await sleep(50);
 
     }
-    if(name.includes("goldhen2b"))
-        await sleep(100);
+    // if(name.includes("goldhen2b"))
+    //     await sleep(100);
 
     if(jb){
+    // await jailbreak();
+
     window.timeC.addEventListener('animationend', jb_time);
     window.timeC.style.animation='moving 1s alternate 1';
     window.timeC.style.webkitanimation='moving 1s alternate 1';
     window.timeC.style.visibility='visible';
     }
     if(ldr_only){
-        loader_("./pl/hen_loader.bin",0);
+        // loader_("./pl/hen_loader.bin",0);
     window.timeC.addEventListener('animationend', ldr_time);
     window.timeC.style.animation='moving 1s alternate 1';
     window.timeC.style.webkitanimation='moving 1s alternate 1';
@@ -82,10 +81,10 @@ var PLdr_ = function(name,jb=0,ld=1,ldr_only=0){
     return;
 }
 
-function jb_time(func){
-    LoadedMSG= "破解成功 已加载。\n请等待 左上角 跳窗结束再操作";
-    jailbreak();
-
+async function jb_time(func){
+    await jailbreak();
+    await sleep(300);
+    // await read_ptr_at(0);
 }
 function ldr_time(func){
     loadcode();
@@ -114,7 +113,7 @@ function load_exploit_mira() {
 // //     window.timeC.style.webkitanimation='moving 1s alternate 1';
 // //     window.timeC.style.visibility='visible';
 //     }
-    if(ExploitMira=='goldhen2b')loader_("./pl/goldhen_loader.bin",1);
+    if(ExploitMira=='goldhen2b')loader_("./pl/goldhen2b2.bin",1);
     else if (ExploitMira == "binLoader_jb") {
     msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 已加载 binLoader 请发送 9020端口 左上角没有提示！！！</h1>";
     window.timeC.addEventListener('animationend', jb_time);
@@ -129,10 +128,10 @@ function load_exploit_mira() {
     window.timeC.style.webkitanimation='moving 1s alternate 1';
     window.timeC.style.visibility='visible';
     }
-    else{
-        PLdr_("./pl/"+ExploitMira+"_mira.bin",1,1);
-        //loader_("./pl/"+ExploitMira+"_mira.bin",1,1);
-    }
+    // else{
+    //     PLdr_("./pl/"+ExploitMira+"_mira.bin",1,1);
+    //     //loader_("./pl/"+ExploitMira+"_mira.bin",1,1);
+    // }
     startTime = new Date();
     return;
 };

