@@ -19,7 +19,8 @@ var loader_ = async function(name,jb=0,pl=0,ldr_only=0){
 
     if (pl) {
         //if(jb==0)
-        await sleep(150);
+        // await sleep(150);
+        //await sleep(500);
         let getlength = payload.length;
         window.pl_bin_len=getlength;
         window.pl_bin=malloc(window.pl_bin_len);
@@ -85,8 +86,8 @@ async function jb_time(func){
     await jailbreak();
     // await read_ptr_at(0);
 }
-function ldr_time(func){
-    loadcode();
+async function ldr_time(func){
+    await loadcode();
 }
 
 function load_exploit_mira() {
