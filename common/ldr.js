@@ -11600,7 +11600,6 @@ var _ = malloc_nogc.pop();
 var _ = malloc_nogc.pop();
 var _ = malloc_nogc.pop();
 
-delete window.other_hen;
 delete _;
 delete printf_buf_end;
 delete printf_ans;
@@ -11611,7 +11610,6 @@ delete printf_buf_offset;
 delete __swbuf_addr;
 if(main_ret==179|| main_ret==0){           
 
-    delete main_ret;
     window.msgs.innerHTML="<h1 style='font-size:25px;color:green;text-align:center;'>"+LoadedMSG+"</h1>";
     window.timeC.style.visibility='hidden';
     window.timeC.removeEventListener('animationend', ldr_time);

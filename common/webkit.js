@@ -62,8 +62,9 @@ function read_mem_as_string(p, sz)
 
 function write_mem(p, data)
 {
-    i48_put(p, oob_master);
-    oob_master[6] = data.length;
+    // i48_put(p, oob_master);
+    // oob_master[6] = data.length;
+    read_mem_setup(p, data.length);
     for(var i = 0; i < data.length; i++)
         oob_slave[i] = data[i];
 };

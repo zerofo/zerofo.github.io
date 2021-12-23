@@ -153,31 +153,31 @@ else{
         </div>
     </div>
 </div>
-<div id='ing' class='processing' style="visibility:hidden"></div>
-    <h2 id="msgs" style="min-height:38px;" ></h2>
 
-    </div>
+<div>
 
-<h1>一键⇩折腾</h1>
+<h1 id='titleONE'>一键⇩折腾</h1>
 <div id='onekey' style="display:inline-block;">
     <h3 id="oneclick" class="dropbtn diy-btn btn-twinkle" style="padding-top: 4px;" onclick="load_exploit_mira();" value="zerofo">Zerofo hen</h3>
     <div class="dropdown">
     <h2 id="pl_switch" class="diy-drop btn-twinkle">▶</h2>
     <div class="dropdown-content diy-dropdown-content">
-        <h3 class='link pllink' onclick="change_oneclick('oneclick','Zerofo<br>hen2.1.3', 'zerofo');">Zerofo(推荐)<br>Hen2.1.3</h3>
         <h3 class='link pllink' onclick="change_oneclick('oneclick','SiSTRo_GHen2<br>Zerofo_Ldr', 'goldhen2b');">SiSTRo_GHen2<br>Zerofo_Ldr</h3>
-        <h3 class='link pllink' onclick="change_oneclick('oneclick','binLoader<br>(9020 含破解)', 'binLoader_jb');">Bin_Loader<br>(9020 含破解)</h3>
+<!--         <h3 class='link pllink' onclick="change_oneclick('oneclick','binLoader<br>(9020 含破解)', 'binLoader_jb');">Bin_Loader<br>(9020 含破解)</h3> -->
         <h3 class='link pllink' onclick="change_oneclick('oneclick','binLoader<br>(9021 含破解)', 'binLoader_jb0');">Bin_Loader<br>(9021 含破解)</h3>
     </div>
     </div>
 </div>
 <div style="display:block;width: 20%; padding: 20px;">
-	<h3 id='orbis' class='pllink' onclick="load_script('Orbis');" style="background-color: purple;">Orbis UI<br>(限goldhen后用,用<br>了别待机会断电！)</h3>
+	<h3 id='orbis' class='pllink' onclick="load_script('Orbis');" style="background-color: purple;display: none;">Orbis 工具箱<br>(用了无法待机, 没事别点)</h3>
 </div>
-<div style="width: 70%;">
-<a href="https://zerofo.gitee.io/c672"> 新版破解 地址(尝鲜) </a>
+    <h2 id="msgs" style="min-height:38px;" ></h2>
+
+<div id='ing' class='processing' style="visibility:hidden"></div>
+    </div>
+<div style="width: 70%;margin-top: 8%;*position:absolute;">
     
-<hr>问题反馈 emptytaboo@gmail.com 或者 91联系我, 可加QQ(私下邮箱或者91 咨要) ver 3.7.8Beta10 + ghen2
+<hr>问题反馈 emptytaboo@gmail.com 或者 91联系我, 可加QQ(私下邮箱或者91 咨要) ver3.7.8XY+ghen2b2
 </div>
 <div id='timeC'  style="visibility: hidden"></div>
 <script>
@@ -188,7 +188,7 @@ document.getElementById("fail_times").innerHTML="失败次数: "+String(fail_tim
 document.getElementById("jb_times").innerHTML="成功次数: "+String(jb_times);
 window.ing.style.visibility='visible';
 window.msgs.innerHTML="<h1 style='font-size:25px;color:red;text-align:center;'>初始化 请稍等 ！！！</h1>";
-var IdMap = ["Zerofo<br>Hen2.1.3","zerofo"];
+var IdMap = ["SiSTRo_GHen2<br>Zerofo_Ldr","goldhen2b"];
 var Name=localStorage.getItem("oneclickName");
 var Value=localStorage.getItem("oneclickVAL");
 if (Name==null||Value==null){Name=IdMap[0]; Value=IdMap[1];}

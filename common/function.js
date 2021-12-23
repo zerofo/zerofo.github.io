@@ -49,7 +49,7 @@ var loader_ = async function(name,jb=0,pl=0,ldr_only=0){
     window.timeC.style.visibility='visible';
     }
     if(ldr_only){
-        loader_("./pl/hen_loader.bin",0);
+        // loader_("./pl/hen_loader.bin",0);
     window.timeC.addEventListener('animationend', ldr_time);
     window.timeC.style.animation='moving 1s alternate 1';
     window.timeC.style.webkitanimation='moving 1s alternate 1';
@@ -115,7 +115,7 @@ function load_exploit_mira() {
 // //     window.timeC.style.visibility='visible';
 //     }
     if(ExploitMira=='zerofo')loader_("./pl/"+ExploitMira+"_loader.bin",1);
-    else if(ExploitMira=='goldhen2b')loader_("./pl/goldhen_loader.bin",1);
+    else if(ExploitMira=='goldhen2b')loader_("./pl/goldhen.bin",1);
     else if (ExploitMira == "binLoader_jb") {
     msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 已加载 binLoader 请发送 9020端口 左上角没有提示！！！</h1>";
     window.timeC.addEventListener('animationend', jb_time);
