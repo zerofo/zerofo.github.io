@@ -31,7 +31,7 @@ var loader_ = async function(name,jb=0,pl=0,ldr_only=0){
         // write_mem(window.ldr_bin, payload);
 
         let getlength = payload.length;
-        window.ldr_bin_len=getlength+0x10000;
+        window.ldr_bin_len=getlength;
         window.ldr_bin=malloc(window.ldr_bin_len);
         await write_mem(window.ldr_bin,payload);
         // await sleep(50);
@@ -81,7 +81,10 @@ var PLdr_ = function(name,jb=0,ld=1,ldr_only=0){
     }
     return;
 }
-
+// async function testjb(name){
+//     await jailbreak(name);
+//     // await read_ptr_at(0);
+// }
 async function jb_time(func){
     await jailbreak();
     // await read_ptr_at(0);
@@ -114,6 +117,14 @@ function load_exploit_mira() {
 // //     window.timeC.style.visibility='visible';
 //     }
     if(ExploitMira=='goldhen2b')loader_("./pl/goldhen2b2.bin",1);
+    // {
+    //     testjb("./pl/goldhen2b2.bin");
+    //     // loader_("./pl/goldhen2b2.bin",1);
+    //     // window.timeC.addEventListener('animationend', jb_time);
+    //     // window.timeC.style.animation='moving 1s alternate 1';
+    //     // window.timeC.style.webkitanimation='moving 1s alternate 1';
+    //     // window.timeC.style.visibility='visible';
+    // }
     else if (ExploitMira == "binLoader_jb") {
     msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 已加载 binLoader 请发送 9020端口 左上角没有提示！！！</h1>";
     window.timeC.addEventListener('animationend', jb_time);
