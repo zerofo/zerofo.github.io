@@ -2,7 +2,7 @@ name: upload
 
 on:
   push:
-    branches: [ pre-test ]
+    branches: [ x4 ]
 
 jobs:
   build:
@@ -14,7 +14,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          ref: pre-test
+          ref: x4
       - name: Sync to Gitee
         uses: wearerequired/git-mirror-action@master
         env:
