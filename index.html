@@ -34,6 +34,7 @@
 <title>6.72折腾网站 by zerofo</title>
 </head>
 <body onload="
+WK=1;
     if(WK){
     jb_done=sessionStorage.getItem('jb_done');
     if (jb_done != '1') 
@@ -162,7 +163,6 @@ else{
     <h2 id="pl_switch" class="diy-drop btn-twinkle">▶</h2>
     <div class="dropdown-content diy-dropdown-content">
         <h3 class='link pllink' onclick="change_oneclick('oneclick','SiSTRo_GHen2<br>Zerofo_Ldr', 'goldhen2b');">SiSTRo_GHen2<br>Zerofo_Ldr</h3>
-<!--         <h3 class='link pllink' onclick="change_oneclick('oneclick','binLoader<br>(9020 含破解)', 'binLoader_jb');">Bin_Loader<br>(9020 含破解)</h3> -->
         <h3 class='link pllink' onclick="change_oneclick('oneclick','binLoader<br>(9021 含破解)', 'binLoader_jb0');">Bin_Loader<br>(9021 含破解)</h3>
     </div>
     </div>
@@ -176,9 +176,14 @@ else{
     </div>
 
 
-<div style="width: 70%;margin-top: 8%;*position:absolute;">
-    
-<hr>问题反馈 emptytaboo@gmail.com 或者 91联系我, 可加QQ(私下邮箱或者91 咨要) ver3.9.1X+ghen2b2
+<div style="width: 70%;margin-top: 6%;*position:absolute;">
+    <h6>破解代码来自:
+<a href="https://github.com/sleirsgoevy">sleirsgoevy</a>,
+SiSTRo,
+Al_Azif,
+leeful...
+</h6>
+<hr>问题反馈 emptytaboo@gmail.com 或者 91联系我, 可加QQ(私下邮箱或者91 咨要) ver4.1.2X
 </div>
 <div id='timeC'  style="visibility: hidden"></div>
 <script>
@@ -193,7 +198,6 @@ var IdMap = ["SiSTRo_GHen2<br>Zerofo_Ldr","goldhen2b"];
 var Name=localStorage.getItem("oneclickName");
 var Value=localStorage.getItem("oneclickVAL");
 if (Name==null||Value==null){Name=IdMap[0]; Value=IdMap[1];}
-
 document.getElementById("oneclick").innerHTML=Name;
 document.getElementById("oneclick").value=Value;
 
