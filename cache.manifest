@@ -22,7 +22,7 @@ CACHE MANIFEST
 ./pl/pl_webrte.bin
 ./pl/pl_todev.bin
 ./pl/pl_updatesDisable.bin
-./pl/pl_fan.js
+./pl/pl_fan.bin
 ./pl/pl_ps4debug.bin
 ./pl/pl_saveRestore.bin
 ./pl/pl_ftp.bin
