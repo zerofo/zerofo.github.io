@@ -11625,6 +11625,6 @@ if(main_ret==179|| main_ret==0){
     }
     write_mem(window.pl_bin,Cpayload);
 }else{
-	window.msgs.innerHTML="<h1 style='color:red;font-size:25px;text-align:center;'>失败! <br> 请关机再开机重试.<br>"+main_ret+"</h1>";
+	window.msgs.innerHTML="<h1 style='color:red;font-size:25px;text-align:center;'>FAIL! <br> reboot<br>"+main_ret+"</h1>";
 }
 }

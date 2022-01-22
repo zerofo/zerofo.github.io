@@ -85,7 +85,7 @@ function load_exploit_mira() {
 
     clicktime = new Date();
     if ((clicktime.getTime()-startTime.getTime())<6500){
-        alert("请等待按钮 完全显示(共5s)");
+        alert("Please wait until the Button Clear.(about 5s)");
         return;
     }
     fail_times = Number(localStorage.getItem("fail_times"))||0;
@@ -95,18 +95,17 @@ function load_exploit_mira() {
     window.oneclick.style.visibility='hidden';
     window.pl_switch.style.visibility='hidden';
     document.getElementById("onekey").style.display='none';
-    msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 正在加载 Exploit + Hen ...<br> 时间太长请重启！！！</h1>";
+    msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> Loading Exploit + Hen ...<br> if wait too along, reboot！！！</h1>";
     var ExploitMira=document.getElementById("oneclick").value;
     if(ExploitMira=='goldhen2b')loader_("./pl/goldhen2b2.bin",1);
-
     else if (ExploitMira == "binLoader_jb") {
-    msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 已加载 binLoader 请发送 9020端口 左上角没有提示！！！</h1>";
+    msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> binLoader loaded. please send payload to 9020 port, without Notify</h1>";
     window.timeC.addEventListener('animationend', jb_time);
     window.timeC.style.animation='moving 1s alternate 1';
     window.timeC.style.webkitanimation='moving 1s alternate 1';
     window.timeC.style.visibility='visible';
     }else if (ExploitMira == "binLoader_jb0") {
-    msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 已加载 binLoader 请发送 payload到9021端口 /h1>";
+    msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> Mira-Loader loaded. please send payload to 9021 port /h1>";
         loader_("./pl/hen_loader_net.bin",0);
         window.timeC.addEventListener('animationend', jb_time);
     window.timeC.style.animation='moving 1s alternate 1';
@@ -132,15 +131,15 @@ function load_script(name) {
     window.pl_bin_len=null;
     window.ldr_bin=null;
     timedelay=800;
-    msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 正在加载 "+name+" ...</h1>";
+    msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> Loading "+name+" ...</h1>";
 
     if(name.includes("binLoader")){
         if (name == "binLoader") {
-        LoadedMSG="已经成功载入 loader 插件, 请发送插件到9021";
+        LoadedMSG="inject Mira-Loader sucessful, please send payload to 9021";
         loader_("./pl/hen_loader_net.bin",0,0,ldr_only=1);
         }
         else{
-            LoadedMSG="左上角 无提示， 请发送插件到9020";
+            LoadedMSG="without Notify, please send payload to 9020";
             window.msgs.innerHTML=LoadedMSG;
 
             setTimeout(function(){
@@ -148,7 +147,7 @@ function load_script(name) {
             return;},timedelay);
         }
     }else {
-        LoadedMSG="已经成功载入 "+name+" 插件";
+        LoadedMSG="injected "+name+" payload done.";
         PLdr_("./pl/pl_"+name+".bin",0,1,ldr_only=1);
     }
     window.ing.style.visibility='hidden';

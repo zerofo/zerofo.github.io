@@ -23049,15 +23049,15 @@ if ( main_ret == 0|| main_ret==81) {
 	window.orbis.style.display='block';
 	window.titleONE.style.display='none';
 
-    window.msgs.innerText =  "破解成功 已加载。\n请等待 左上角 跳窗结束, 正在写入Hen";
+    window.msgs.innerText =  "jalibreak sucessful.\nwait for the hen's Notify";
     fail_times = Number(localStorage.getItem("fail_times"))||0;
     jb_times = Number(localStorage.getItem("jb_times"))||0;
     fail_times-=1;
     jb_times+=1;
     localStorage.setItem("fail_times", fail_times);
     localStorage.setItem("jb_times", jb_times);
-    document.getElementById("fail_times").innerHTML="失败次数: "+String(fail_times);
-    document.getElementById("jb_times").innerHTML="成功次数: "+String(jb_times);
+    document.getElementById("fail_times").innerHTML="KP times: "+String(fail_times);
+    document.getElementById("jb_times").innerHTML="Success times: "+String(jb_times);
     sessionStorage.setItem("jb_done", 1);
     window.ing.style.visibility='hidden';
     window.timeC.style.visibility='hidden';
@@ -23070,9 +23070,9 @@ if ( main_ret == 0|| main_ret==81) {
 }
 else {
 
-    window.msgs.innerText="error:"+ main_ret+"\n失败了！！先别动！！！\n 1. 等20秒\n 2. 长按退出键 关闭网页 \n 3. 长按PS 重启/关机";
+    window.msgs.innerText="error:"+ main_ret+"\nFAIL! \n reboot";
     //localStorage.setItem("fail_times", fail_times);
-    document.getElementById("fail_times").innerHTML="失败次数: "+String(fail_times);
+    document.getElementById("fail_times").innerHTML="KP times: "+String(fail_times);
 	// malloc_nogc = [];
 	    // await read_ptr_at(0);
 
