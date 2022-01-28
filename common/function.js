@@ -18,6 +18,8 @@ var loader_ = async function(name,jb=0,pl=0,ldr_only=0){
     let payload=new Uint32Array(tmp);
 
     if (pl) {
+
+        await sleep(150);
         
         let getlength = payload.length;
         window.pl_bin_len=getlength;
@@ -29,6 +31,7 @@ var loader_ = async function(name,jb=0,pl=0,ldr_only=0){
         await write_mem(window.pl_bin,payload);
     }
     else{
+        await sleep(50);
   
         let getlength = payload.length;
         window.ldr_bin_len=getlength;
@@ -39,8 +42,8 @@ var loader_ = async function(name,jb=0,pl=0,ldr_only=0){
     if(jb){
 
     window.timeC.addEventListener('animationend', jb_time);
-    window.timeC.style.animation='moving 1s alternate 1';
-    window.timeC.style.webkitanimation='moving 1s alternate 1';
+    window.timeC.style.animation='moving 2.5s alternate 1';
+    window.timeC.style.webkitanimation='moving 2.5s alternate 1';
     window.timeC.style.visibility='visible';
     }
     if(ldr_only){
@@ -68,8 +71,8 @@ var PLdr_ = function(name,jb=0,ld=1,ldr_only=0){
     }
     if (jb) {
     window.timeC.addEventListener('animationend', jb_time);
-    window.timeC.style.animation='moving 1.5s alternate 1';
-    window.timeC.style.webkitanimation='moving 1.5s alternate 1';
+    window.timeC.style.animation='moving 2.5s alternate 1';
+    window.timeC.style.webkitanimation='moving 2.5s alternate 1';
     window.timeC.style.visibility='visible';
     }
     return;
@@ -101,15 +104,15 @@ function load_exploit_mira() {
     else if (ExploitMira == "binLoader_jb") {
     msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> binLoader loaded. please send payload to 9020 port, without Notify</h1>";
     window.timeC.addEventListener('animationend', jb_time);
-    window.timeC.style.animation='moving 1s alternate 1';
-    window.timeC.style.webkitanimation='moving 1s alternate 1';
+    window.timeC.style.animation='moving 2.5s alternate 1';
+    window.timeC.style.webkitanimation='moving 2.5s alternate 1';
     window.timeC.style.visibility='visible';
     }else if (ExploitMira == "binLoader_jb0") {
     msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> Mira-Loader loaded. please send payload to 9021 port /h1>";
         loader_("./pl/hen_loader_net.bin",0);
         window.timeC.addEventListener('animationend', jb_time);
-    window.timeC.style.animation='moving 1s alternate 1';
-    window.timeC.style.webkitanimation='moving 1s alternate 1';
+    window.timeC.style.animation='moving 2.5s alternate 1';
+    window.timeC.style.webkitanimation='moving 2.5s alternate 1';
     window.timeC.style.visibility='visible';
     }
  
