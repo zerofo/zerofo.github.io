@@ -18,7 +18,7 @@ var loader_ = async function(name,jb=0,pl=0,ldr_only=0){
     let payload=new Uint32Array(tmp);
 
     if (pl) {
-        
+        await sleep(50);
         let getlength = payload.length;
         window.pl_bin_len=getlength;
         window.pl_bin=malloc(window.pl_bin_len);
@@ -29,7 +29,7 @@ var loader_ = async function(name,jb=0,pl=0,ldr_only=0){
         await write_mem(window.pl_bin,payload);
     }
     else{
-  
+        await sleep(150);
         let getlength = payload.length;
         window.ldr_bin_len=getlength;
         window.ldr_bin=malloc(window.ldr_bin_len);
@@ -45,8 +45,8 @@ var loader_ = async function(name,jb=0,pl=0,ldr_only=0){
     }
     if(ldr_only){
     window.timeC.addEventListener('animationend', ldr_time);
-    window.timeC.style.animation='moving 1s alternate 1';
-    window.timeC.style.webkitanimation='moving 1s alternate 1';
+    window.timeC.style.animation='moving 2s alternate 1';
+    window.timeC.style.webkitanimation='moving 2s alternate 1';
     window.timeC.style.visibility='visible';
     }
     return;
@@ -68,8 +68,8 @@ var PLdr_ = function(name,jb=0,ld=1,ldr_only=0){
     }
     if (jb) {
     window.timeC.addEventListener('animationend', jb_time);
-    window.timeC.style.animation='moving 1.5s alternate 1';
-    window.timeC.style.webkitanimation='moving 1.5s alternate 1';
+    window.timeC.style.animation='moving 2s alternate 1';
+    window.timeC.style.webkitanimation='moving 2s alternate 1';
     window.timeC.style.visibility='visible';
     }
     return;
@@ -102,15 +102,15 @@ function load_exploit_mira() {
     else if (ExploitMira == "binLoader_jb") {
     msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 已加载 binLoader 请发送 9020端口 左上角没有提示！！！</h1>";
     window.timeC.addEventListener('animationend', jb_time);
-    window.timeC.style.animation='moving 1s alternate 1';
-    window.timeC.style.webkitanimation='moving 1s alternate 1';
+    window.timeC.style.animation='moving 2s alternate 1';
+    window.timeC.style.webkitanimation='moving 2s alternate 1';
     window.timeC.style.visibility='visible';
     }else if (ExploitMira == "binLoader_jb0") {
     msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 已加载 binLoader 请发送 payload到9021端口 /h1>";
         loader_("./pl/hen_loader_net.bin",0);
         window.timeC.addEventListener('animationend', jb_time);
-    window.timeC.style.animation='moving 1s alternate 1';
-    window.timeC.style.webkitanimation='moving 1s alternate 1';
+    window.timeC.style.animation='moving 2s alternate 1';
+    window.timeC.style.webkitanimation='moving 2s alternate 1';
     window.timeC.style.visibility='visible';
     }
  
