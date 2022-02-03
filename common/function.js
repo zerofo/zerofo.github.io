@@ -97,7 +97,7 @@ function load_exploit_mira() {
     document.getElementById("onekey").style.display='none';
     msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 正在加载 Exploit + Hen ...<br> 时间太长请重启！！！</h1>";
     var ExploitMira=document.getElementById("oneclick").value;
-    if(ExploitMira=='goldhen2b')loader_("./pl/goldhen2b2.bin",1);
+    if(ExploitMira=='goldhen2_1')loader_("./pl/goldhen2_1.bin",1);
 
     else if (ExploitMira == "binLoader_jb") {
     msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 已加载 binLoader 请发送 9020端口 左上角没有提示！！！</h1>";
