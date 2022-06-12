@@ -74,7 +74,6 @@ jobs:
           sudo -E cp ./zerofo.github.io /mk8266 -rf
           sudo -E ls /mk8266
           sudo -E rm /mk8266/README.md
-          sudo -E rm /mk8266/CNAME
           sudo -E cp ./docker-8266-builder/Ps4-wifi-http_async /Ps4-wifi-http -rf
           sudo -E mkdir -p /output
           sudo -E bash /mk8266.sh
