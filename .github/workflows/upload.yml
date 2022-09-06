@@ -81,7 +81,7 @@ jobs:
           sudo -E echo "zip file"
           sudo -E zip -r /672/zerofo_672.zip ./zerofo.github.io -x"*/.git*"
           sudo -E echo "upload"
-          if [ `cat zerofo.github.io/.github/packup` -eq 1 ]; then sudo -E BaiduPCS-Py upload /output/*.zip /8266/8266固件包---bin/672/;sudo -E BaiduPCS-Py sync /672 /8266/网站_离线包/672/; else echo "此commit 不打包"; fi;
+          #if [ `cat zerofo.github.io/.github/packup` -eq 1 ]; then sudo -E BaiduPCS-Py upload /output/*.zip /8266/8266固件包---bin/672/;sudo -E BaiduPCS-Py sync /672 /8266/网站_离线包/672/; else echo "此commit 不打包"; fi;
           
       - name: upload binfile
         uses: actions/upload-artifact@v2
