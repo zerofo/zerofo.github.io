@@ -13,6 +13,8 @@ const sleep = (timeountMS) => new Promise((resolve) => {
 var loader_ = async function(name,jb=0,pl=0,ldr_only=0){
     let file = await getfile(name);
     let data = await new Response(file).arrayBuffer()
+    if(file=='')
+        throw "ERROR"
     let tmp=new Uint8Array(data.byteLength);
     tmp.set(new Uint8Array(data),0);
     let payload=new Uint32Array(tmp);
@@ -29,9 +31,9 @@ var loader_ = async function(name,jb=0,pl=0,ldr_only=0){
         await write_mem(window.pl_bin,payload);
     }
     else{
-        await sleep(150);
+        await sleep(300);
         let getlength = payload.length;
-        window.ldr_bin_len=getlength;
+        window.ldr_bin_len=getlength+1000;
         window.ldr_bin=malloc(window.ldr_bin_len);
         await write_mem(window.ldr_bin,payload);
 
@@ -97,7 +99,7 @@ function load_exploit_mira() {
     document.getElementById("onekey").style.display='none';
     msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 正在加载 Exploit + Hen ...<br> 时间太长请重启！！！</h1>";
     var ExploitMira=document.getElementById("oneclick").value;
-    if(ExploitMira=='goldhen2_2')loader_("./pl/goldhen2_2.bin",1);
+    if(ExploitMira=='ghen_224')loader_("./pl/ghen_224.bin",1);
 
     else if (ExploitMira == "binLoader_jb") {
     msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 已加载 binLoader 请发送 9020端口 左上角没有提示！！！</h1>";
