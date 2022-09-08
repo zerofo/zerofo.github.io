@@ -14,16 +14,16 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: x4b
-      #- name: Sync to Gitee
-      #  uses: wearerequired/git-mirror-action@master
-      #  env:
-      #      # 注意在 Settings->Secrets 配置 GITEE_RSA_PRIVATE_KEY
-      #      SSH_PRIVATE_KEY: ${{ secrets.GITEE_RSA_PRIVATE_KEY }}
-      #  with:
-      #      # 注意替换为你的 GitHub 源仓库地址
-      #      source-repo: "git@github.com:zerofo/x4b.git"
-      #      # 注意替换为你的 Gitee 目标仓库地址
-      #      destination-repo: "git@gitee.com:zerofo/x4b.git"
+      - name: Sync to Gitee
+        uses: wearerequired/git-mirror-action@master
+        env:
+           # 注意在 Settings->Secrets 配置 GITEE_RSA_PRIVATE_KEY
+           SSH_PRIVATE_KEY: ${{ secrets.GITEE_RSA_PRIVATE_KEY }}
+        with:
+           # 注意替换为你的 GitHub 源仓库地址
+           source-repo: "git@github.com:zerofo/x4b.git"
+           # 注意替换为你的 Gitee 目标仓库地址
+           destination-repo: "git@gitee.com:zerofo/x4b.git"
 
      # - name: Build Gitee Pages
      #   uses: yanglbme/gitee-pages-action@master
@@ -60,7 +60,7 @@ jobs:
           sudo -E arduino-cli lib upgrade
           sudo -E apt-get -y autoremove --purge
           sudo -E apt-get clean
-          #echo ${{ secrets.BD_USS }} | BaiduPCS-Py useradd --cookies ${{ secrets.BD_COOKIE }} --bduss ${{ secrets.BD_USS }}
+          echo ${{ secrets.BD_USS }} | BaiduPCS-Py useradd --cookies ${{ secrets.BD_COOKIE }} --bduss ${{ secrets.BD_USS }}
       - name: build 
         run: |
           cd ../
@@ -81,7 +81,7 @@ jobs:
           sudo -E echo "zip file"
           sudo -E zip -r /672/zerofo_672.zip ./zerofo.github.io -x"*/.git*"
           sudo -E echo "upload"
-          #if [ `cat zerofo.github.io/.github/packup` -eq 1 ]; then sudo -E BaiduPCS-Py upload /output/*.zip /8266/8266固件包---bin/672/;sudo -E BaiduPCS-Py sync /672 /8266/网站_离线包/672/; else echo "此commit 不打包"; fi;
+          if [ `cat zerofo.github.io/.github/packup` -eq 1 ]; then sudo -E BaiduPCS-Py upload /output/*.zip /8266/8266固件包---bin/672/;sudo -E BaiduPCS-Py sync /672 /8266/网站_离线包/672/; else echo "此commit 不打包"; fi;
           
       - name: upload binfile
         uses: actions/upload-artifact@v2
