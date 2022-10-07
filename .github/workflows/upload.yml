@@ -36,8 +36,6 @@ jobs:
            gitee-repo: zerofo/x4b
            branch: x4b
 
-
-
       - name: cleanup & env setup
         env:
           DEBIAN_FRONTEND: noninteractive
