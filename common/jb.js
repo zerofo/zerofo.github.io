@@ -24063,9 +24063,8 @@ if ( main_ret == 0|| main_ret==81) {
     //delete main_ret;
     // await sleep(1000);
 
-	window.orbis.style.display='block';
+	// window.orbis.style.display='block';
 	window.titleONE.style.display='none';
-
     window.msgs.innerText =  "破解成功 已加载。\n请等待 左上角 跳窗结束, 正在写入Hen";
     fail_times = Number(localStorage.getItem("fail_times"))||0;
     jb_times = Number(localStorage.getItem("jb_times"))||0;

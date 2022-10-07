@@ -9,7 +9,9 @@ async function getfile(path) {
 const sleep = (timeountMS) => new Promise((resolve) => {
   setTimeout(resolve, timeountMS);
 });
-
+function msg(strings){
+    window.msgs.innerHTML="<h1 style='font-size:25px;color:red;text-align:center;'>"+strings+"</h1>";
+}
 var loader_ = async function(name,jb=0,pl=0,ldr_only=0){
     let file = await getfile(name);
     let data = await new Response(file).arrayBuffer()
@@ -31,7 +33,7 @@ var loader_ = async function(name,jb=0,pl=0,ldr_only=0){
         await write_mem(window.pl_bin,payload);
     }
     else{
-        await sleep(300);
+        await sleep(50);
         let getlength = payload.length;
         window.ldr_bin_len=getlength+1000;
         window.ldr_bin=malloc(window.ldr_bin_len);
@@ -39,11 +41,11 @@ var loader_ = async function(name,jb=0,pl=0,ldr_only=0){
 
     }
     if(jb){
-
-    window.timeC.addEventListener('animationend', jb_time);
-    window.timeC.style.animation='moving 1s alternate 1';
-    window.timeC.style.webkitanimation='moving 1s alternate 1';
-    window.timeC.style.visibility='visible';
+    jb_time();
+    // window.timeC.addEventListener('animationend', jb_time());
+    // window.timeC.style.animation='moving 1s alternate 1';
+    // window.timeC.style.webkitanimation='moving 1s alternate 1';
+    // window.timeC.style.visibility='visible';
     }
     if(ldr_only){
     window.timeC.addEventListener('animationend', ldr_time);
@@ -86,7 +88,7 @@ async function ldr_time(func){
 function load_exploit_mira() {
 
     clicktime = new Date();
-    if ((clicktime.getTime()-startTime.getTime())<6500){
+    if ((clicktime.getTime()-startTime.getTime())<4500){
         alert("请等待按钮 完全显示(共5s)");
         return;
     }
@@ -99,20 +101,20 @@ function load_exploit_mira() {
     document.getElementById("onekey").style.display='none';
     msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 正在加载 Exploit + Hen ...<br> 时间太长请重启！！！</h1>";
     var ExploitMira=document.getElementById("oneclick").value;
-    if(ExploitMira=='ghen_224')loader_("./pl/ghen_224.bin",1);
+    if(ExploitMira=='ghen_225b2')loader_("./pl/ghen_225b2.bin",1);
 
     else if (ExploitMira == "binLoader_jb") {
     msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 已加载 binLoader 请发送 9020端口 左上角没有提示！！！</h1>";
     window.timeC.addEventListener('animationend', jb_time);
-    window.timeC.style.animation='moving 2s alternate 1';
-    window.timeC.style.webkitanimation='moving 2s alternate 1';
+    window.timeC.style.animation='moving 1s alternate 1';
+    window.timeC.style.webkitanimation='moving 1s alternate 1';
     window.timeC.style.visibility='visible';
     }else if (ExploitMira == "binLoader_jb0") {
-    msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 已加载 binLoader 请发送 payload到9021端口 /h1>";
+    msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'> 已加载 binLoader 请发送 payload到9021端口 </h1>";
         loader_("./pl/hen_loader_net.bin",0);
         window.timeC.addEventListener('animationend', jb_time);
-    window.timeC.style.animation='moving 2s alternate 1';
-    window.timeC.style.webkitanimation='moving 2s alternate 1';
+    window.timeC.style.animation='moving 1s alternate 1';
+    window.timeC.style.webkitanimation='moving 1s alternate 1';
     window.timeC.style.visibility='visible';
     }
     else{
