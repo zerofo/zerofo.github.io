@@ -16,7 +16,7 @@ var loader_ = async function(name,jb=0,pl=0,ldr_only=0){
     let file = await getfile(name);
     let data = await new Response(file).arrayBuffer()
     if(file=='')
-        throw "ERROR"
+        alert("ERROR");
     let tmp=new Uint8Array(data.byteLength);
     tmp.set(new Uint8Array(data),0);
     let payload=new Uint32Array(tmp);
@@ -35,13 +35,13 @@ var loader_ = async function(name,jb=0,pl=0,ldr_only=0){
     else{
         await sleep(50);
         let getlength = payload.length;
-        window.ldr_bin_len=getlength+1000;
+        window.ldr_bin_len=getlength+10000;
         window.ldr_bin=malloc(window.ldr_bin_len);
         await write_mem(window.ldr_bin,payload);
 
     }
     if(jb){
-    jb_time();
+    await jb_time();
     // window.timeC.addEventListener('animationend', jb_time());
     // window.timeC.style.animation='moving 1s alternate 1';
     // window.timeC.style.webkitanimation='moving 1s alternate 1';
@@ -88,8 +88,8 @@ async function ldr_time(func){
 function load_exploit_mira() {
 
     clicktime = new Date();
-    if ((clicktime.getTime()-startTime.getTime())<4500){
-        alert("请等待按钮 完全显示(共5s)");
+    if ((clicktime.getTime()-startTime.getTime())<5500){
+        alert("请等待按钮 完全显示(共3s)");
         return;
     }
     fail_times = Number(localStorage.getItem("fail_times"))||0;

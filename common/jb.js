@@ -9,12 +9,16 @@ function set_gadget(val)
 }
 function set_gadgets(l)
 {
-    for(var i = 0; i < l.length; i++)
+	var i = 0, lx = l.length;
+	for (; i < lx; i++) 
+    // for(var i = 0; i < l.length; i++)
         set_gadget(l[i]);
 }
 function db(data)
 {
-    for(var i = 0; i < data.length; i++)
+	var i = 0, l = data.length;
+	for (; i < l; i++) 
+    // for(var i = 0; i < data.length; i++)
         ropchain_array[ropchain_offset++] = data[i];
 }
 var main_ret = malloc(8);
