@@ -51,7 +51,7 @@ jobs:
           sudo -E arduino-cli config init 
           sudo -E arduino-cli config add board_manager.additional_urls http://arduino.esp8266.com/stable/package_esp8266com_index.json
           sudo -E arduino-cli config set library.enable_unsafe_install true
-          sudo -E arduino-cli core install -h esp8266:esp8266:nodemcuv2 
+          sudo -E arduino-cli core install esp8266:esp8266   --additional-urls  http://arduino.esp8266.com/stable/package_esp8266com_index.json
           sudo -E arduino-cli core upgrade
           sudo -E arduino-cli lib install --git-url https://github.com/me-no-dev/ESPAsyncTCP.git
           sudo -E arduino-cli lib install --git-url https://github.com/me-no-dev/ESPAsyncWebServer.git
