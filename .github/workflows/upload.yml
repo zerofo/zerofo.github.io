@@ -62,6 +62,7 @@ jobs:
           # echo ${{ secrets.BD_USS }} | BaiduPCS-Py useradd  --account_name  Zerofo_tang --cookies ${{ secrets.BD_COOKIE }} --bduss ${{ secrets.BD_USS }}
       - name: build 
         run: |
+          cd ../
           sudo -E echo "debug"
           sudo -E git clone https://github.com/zerofo/docker-8266-builder
           sudo -E sed -i "s/ps4-zerofo/ps4-zerofo---全新破解代码-----github自动上传版本---底包---修复游戏进入必断v4.3.9x+ghen225b2--/g" ./docker-8266-builder/config.txt
@@ -70,16 +71,15 @@ jobs:
           sudo -E sed -i "s/#blockList/blockList/g" /config.txt
           sudo -E cp ./docker-8266-builder/mk8266.sh /mk8266.sh
           sudo -E rm ./zerofo.github.io/zerofo.github.io.git -rf
-          sudo -E ls ../ && ls . && pwd
           sudo -E cp ./zerofo.github.io /mk8266 -rf
-          sudo -E ls ./mk8266
-          sudo -E rm ./mk8266/README.md
+          sudo -E ls /mk8266
+          sudo -E rm /mk8266/README.md
           sudo -E cp ./docker-8266-builder/Ps4-wifi-http_async /Ps4-wifi-http -rf
-          sudo -E mkdir -p ./output
-          sudo -E bash ./mk8266.sh
-          sudo -E mkdir ./672;
+          sudo -E mkdir -p /output
+          sudo -E bash /mk8266.sh
+          sudo -E mkdir /672;
           sudo -E echo "zip file"
-          sudo -E zip -r ./672/zerofo_672.zip ./zerofo.github.io -x"*/.git*"
+          sudo -E zip -r /672/zerofo_672.zip ./zerofo.github.io -x"*/.git*"
           sudo -E echo "upload"
           # if [ `cat zerofo.github.io/.github/packup` -eq 1 ]; then sudo -E BaiduPCS-Py upload /output/*.zip /8266/8266固件包---bin/672/;sudo -E BaiduPCS-Py sync /672 /8266/网站_离线包/672/; else echo "此commit 不打包"; fi;
           
@@ -87,4 +87,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: ps4-8266-bin------------github自动上传版本
-          path: ./output/
+          path: /output/
