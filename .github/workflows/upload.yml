@@ -49,7 +49,7 @@ jobs:
           sudo -E tar xfz mklittlefs.tar.gz -C /bin/ --strip-components=1
           sudo -E rm mklittlefs.tar.gz
           sudo -E arduino-cli config init 
-          sudo -E wget http://arduino.esp8266.com/stable/package_esp8266com_index.json -o /home/runner/.arduino15/package_esp8266com_index.json
+          sudo -E wget http://arduino.esp8266.com/stable/package_esp8266com_index.json -P /home/runner/.arduino15/
           sudo -E arduino-cli config add board_manager.additional_urls http://arduino.esp8266.com/stable/package_esp8266com_index.json
           sudo -E arduino-cli config set library.enable_unsafe_install true
           sudo -E arduino-cli core install esp8266:esp8266   --additional-urls  http://arduino.esp8266.com/stable/package_esp8266com_index.json
