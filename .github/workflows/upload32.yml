@@ -34,7 +34,6 @@ jobs:
           sudo -E arduino-cli core upgrade 
           sudo -E arduino-cli lib install --git-url https://github.com/me-no-dev/AsyncTCP.git
           sudo -E arduino-cli lib install --git-url https://github.com/me-no-dev/ESPAsyncWebServer.git
-          sudo -E arduino-cli lib upgrade littlefs
           sudo -E arduino-cli lib upgrade 
           sudo -E apt-get -y autoremove --purge
           sudo -E apt-get clean
