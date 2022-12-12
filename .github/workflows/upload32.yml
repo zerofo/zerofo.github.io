@@ -68,7 +68,7 @@ jobs:
           sudo -E sed -i "s/COOKIE_PHPDISK_INFO=\"XXX\"/COOKIE_PHPDISK_INFO=\$4/" lanzou_up.sh
           sudo -E sed -i "s/COOKIE_YLOGIN=\"XXX\"/COOKIE_YLOGIN=\$5/" lanzou_up.sh
           sudo -E chmod +x lanzou_up.sh
-          sudo -E bash lanzou_up.sh  "`ls /output/*.zip|awk -F '/' '{print $2}'`" "/PsX/672/esp32" "6636600" "${{ secrets.LZ_INFO }}" "${{ secrets.LZ_LOGIN }}"
+          sudo -E bash lanzou_up.sh  "`ls /output/*.zip|awk -F '/' '{print $2}'`" "/root/PsX/672/esp32" "6636600" "${{ secrets.LZ_INFO }}" "${{ secrets.LZ_LOGIN }}"
       - name: upload binfile
         uses: actions/upload-artifact@v3
         with:
