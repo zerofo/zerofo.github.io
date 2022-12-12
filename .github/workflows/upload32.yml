@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           ref: x4b
       - name: cleanup & env setup
@@ -64,7 +64,7 @@ jobs:
           if [ `cat zerofo.github.io/.github/packup` -eq 1 ]; then AliPCS-Py upload /output2/*.zip /Psx/672/esp32/; else echo "此commit 不打包"; fi;
           
       - name: upload binfile
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: ps4-32-bin------------github自动上传版本
           path: /output2/
