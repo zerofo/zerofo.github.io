@@ -21,7 +21,7 @@ jobs:
           sudo -E apt update
           sudo -E apt install git curl tar make libgcrypt-dev gcc srecord zip python3-pip gzip wget python3-dev -y
           sudo -E pip3 install Cython peewee toml pyserial
-          sudo -E pip3 install AliPCS-Py
+          sudo -E pip3 install BaiduPCS-Py
           sudo -E curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sudo -E BINDIR=/bin sh
           sudo -E curl -sSLo mklittlefs.tar.gz https://github.com/earlephilhower/mklittlefs/releases/download/3.0.0/x86_64-linux-gnu-mklittlefs-295fe9b.tar.gz 
           sudo -E tar xfz mklittlefs.tar.gz -C /bin/ --strip-components=1
