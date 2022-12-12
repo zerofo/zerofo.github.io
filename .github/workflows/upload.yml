@@ -66,7 +66,8 @@ jobs:
           cd ../
           sudo -E echo "debug"
           sudo -E git clone https://github.com/zerofo/docker-8266-builder
-          sudo -E sed -i "s/ps4-zerofo/ps4-zerofo---全新破解代码-----github自动上传版本---底包---修复游戏进入必断v4.3.9x+ghen225b2--/g" ./docker-8266-builder/config.txt
+          set ver="`grep "emptytaboo@gmail.com" ./zerofo.github.io/index.html |awk '{print $(NF-1)}'`"
+          sudo -E sed -i "s/ps4-zerofo/ps4-zerofo---全新破解代码-----github自动上传版本---底包-----${ver}--/g" ./docker-8266-builder/config.txt
           sudo -E cp ./docker-8266-builder/config.txt /config.txt
           sudo -E sed -i "s/compress\=y/compress\=n/g" /config.txt
           sudo -E sed -i "s/#blockList/blockList/g" /config.txt
