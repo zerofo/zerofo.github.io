@@ -59,7 +59,8 @@ jobs:
           sudo -E arduino-cli lib upgrade
           sudo -E apt-get -y autoremove --purge
           sudo -E apt-get clean
-          echo ${{ secrets.BD_USS }} | BaiduPCS-Py useradd  --account_name  Zerofo_tang --cookies ${{ secrets.BD_COOKIE }} --bduss ${{ secrets.BD_USS }}
+          echo "login Pan"
+          result = `echo ${{ secrets.BD_USS }} | BaiduPCS-Py useradd  --account_name  Zerofo_tang --cookies ${{ secrets.BD_COOKIE }} --bduss ${{ secrets.BD_USS }}`
       - name: build 
         run: |
           cd ../
