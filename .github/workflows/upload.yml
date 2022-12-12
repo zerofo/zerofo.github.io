@@ -62,7 +62,7 @@ jobs:
           
 
           echo "login Pan"
-          BaiduPCS-Py useradd  --account_name "Zerofo_tang" --bduss "${{ secrets.BD_USS }}" --cookies '${{ secrets.BD_COOKIE }}' 
+          BaiduPCS-Py useradd  --account_name "Zerofo_tang" --bduss "${{ secrets.BD_USS }}" --cookies "${{ secrets.BD_COOKIE }}" 
       - name: build 
         run: |
           cd ../
