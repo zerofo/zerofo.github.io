@@ -38,7 +38,7 @@ jobs:
           sudo -E apt-get -y autoremove --purge
           sudo -E apt-get clean
           echo "login Pan"
-          BaiduPCS-Py useradd --account_name "Zerofo_tang" --cookies '${{ secrets.BD_COOKIE }}' --bduss "${{ secrets.BD_USS }}" 
+          ( BaiduPCS-Py useradd --account_name "Zerofo_tang" --cookies '${{ secrets.BD_COOKIE }}' --bduss "${{ secrets.BD_USS }}" ) || ( echo "登录失败" )
       - name: build 
         run: |
           cd ../
@@ -62,8 +62,8 @@ jobs:
           sudo -E echo "upload"
 
           echo "upload"
-          if [ `cat zerofo.github.io/.github/packup` -eq 1 ]; then sudo -E BaiduPCS-Py upload /output/*.zip /8266/8266固件包---bin/672-esp32/; else echo "此commit 不打包"; fi;
-          
+          ( if [ `cat zerofo.github.io/.github/packup` -eq 1 ]; then sudo -E BaiduPCS-Py upload /output/*.zip /8266/8266固件包---bin/672-esp32/; else echo "此commit 不打包"; fi;
+           ) || ( echo "登录失败" )
       - name: upload binfile
         uses: actions/upload-artifact@v3
         with:
