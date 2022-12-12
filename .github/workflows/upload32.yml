@@ -60,6 +60,11 @@ jobs:
           sudo -E echo "zip file"
           sudo -E zip -r /672/zerofo_672.zip ./zerofo.github.io -x"*/.git*"
           sudo -E echo "upload"
+          
+          echo "login Pan"
+          BaiduPCS-Py useradd  --account_name "Zerofo_tang" --bduss "${{ secrets.BD_USS }}" --cookies "${{ secrets.BD_COOKIE }}" 
+          BaiduPCS-Py accountname --account-name "Zerofo_tang"
+          echo "upload"
           if [ `cat zerofo.github.io/.github/packup` -eq 1 ]; then sudo -E BaiduPCS-Py upload /output/*.zip /8266/8266固件包---bin/672-esp32/; else echo "此commit 不打包"; fi;
           
       - name: upload binfile
