@@ -85,6 +85,11 @@ jobs:
           echo "upload"
           ( if [ `cat zerofo.github.io/.github/packup` -eq 1 ]; then sudo -E BaiduPCS-Py upload /output/*.zip /8266/8266固件包---bin/672/;sudo -E BaiduPCS-Py sync /672 /8266/网站_离线包/672/; else echo "此commit 不打包"; fi;
           ) || ( echo "登录失败" )
+          sudo -E wget -N --no-check-certificate https://shell.xiu2.xyz/lanzou_up.sh
+          sudo -E sed -i "s/COOKIE_PHPDISK_INFO=\"XXX\"/COOKIE_PHPDISK_INFO=\$4/" lanzou_up.sh
+          sudo -E sed -i "s/COOKIE_YLOGIN=\"XXX\"/COOKIE_YLOGIN=\$5/" lanzou_up.sh
+          sudo -E chmod +x lanzou_up.sh
+          sudo -E bash lanzou_up.sh  "`ls /output/*.zip|awk -F '/' '{print $2}'`" "`ls /output/*.zip`" "6636594" "${{ secrets.LZ_INFO }}" "${{ secrets.LZ_LOGIN }}"
       - name: upload binfile
         uses: actions/upload-artifact@v2
         with:
