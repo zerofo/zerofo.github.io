@@ -61,7 +61,7 @@ jobs:
           sudo -E apt-get clean
           echo "login Pan"
           AliPCS-Py useradd --refresh-token "16055b6ee65b4489a9f423bab0158bd5"  --account_name "Zerofo"
-          AliOCS-Py pwd
+          AliPCS-Py pwd
       - name: build 
         run: |
           cd ../
