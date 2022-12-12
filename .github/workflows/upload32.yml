@@ -27,7 +27,7 @@ jobs:
           sudo -E tar xfz mklittlefs.tar.gz -C /bin/ --strip-components=1
           sudo -E rm mklittlefs.tar.gz
           
-          sudo -E arduino-cli config init && arduino-cli config add board_manager.additional_urls https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_dev_index.json
+          sudo -E arduino-cli config init && sudo -E arduino-cli config add board_manager.additional_urls https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_dev_index.json
           sudo -E arduino-cli config set library.enable_unsafe_install true
           sudo -E arduino-cli core update-index --additional-urls https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_dev_index.json
           sudo -E arduino-cli core install esp32:esp32
