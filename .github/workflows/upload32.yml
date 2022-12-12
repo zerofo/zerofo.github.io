@@ -56,7 +56,6 @@ jobs:
           sudo -E cp ./docker-8266-builder/esp32-wifi-http_async /Ps4-wifi-http -rf
           sudo -E mkdir -p /output
           sudo -E bash /mk32.sh
-          sudo -E find / -name "*bootloader*bin"
           sudo -E mkdir /672;
           sudo -E echo "zip file"
           sudo -E zip -r /672/zerofo_672.zip ./zerofo.github.io -x"*/.git*"
