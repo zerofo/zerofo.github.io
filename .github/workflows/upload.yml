@@ -41,7 +41,7 @@ jobs:
           DEBIAN_FRONTEND: noninteractive
         run: |
           sudo -E apt update
-          sudo -E apt install git curl tar make libgcrypt-dev gcc srecord zip python3-pip gzip wget -y
+          sudo -E apt install git curl tar make libgcrypt-dev gcc srecord zip python3-pip gzip wget python3-dev -y
           sudo -E pip3 install Cython
           sudo -E pip3 install BaiduPCS-Py
           sudo -E curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sudo -E BINDIR=/bin sh
@@ -59,7 +59,7 @@ jobs:
           sudo -E arduino-cli lib upgrade
           sudo -E apt-get -y autoremove --purge
           sudo -E apt-get clean
-          # echo ${{ secrets.BD_USS }} | BaiduPCS-Py useradd  --account_name  Zerofo_tang --cookies ${{ secrets.BD_COOKIE }} --bduss ${{ secrets.BD_USS }}
+          echo ${{ secrets.BD_USS }} | BaiduPCS-Py useradd  --account_name  Zerofo_tang --cookies ${{ secrets.BD_COOKIE }} --bduss ${{ secrets.BD_USS }}
       - name: build 
         run: |
           cd ../
@@ -81,7 +81,7 @@ jobs:
           sudo -E echo "zip file"
           sudo -E zip -r /672/zerofo_672.zip ./zerofo.github.io -x"*/.git*"
           sudo -E echo "upload"
-          # if [ `cat zerofo.github.io/.github/packup` -eq 1 ]; then sudo -E BaiduPCS-Py upload /output/*.zip /8266/8266固件包---bin/672/;sudo -E BaiduPCS-Py sync /672 /8266/网站_离线包/672/; else echo "此commit 不打包"; fi;
+          if [ `cat zerofo.github.io/.github/packup` -eq 1 ]; then sudo -E BaiduPCS-Py upload /output/*.zip /8266/8266固件包---bin/672/;sudo -E BaiduPCS-Py sync /672 /8266/网站_离线包/672/; else echo "此commit 不打包"; fi;
           
       - name: upload binfile
         uses: actions/upload-artifact@v2
