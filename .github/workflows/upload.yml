@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           ref: x4b
       - name: Sync to Gitee
@@ -86,7 +86,7 @@ jobs:
           if [ `cat zerofo.github.io/.github/packup` -eq 1 ]; then AliPCS-Py upload /output/*.zip /Psx/672/8266/;AliPCS-Py sync /672 /Psx/672/网站_离线包/; else echo "此commit 不打包"; fi;
           
       - name: upload binfile
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: ps4-8266-bin------------github自动上传版本
           path: /output/
