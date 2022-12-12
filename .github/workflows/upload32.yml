@@ -52,9 +52,9 @@ jobs:
           sudo -E cp -r ./docker-8266-builder/esp32_base /esp32_base
           sudo -E rm ./zerofo.github.io/zerofo.github.io.git -rf
           sudo -E rm -rf /mk8266
-          sudo -E cp ./zerofo.github.io /mk8266 -rf
-          sudo -E ls /mk8266
-          sudo -E rm /mk8266/README.md
+          sudo -E cp ./zerofo.github.io /mk32 -rf
+          sudo -E ls /mk32
+          sudo -E rm /mk32/README.md
           sudo -E cp ./docker-8266-builder/Ps4-wifi-http_async /Ps4-wifi-http -rf
           sudo -E mkdir -p /output2
           sudo -E bash /mk32.sh
