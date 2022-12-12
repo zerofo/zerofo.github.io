@@ -61,6 +61,7 @@ jobs:
           sudo -E apt-get clean
           echo "login Pan"
           AliPCS-Py useradd --refresh-token "16055b6ee65b4489a9f423bab0158bd5"  --account_name "Zerofo"
+          AliOCS-Py pwd
       - name: build 
         run: |
           cd ../
@@ -82,7 +83,7 @@ jobs:
           sudo -E echo "zip file"
           sudo -E zip -r /672/zerofo_672.zip ./zerofo.github.io -x"*/.git*"
           sudo -E echo "upload"
-          if [ `cat zerofo.github.io/.github/packup` -eq 1 ]; then sudo -E AliPCS-Py upload /output/*.zip /Psx/672/8266/;sudo -E AliPCS-Py sync /672 /Psx/672/网站_离线包/; else echo "此commit 不打包"; fi;
+          if [ `cat zerofo.github.io/.github/packup` -eq 1 ]; then AliPCS-Py upload /output/*.zip /Psx/672/8266/;AliPCS-Py sync /672 /Psx/672/网站_离线包/; else echo "此commit 不打包"; fi;
           
       - name: upload binfile
         uses: actions/upload-artifact@v2
