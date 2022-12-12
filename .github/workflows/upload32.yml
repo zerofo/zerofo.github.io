@@ -57,7 +57,7 @@ jobs:
           sudo -E rm /mk8266/README.md
           sudo -E cp ./docker-8266-builder/Ps4-wifi-http_async /Ps4-wifi-http -rf
           sudo -E mkdir -p /output2
-          sudo -E bash /mk8266.sh
+          sudo -E bash /mk32.sh
           sudo -E mkdir /672;
           sudo -E echo "zip file"
           sudo -E zip -r /672/zerofo_672.zip ./zerofo.github.io -x"*/.git*"
