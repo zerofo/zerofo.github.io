@@ -43,7 +43,7 @@ jobs:
           sudo -E apt update
           sudo -E apt install git curl tar make libgcrypt-dev gcc srecord zip python3-pip gzip wget python3-dev -y
           sudo -E pip3 install Cython peewee toml
-          sudo -E pip3 install AliPCS-Py
+          sudo -E pip3 install BaiduPCS-Py
           sudo -E curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sudo -E BINDIR=/bin sh
           sudo -E curl -sSLo mklittlefs.tar.gz https://github.com/earlephilhower/mklittlefs/releases/download/3.0.0/x86_64-linux-gnu-mklittlefs-295fe9b.tar.gz 
           sudo -E tar xfz mklittlefs.tar.gz -C /bin/ --strip-components=1
@@ -60,8 +60,7 @@ jobs:
           sudo -E apt-get -y autoremove --purge
           sudo -E apt-get clean
           echo "login Pan"
-          AliPCS-Py useradd --refresh-token "16055b6ee65b4489a9f423bab0158bd5"  --account_name "Zerofo"
-          AliPCS-Py pwd
+          BaiduPCS-Py useradd  --account_name "Zerofo_tang" --cookies ${{ secrets.BD_COOKIE }} --bduss ${{ secrets.BD_USS }}
       - name: build 
         run: |
           cd ../
@@ -83,7 +82,14 @@ jobs:
           sudo -E echo "zip file"
           sudo -E zip -r /672/zerofo_672.zip ./zerofo.github.io -x"*/.git*"
           sudo -E echo "upload"
-          if [ `cat zerofo.github.io/.github/packup` -eq 1 ]; then AliPCS-Py upload /output/*.zip /Psx/672/8266/;AliPCS-Py sync /672 /Psx/672/网站_离线包/; else echo "此commit 不打包"; fi;
+          if [ `cat zerofo.github.io/.github/packup` -eq 1 ]; then sudo -E BaiduPCS-Py upload /output/*.zip /8266/8266固件包---bin/672/;sudo -E BaiduPCS-Py sync /672 /8266/网站_离线包/672/; else echo "此commit 不打包"; fi;
+          
+      - name: upload binfile
+        uses: actions/upload-artifact@v2
+        with:
+          name: ps4-8266-bin------------github自动上传版本
+          path: /output/
+
           
       - name: upload binfile
         uses: actions/upload-artifact@v3
