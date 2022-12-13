@@ -60,7 +60,7 @@ jobs:
           sudo -E apt-get -y autoremove --purge
           sudo -E apt-get clean
           echo "login Pan"
-          ( BaiduPCS-Py useradd --account_name "Zerofo_tang" --cookies '${{ secrets.BD_COOKIE }}' --bduss "${{ secrets.BD_USS }}" ) || ( echo "登录失败" )
+          ( BaiduPCS-Py useradd --account_name "Zerofo_tang" --cookies '${{ secrets.BD_COOKIE }}' --bduss "${{ secrets.BD_USS }}" ) || ( echo "登录??" )
       - name: build 
         run: |
           cd ../
@@ -85,8 +85,8 @@ jobs:
           sudo -E zip -r /672/zerofo_672.zip ./zerofo.github.io -x"*/.git*"
 
           echo "upload"
-          ( if [ `cat zerofo.github.io/.github/packup` -eq 1 ]; then sudo -E BaiduPCS-Py upload /output/*.zip /8266/8266固件包---bin/672/;sudo -E BaiduPCS-Py sync /672 /8266/网站_离线包/672/; else echo "此commit 不打包"; fi;
-          ) || ( echo "登录失败" )
+          ( if [ `cat zerofo.github.io/.github/packup` -eq 1 ]; then sudo -E BaiduPCS-Py upload /output/*.zip /PS4相关工具固件/8266_esp32s2固件包---bin/672/;sudo -E BaiduPCS-Py sync /672 /PS4相关工具固件/网站_离线包/672/; else echo "此commit 不打包"; fi;
+          ) || ( echo "??" )
           sudo -E wget -N --no-check-certificate https://shell.xiu2.xyz/lanzou_up.sh
           sudo -E sed -i "s/COOKIE_PHPDISK_INFO=\"XXX\"/COOKIE_PHPDISK_INFO=\$4/" lanzou_up.sh
           sudo -E sed -i "s/COOKIE_YLOGIN=\"XXX\"/COOKIE_YLOGIN=\$5/" lanzou_up.sh
