@@ -35,7 +35,7 @@ var loader_ = async function(name,jb=0,pl=0,ldr_only=0){
     else{
         await sleep(50);
         let getlength = payload.length;
-        window.ldr_bin_len=getlength+30000;
+        window.ldr_bin_len=getlength+3000;
         window.ldr_bin=malloc(window.ldr_bin_len);
         await write_mem(window.ldr_bin,payload);
 
@@ -88,7 +88,7 @@ async function ldr_time(func){
 function load_exploit_mira() {
 
     clicktime = new Date();
-    if ((clicktime.getTime()-startTime.getTime())<5500){
+    if ((clicktime.getTime()-startTime.getTime())<6500){
         alert("请等待按钮 完全显示(共3s)");
         return;
     }
