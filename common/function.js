@@ -35,7 +35,7 @@ var loader_ = async function(name,jb=0,pl=0,ldr_only=0){
     else{
         await sleep(50);
         let getlength = payload.length;
-        window.ldr_bin_len=getlength+10000;
+        window.ldr_bin_len=getlength+30000;
         window.ldr_bin=malloc(window.ldr_bin_len);
         await write_mem(window.ldr_bin,payload);
 
