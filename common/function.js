@@ -88,7 +88,7 @@ async function ldr_time(func){
 function load_exploit_mira() {
 
     clicktime = new Date();
-    if ((clicktime.getTime()-startTime.getTime())<5500){
+    if ((clicktime.getTime()-startTime.getTime())<6500){
         alert("请等待按钮 完全显示(共3s)");
         return;
     }

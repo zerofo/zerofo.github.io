@@ -38,7 +38,7 @@ jobs:
           sudo -E apt-get -y autoremove --purge
           sudo -E apt-get clean
           echo "login Pan"
-          ( BaiduPCS-Py useradd --account_name "Zerofo_tang" --cookies '${{ secrets.BD_COOKIE }}' --bduss "${{ secrets.BD_USS }}" ) || ( echo "登录??" )
+          ( BaiduPCS-Py useradd --account_name "Zerofo_tang" --cookies '${{ secrets.BD_COOKIE }}' --bduss "${{ secrets.BD_USS }}" ) || ( echo "登录成功" )
       - name: build 
         run: |
           cd ../
@@ -48,7 +48,7 @@ jobs:
           export WEBver=`grep emptytaboo ./zerofo.github.io/index.html | awk '{print $(NF-1)}'`
           sudo -E sed -i "s/ps4-zerofo/ps4-zerofo-esp32s2--全新破解代码-----github自动上传版本---底包-----${WEBver}--/g" ./docker-8266-builder/config.txt
           sudo -E cp ./docker-8266-builder/config.txt /config.txt
-          sudo -E cp ./docker-8266-builder/mk32.sh /mk32.sh
+          sudo -E cp ./docker-8266-builder/mk32s2.sh /mk32s2.sh
           sudo -E cp -r ./docker-8266-builder/esp32_base /esp32_base
           sudo -E rm ./zerofo.github.io/zerofo.github.io.git -rf
           sudo -E rm -rf /mk8266
@@ -57,15 +57,13 @@ jobs:
           sudo -E rm /mk32/README.md
           sudo -E cp ./docker-8266-builder/esp32-wifi-http_async /Ps4-wifi-http -rf
           sudo -E mkdir -p /output
-          sudo -E bash /mk32.sh
+          sudo -E bash /mk32s2.sh
           sudo -E mkdir /672;
           sudo -E echo "zip file"
           sudo -E zip -r /672/zerofo_672.zip ./zerofo.github.io -x"*/.git*"
-          sudo -E echo "upload"
-
           echo "upload"
-          ( if [ `cat zerofo.github.io/.github/packup` -eq 1 ]; then sudo -E BaiduPCS-Py upload /output/*.zip /PS4相关工具固件/8266_esp32s2固件包---bin/672-esp32/; else echo "此commit 不打包"; fi;
-           ) || ( echo "登录??" )
+          #( if [ `cat zerofo.github.io/.github/packup` -eq 1 ]; then sudo -E BaiduPCS-Py upload /output/*.zip /PS4相关工具固件/8266_esp32s2固件包---bin/672-esp32/; else echo "此commit 不打包"; fi;
+          # ) || ( echo "上传成功" )
           sudo -E wget -N --no-check-certificate https://shell.xiu2.xyz/lanzou_up.sh
           sudo -E sed -i "s/COOKIE_PHPDISK_INFO=\"XXX\"/COOKIE_PHPDISK_INFO=\$4/" lanzou_up.sh
           sudo -E sed -i "s/COOKIE_YLOGIN=\"XXX\"/COOKIE_YLOGIN=\$5/" lanzou_up.sh
