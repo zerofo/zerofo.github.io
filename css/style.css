@@ -1,0 +1,109 @@
+:root{
+--mainColor: #0080FF;
+--fontColor: white;
+--attendColor: #84b5e6;
+--subColor: white;
+--spesColor: gray;
+}
+
+body,html,div,table,a{
+text-align: center;
+margin: auto;
+}
+h1,h2,h3 {
+cursor:pointer;
+}
+
+.webname {
+    margin: 0px;
+    cursor:default;
+
+    text-align:center;
+    background-color:var(--mainColor);
+    color:var(--fontColor);
+    font-size:70px;
+    padding:15px;
+}
+.btn{
+    padding: 15px;
+    border-radius: 12px;
+    min-width: 80px; 
+    font-size: 60px;
+    display: none;
+}
+.payload{
+    float:left;
+    min-width: 160px; 
+    background-Color:var(--mainColor);
+    display: block;
+    font-size: 25px;
+    margin: 5px;
+    flex: 1;
+}
+.payload:hover{
+    background-Color:var(--attendColor);
+}
+#msgs {
+    font-size: 45px;
+    font-weight: bold;
+    margin: 0 auto;
+    left: 40%;
+    bottom: 0;
+    float:inline-start
+  }
+input::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    border-radius: 50%;
+    background-color: var(--mainColor);
+    border: 4px solid black;
+}
+.slice{
+    position: absolute; top: 15%;margin: 0 auto; width: 8%;display: block;
+}
+input{
+    background-Color: gray; border-radius: 8px; cursor: pointer;border: 3px solid #1ba1e2;width: 300px;
+}
+.jb{
+    display: block;
+    visibility: hidden;
+    background-Color:var(--mainColor); 
+}
+.jb:hover{
+    background-Color:var(--attendColor);
+    color: whitesmoke;
+}
+#version{
+    position: absolute;
+    font-size: 21px;
+    bottom: 8%;
+    left: 1%;
+}
+.status{
+    display: inline-flex;
+    position: absolute;
+    font-size: 21px;
+    bottom: 4%;
+    right: 3%;
+}
+@keyframes widthing {
+    0% {
+    width: 60%;
+    }
+    50% {
+        width: 1%;
+    }
+    100% {
+        width: 60%;
+        
+    }
+}
+.lines {
+    background-color: black;
+    width: 60%;
+    height: 5px;
+}
+.timer {
+    width: 60%;
+    /* height: 5px;
+    background-color: red; */
+}

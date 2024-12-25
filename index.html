@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8"/>
+<script>
+
+
+addEventListener('unhandledrejection', async(event) => {
+const reason = event.reason;
+alert(
+    `${reason}\n`
+    + `${reason.sourceURL}:${reason.line}:${reason.column}\n`
+    + `${reason.stack}`
+);
+
+throw reason;
+});
+chk_jb = sessionStorage.getItem("jb_done");
+
+function display(msg='',reslut=0){
+    let color = 'black';
+    if(reslut===0)
+        color = 'black';
+    else if(reslut===1)
+        color = 'green';
+    else color = 'red';
+    window.msgs.style.color = color;
+    window.msgs.innerText=msg;
+
+}
+</script>
+<script src='common/jb.js'></script>
+<script src='common/netcat.js'></script>
+<script src='common/webkit.js'></script>
+<link id="css" rel="stylesheet prefetch" href="css/style.css">
+<title>Best 6.72-折腾网站 by Zerofo </title>
+</head>
+
+<body onload="
+    window.timer.addEventListener('animationend', ()=>{
+        
+        if (window.WEBKIT_Exploit===1 && chk_jb != 1){
+            (async()=>{
+                window.ing.style.animation=null;
+                window.jb_btn.style.visibility='visible';
+                display();
+                }
+            )();
+        }
+        else if(chk_jb===1){
+            window.pl_list.style.display='block';
+            window.pl_list3.style.display='inline-flex';
+        }
+        else{
+            window.webname.innerText = 'Error System Version (not 6.72)';
+            document.title = 'Error System Version';
+            display('Webkit 初始化失败. \n 系统可能不是 PS4 6.72',2);
+        }
+        window.ing.style.animation=null;
+
+    });
+    window.timer.style.animation='widthing 2s 2';
+    window.ing.style.animation='widthing 3s infinite';
+    window.fail_times = Number(localStorage.getItem('fail_times'))||0;
+    window.jb_times = Number(localStorage.getItem('jb_times'))||0;
+    window.jbtimes.innerHTML=String(jb_times);
+    window.failtimes.innerHTML=String(fail_times);
+    
+">
+
+<h1 id="webname" class="webname"> Best 6.72-折腾网站 by Zerofo</h1>
+<div id="ing" class="lines"></div>
+<div id="timer" class="timer"></div>
+<div style="display:inline-block;">
+
+<div style="width: 290px;">
+    <h2 id="jb_btn" tabindex="0" class="btn jb" onmouseover="display('Goldhen2.4B18\n直至2024/11/26最新');" onmouseout="display();" onclick="getHen('goldhen.bin')"> Goldhen </h2>
+</div>
+<div id="pl_list" style="display: none;width: 90%; float:inline-start">
+        <div id="pl_list1" class="btn slice" style="left: 0%;"> 
+            <h2 id="BlockHistory" tabindex="0" class="btn payload" onclick="loader('./History-Blocker.bin')" onmouseover="display('浏览器 历史记录 开/关');" onmouseout="display();"> 历史记录屏蔽 </h2>
+            <h2 id="Backup" tabindex="0" class="btn payload" onclick="loader('./Backup.bin')" onmouseover="display('备份数据库 (重构数据库 游戏会消失)\n如果有备份,可以恢复');" onmouseout="display();"> 备份数据库 </h2>
+            <h2 id="BlockUpdate" tabindex="0" class="btn payload" onclick="loader('./Disable-Updates.bin')" onmouseover="display('屏蔽系统更新');" onmouseout="display();"> 屏蔽更新 </h2>
+            <h2 id="App2USB" tabindex="0" class="btn payload" onclick="loader('./App2USB.bin')" onmouseover="display('移动游戏到硬盘运行');" onmouseout="display();"> App2USB </h2>
+            <h2 id="Dumper" tabindex="0" class="btn payload" onclick="loader('./Dumper.bin')" onmouseover="display('Dump 游戏');" onmouseout="display();"> Dumper </h2>
+            <h2 id="Restore" tabindex="0" class="btn payload" onclick="loader('./Restore.bin')" onmouseover="display('还原数据库 (重构数据库 游戏会消失)\n如果有备份,可以恢复');" onmouseout="display();"> 还原数据库 </h2>
+        </div>
+        
+        <div id="pl_list2" class="btn slice" style="right: 5%;"> 
+            <h2 id="FTP" tabindex="0" class="btn payload" onclick="loader('./FTP.bin')"> FTP </h2>
+            <h2 id="EN_Updates" tabindex="0" class="btn payload" onclick="loader('./Enable-Updates.bin')" onmouseover="display('开启系统更新');" onmouseout="display();"> 开启更新 </h2>
+            <h2 id="EN_Browser" tabindex="0" class="btn payload" onclick="loader('./Enable-Browser.bin')" onmouseover="display('开启浏览器\n(特殊情况才需要)');" onmouseout="display();"> 开启浏览器 </h2>
+            <h2 id="Kernel_Clock" tabindex="0" class="btn payload" onclick="loader('./Kernel-Clock.bin')" onmouseover="display('理论上同步内核时钟\n<672无效>');" onmouseout="display();"> 内核时钟 </h2>
+            <h2 id="Kernel_Dumper" tabindex="0" class="btn payload" onclick="loader('./Kernel-Dumper.bin')" onmouseover="display('Dump 内核');" onmouseout="display();"> 内核Dumper </h2>
+            <h2 id="RIF_Renamer" tabindex="0" class="btn payload" onclick="loader('./RIF-Renamer.bin')" onmouseover="display('RIF重命名\n(统一FPKG签证)');" onmouseout="display();"> RIF重签 </h2>
+        </div>
+    
+</div>
+<div id="msgs">稍等...</div>
+<div id="version">
+    Ver.##ONLINE
+</div>
+
+<div class="status">
+    <h2 id='jbtimes' style="color: greenyellow;">0</h2>
+    <h2>/</h2>
+    <h2 id='failtimes' style="color: red;">0</h2>
+</div>
+
+
+    <div style="width: 100%; position: absolute; bottom: 0%; left: 0%;">
+        <div id="pl_list3" class="btn" style="margin: 0 auto;"> 
+            <h2 id="FAN" class="btn payload" onclick="loader('./Fan-Threshold.bin');" onmouseover="display('设置目标温度, 越低风扇越快\n重启不重置!!!');" onmouseout="display();"> 风扇温度 </h2>
+            <div>
+                <div style="font-size: 25px;" onmouseover="display('设置目标温度, 越低风扇越快\n重启不重置!!!');" onmouseout="display();">温度(默认79):
+                    <input id="temp" tabindex="0" type="range" min="0" max="100" value="79" list="tickmarks" oninput="window.temp_show.innerText=`${window.temp.value}°C`" >
+                    <datalist id="tickmarks">
+                        <option value="79" label="defalut"></option>
+                    </datalist>
+                </div>
+                <div id='temp_show' style="font-size: 25px;"></div>
+            </div>
+        </div>
+        <h3>核心代码来自:
+        <a href="https://github.com/sleirsgoevy">sleirsgoevy</a>,
+        SiSTRo,
+        Al_Azif
+        </h3>
+        <hr>
+        网站 仅用于 个人交流学习. 不以此牟利, 亦未因此获取任何利益. <br>
+        您支付的任何费用与本人无关.
+    </div>
+</div>
+<script>
+
+// var xhr = new XMLHttpRequest();
+// xhr.open('POST', 'https://10.0.0.228:443/1index.html',true);
+// // xhr.open('GET', 'http://'+window.location.host+'');
+// xhr.onreadystatechange = function() {
+//   if (xhr.readyState === 4) { // 请求完成
+//     if (xhr.status == 200 ) { // 成功返回
+//     //   console.log('地址访问成功');
+//     alert("working");
+//     } else { // 失败返回
+//     alert("fail!!");
+//     }
+//   }
+// };
+// xhr.send();
+
+
+</script>
+</body>
+</html>
