@@ -800,7 +800,7 @@ async function getfile(path){
 }
 async function getHen() {
     window.jb_btn.onmouseout=null;
-    display("已经点击\n请等待跳窗.");
+    display("已经点击<br>请等待跳窗.");
     window.jb_btn.style.visibility='hidden';
     await sleep(150);
     let info = await getfile("goldhen.bin");
@@ -809,13 +809,14 @@ async function getHen() {
     write_mem(window.HEN_data, info.data);
     await sleep(150);
         let r = await jb();
+        await new Promise(resolve => setTimeout(resolve, 50));
         if(r==0){
             sessionStorage.setItem("jb_done", 1);
             document.title="Best 6.72-折腾网站 by Zerofo ( ✔成功注入GoldHen✔ )";
             localStorage.setItem('fail_times',fail_times);
             localStorage.setItem('jb_times',jb_times+1);
             window.jbtimes.innerHTML=String(jb_times+1);
-            display("✔成功注入GoldHen✔\n需要注入插件<点我>",1);
+            display("✔成功注入GoldHen✔<br>需要注入插件<点我>",1);
             msgs.style.cursor = "pointer";
             msgs.tabindex = "0";
             msgs.onclick=()=>{

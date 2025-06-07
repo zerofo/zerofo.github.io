@@ -1,0 +1,22 @@
+<html manifest="cache.manifest">
+<head>
+    <meta charset="utf-8"/>
+<title>破解网站缓存页面 by zerofo</title>
+<script>
+function reflash(){setTimeout(function(){localStorage.setItem("cache-by-zerofo",1);window.location.href="./index.html";},1000);}
+window.applicationCache.oncached=function(e){window.msgs.innerHTML="离线缓存 已成功，即将返回";reflash();};
+window.applicationCache.onupdateready=function(e){window.msgs.innerHTML="离线缓存 已成功，即将返回";reflash();};
+window.applicationCache.onnoupdate=function(e){window.msgs.innerHTML="离线缓存 已成功，即将返回";reflash();};
+reflash();
+</script>
+</head>
+<body>
+<h1 style='background-color:black;color:white;font-size:35px;text-align:center;'>破解网站 缓存页面by zerofo</h1>
+<!-- <center>
+<h1 id=msgs></h1>
+</center>
+<hr/> -->
+<h1 id=msgs style='font-size:35px;text-align:center;'>若完成离线缓存，将自动返回。</h1>
+  
+</body>
+</html>

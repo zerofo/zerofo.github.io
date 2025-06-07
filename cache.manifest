@@ -1,0 +1,24 @@
+CACHE MANIFEST
+common/netcat.js
+common/jb.js
+common/webkit.js
+css/style.css
+goldhen.bin
+index.html
+ldr.bin
+pl/App2USB.bin
+pl/Backup.bin
+pl/Disable-Updates.bin
+pl/Dumper.bin
+pl/Enable-Browser.bin
+pl/Enable-Updates.bin
+pl/FTP.bin
+pl/Fan-Threshold.bin
+pl/History-Blocker.bin
+pl/Kernel-Clock.bin
+pl/Kernel-Dumper.bin
+pl/RIF-Renamer.bin
+pl/Restore.bin
+dl.png
+FALLBACK:
+/ index.html

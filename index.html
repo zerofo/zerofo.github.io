@@ -14,6 +14,7 @@ alert(
 
 throw reason;
 });
+
 chk_jb = sessionStorage.getItem("jb_done");
 
 function display(msg='',reslut=0){
@@ -24,7 +25,7 @@ function display(msg='',reslut=0){
         color = 'green';
     else color = 'red';
     window.msgs.style.color = color;
-    window.msgs.innerText=msg;
+    window.msgs.innerHTML=msg;
 
 }
 </script>
@@ -71,27 +72,27 @@ function display(msg='',reslut=0){
 <div id="ing" class="lines"></div>
 <div id="timer" class="timer"></div>
 <div style="display:inline-block;">
-
+<img id="cacheBtn" src="./dl.png" onclick="cachehost();"/>
 <div style="width: 290px;">
-    <h2 id="jb_btn" tabindex="0" class="btn jb" data-msg="Goldhen2.4B18\n直至2024/11/26最新" > Goldhen </h2>
+    <h2 id="jb_btn" tabindex="0" class="btn jb" data-msg="Goldhen2.4B18<br>直至2024/11/26最新" > Goldhen </h2>
 </div>
 <div id="pl_list" style="display: none;width: 90%; float:inline-start">
         <div id="pl_list1" class="btn slice" style="left: 0%;"> 
             <h2 id="BlockHistory" tabindex="0" class="btn payload" data-custom-value="History-Blocker.bin" data-msg="浏览器 历史记录 开/关" > 历史记录屏蔽 </h2>
-            <h2 id="Backup" tabindex="0" class="btn payload" data-custom-value="Backup.bin" data-msg="备份数据库 (重构数据库 游戏会消失)\n如果有备份,可以恢复" > 备份数据库 </h2>
+            <h2 id="Backup" tabindex="0" class="btn payload" data-custom-value="Backup.bin" data-msg="备份数据库 (重构数据库 游戏会消失)<br>如果有备份,可以恢复" > 备份数据库 </h2>
             <h2 id="BlockUpdate" tabindex="0" class="btn payload" data-custom-value="Disable-Updates.bin" data-msg="屏蔽系统更新" > 屏蔽更新 </h2>
             <h2 id="App2USB" tabindex="0" class="btn payload" data-custom-value="App2USB.bin" data-msg="移动游戏到硬盘运行" > App2USB </h2>
             <h2 id="Dumper" tabindex="0" class="btn payload" data-custom-value="Dumper.bin" data-msg="Dump 游戏" > Dumper </h2>
-            <h2 id="Restore" tabindex="0" class="btn payload" data-custom-value="Restore.bin" data-msg="还原数据库 (重构数据库 游戏会消失)\n如果有备份,可以恢复" > 还原数据库 </h2>
+            <h2 id="Restore" tabindex="0" class="btn payload" data-custom-value="Restore.bin" data-msg="还原数据库 (重构数据库 游戏会消失)<br>如果有备份,可以恢复" > 还原数据库 </h2>
         </div>
         
         <div id="pl_list2" class="btn slice" style="right: 5%;"> 
             <h2 id="FTP" tabindex="0" class="btn payload" data-custom-value="FTP.bin"> FTP </h2>
             <h2 id="EN_Updates" tabindex="0" class="btn payload" data-custom-value="Enable-Updates.bin" data-msg="开启系统更新" > 开启更新 </h2>
-            <h2 id="EN_Browser" tabindex="0" class="btn payload" data-custom-value="Enable-Browser.bin" data-msg="开启浏览器\n(特殊情况才需要)" > 开启浏览器 </h2>
-            <h2 id="Kernel_Clock" tabindex="0" class="btn payload" data-custom-value="Kernel-Clock.bin" data-msg="理论上同步内核时钟\n(672无效)" > 内核时钟 </h2>
+            <h2 id="EN_Browser" tabindex="0" class="btn payload" data-custom-value="Enable-Browser.bin" data-msg="开启浏览器<br>(特殊情况才需要)" > 开启浏览器 </h2>
+            <h2 id="Kernel_Clock" tabindex="0" class="btn payload" data-custom-value="Kernel-Clock.bin" data-msg="理论上同步内核时钟<br>(672无效)" > 内核时钟 </h2>
             <h2 id="Kernel_Dumper" tabindex="0" class="btn payload" data-custom-value="Kernel-Dumper.bin" data-msg="Dump 内核" > 内核Dumper </h2>
-            <h2 id="RIF_Renamer" tabindex="0" class="btn payload" data-custom-value="RIF-Renamer.bin" data-msg="RIF重命名\n(统一FPKG签证)" > RIF重签 </h2>
+            <h2 id="RIF_Renamer" tabindex="0" class="btn payload" data-custom-value="RIF-Renamer.bin" data-msg="RIF重命名<br>(统一FPKG签证)" > RIF重签 </h2>
         </div>
     
 </div>
@@ -108,10 +109,10 @@ function display(msg='',reslut=0){
 
     <div style="width: 100%; position: absolute; bottom: 0%; left: 0%;">
         <div id="pl_list3" class="btn" style="margin: 0 auto;"> 
-            <h2 id="FAN" class="btn payload" data-custom-value="Fan-Threshold.bin" data-msg="设置目标温度, 越低风扇越快\n重启不重置!!!" > 风扇温度 </h2>
+            <h2 id="FAN" class="btn payload" data-custom-value="Fan-Threshold.bin" data-msg="设置目标温度, 越低风扇越快<br>重启不重置!!!" > 风扇温度 </h2>
             <div>
-                <div style="font-size: 25px;" data-msg="设置目标温度, 越低风扇越快\n重启不重置!!!" >温度(默认79):
-                    <input id="temp" tabindex="0" type="range" min="0" max="100" value="79" list="tickmarks" oninput="window.temp_show.innerText=`${window.temp.value}°C`" >
+                <div style="font-size: 25px;" data-msg="设置目标温度, 越低风扇越快<br>重启不重置!!!" >温度(默认<a onclick="window.temp.value=79;window.temp_show.innerText=79;">79</a>):
+                    <input id="temp" tabindex="0" type="range" min="0" max="100" value="79" list="tickmarks" > 
                     <datalist id="tickmarks">
                         <option value="79" label="defalut"></option>
                     </datalist>
@@ -130,14 +131,17 @@ function display(msg='',reslut=0){
     </div>
 </div>
 <script>
+    if (localStorage.getItem("cache-by-zerofo") != null)
+       cacheBtn.style.display='none';
 const elements = document.querySelectorAll('.payload,.jb');
+window.temp.addEventListener('change', ()=>{
+    window.temp_show.innerText=`${window.temp.value}°C`;
+});
 Array.prototype.forEach.call(elements, function(element) {
     element.addEventListener('click', ()=>{
         let obj = event.currentTarget;
         if ( event.target.classList.contains('jb') )
-        {
             getHen("./goldhen.bin");
-        }
         else{
             let path=element.dataset.customValue;
             loader(path);
@@ -151,6 +155,12 @@ Array.prototype.forEach.call(elements, function(element) {
         display();
     });
 });
+                
+            cacheBtn.addEventListener('click', ()=>{window.location.href='cache.html';});
+    (async()=>{
+        await new Promise(resolve => setTimeout(resolve, 50));
+    })();
+
 </script>
 </body>
 </html>

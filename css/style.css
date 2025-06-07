@@ -13,7 +13,13 @@ margin: auto;
 h1,h2,h3 {
 cursor:pointer;
 }
-
+#cacheBtn{
+    position: fixed;
+    width: 2%;
+    height: 4%;
+    top:1%;
+    right: 1%;
+}
 .webname {
     margin: 0px;
     cursor:default;

