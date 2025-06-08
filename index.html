@@ -131,8 +131,10 @@ function display(msg='',reslut=0){
     </div>
 </div>
 <script>
-    if (localStorage.getItem("cache-by-zerofo") != null)
+    if (localStorage.getItem("cache-by-zerofo")){
        cacheBtn.style.display='none';
+    }
+
 const elements = document.querySelectorAll('.payload,.jb');
 window.temp.addEventListener('change', ()=>{
     window.temp_show.innerText=`${window.temp.value}°C`;
