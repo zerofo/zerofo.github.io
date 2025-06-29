@@ -798,12 +798,12 @@ async function getfile(path){
     let getlength = payload.length;
     return {data:payload, len: getlength}
 }
-async function getHen() {
+async function getHen(path) {
     window.jb_btn.onmouseout=null;
     display("已经点击<br>请等待跳窗.");
     window.jb_btn.style.visibility='hidden';
     await sleep(150);
-    let info = await getfile("goldhen.bin");
+    let info = await getfile(path);
     window.HEN_data_len = info.len;
     window.HEN_data = await malloc(window.HEN_data_len+1000);
     write_mem(window.HEN_data, info.data);
@@ -837,7 +837,9 @@ async function loader(path){
     window.ldr_bin = malloc(window.ldr_bin_len);
     write_mem(window.ldr_bin,info.data);
     let info2 = await getfile("pl/"+path)
-    
+    // window.ldr_bin_len=info2.len;
+    // window.ldr_bin = malloc(window.ldr_bin_len);
+    // write_mem(window.ldr_bin,info2.data);
     if(path==='Fan-Threshold.bin') 
         info2.data[0x1E30] = window.temp.value;
     window.ldr_bin_2_len=info2.len;

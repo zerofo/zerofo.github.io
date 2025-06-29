@@ -13,6 +13,10 @@ margin: auto;
 h1,h2,h3 {
 cursor:pointer;
 }
+a{
+cursor:none;
+
+}
 #cacheBtn{
     position: fixed;
     width: 2%;
